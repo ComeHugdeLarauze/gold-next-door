@@ -1,0 +1,2 @@
+class TresorsController < ApplicationController
+end
