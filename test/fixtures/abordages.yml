@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tresor: one
+  pirate: one
+  message: MyText
+  type_abordage: one
+  accepte: false
+
+two:
+  tresor: two
+  pirate: two
+  message: MyText
+  type_abordage: two
+  accepte: false
