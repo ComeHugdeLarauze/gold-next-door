@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titre: MyString
+  photo: MyString
+  description: MyText
+  prive: false
+  indice: MyString
+  pirate: one
+
+two:
+  titre: MyString
+  photo: MyString
+  description: MyText
+  prive: false
+  indice: MyString
+  pirate: two

@@ -1,0 +1,2 @@
+class TypeAbordage < ApplicationRecord
+end
