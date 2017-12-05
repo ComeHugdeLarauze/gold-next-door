@@ -18,6 +18,6 @@
     <h3>Négociations</h3>
     <hr>
     <%= render "abordages/list", abordages: @tresor.abordages %>
-    <%= render "abordages/form", tresor: @tresor %>
+    <%= render "abordages/form", tresor: @tresor, abordage: Abordage.new %>
   </div>
 </div>

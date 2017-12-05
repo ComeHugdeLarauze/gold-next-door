@@ -1,18 +1,7 @@
-<%= simple_form_for [tresor, Abordage.new] do |f| %>
+<%= simple_form_for([tresor, abordage], remote: true) do |f| %>
   <%= f.input :message %>
   <%= f.input :quantite %>
-  <%= f.association :type_abordage, collection: TypeAbordage.all, as: :radio_buttons, label_method: -> (obj){obj.nom}, input_html: {class: "aaa"} %>
+  <%= f.association :type_abordage, collection: TypeAbordage.all, as: :radio_buttons, label_method: -> (obj){obj.nom}, input_html: {class: "aaaa"} %>
   <%= f.submit "GO" %>
 <% end %>
 
-
- <!--  <div class="form-group radio_buttons required abordage_type_abordage">
-    <label class="control-label radio_buttons required">
-      <abbr title="required">*</abbr> Type abordage</label>
-      <input type="hidden" name="abordage[type_abordage]" value="">
-      <% TypeAbordage.all.each do |type| %>
-        <span class="radio"><label for="abordage_type_abordage_<%= type.id %>">
-          <input class="radio_buttons required <%= type.emoji %>" type="radio" value="<%= type.id %>" name="abordage[type_abordage]" id="abordage_type_abordage_<%= type.id %>"><%= type.nom %></label>
-        </span>
-      <% end %>
-    </div> -->

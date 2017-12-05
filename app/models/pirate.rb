@@ -5,4 +5,6 @@ class Pirate < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tresors
   has_many :abordages
+
+  validates :pseudo, uniqueness: true
 end
