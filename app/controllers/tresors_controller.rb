@@ -25,7 +25,7 @@ class TresorsController < ApplicationController
 
   def destroy
     @tresor.destroy
-    redirect_to root_path
+    redirect_to tresors_path
   end
 
   private
@@ -35,6 +35,6 @@ class TresorsController < ApplicationController
   end
 
   def tresor_params
-    params.require(:tresor).permit(:titre, :description, :photo, :photo_cache)
+    params.require(:tresor).permit(:titre, :description, :prive, :indice, :photo, :photo_cache)
   end
 end
