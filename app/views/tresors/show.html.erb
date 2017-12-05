@@ -1,0 +1,16 @@
+<div class="container col-xs-12 col-sm-4 col-sm-offset-4">
+
+  <div class="row">
+    <div class="card">
+      <div class="card-description">
+        <h2><%= @tresor.titre %></h2>
+        <p><%= @tresor.description %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Supprimer tresor", tresor_path(@tresor), method: :delete, class: 'btn btn-danger' %>
+  </div>
+
+</div>
