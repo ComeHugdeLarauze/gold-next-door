@@ -7,9 +7,41 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   position: fixed;
-  width: 100%
+  width: 100%;
+  bottom: 0;
+  border-top-left-radius: 50% 55%;
+  border-top-right-radius: 50% 55%;
 }
 
 .footer-links a:hover {
   opacity: 1;
+}
+
+.decouvrir {
+  position: relative;
+  right: 25px;
+  bottom: 10px;
+}
+
+.pourparlers {
+  position: relative;
+  left: 25px;
+  bottom: 10px;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: white;
+}
+
+.margin-footer {
+  margin-bottom: 4px;
+}
+
+.btn-principal {
+  border-radius: 50%;
+  position: relative;
+  bottom: 20px;
+  border: solid 1px;
+  border-color: $noir;
 }
