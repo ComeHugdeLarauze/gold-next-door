@@ -1,0 +1,7 @@
+<%= abordages.each do |abordage| %>
+<h2>abordage.pirate.name</h2>
+<p>abordage.message</p>
+<% if abordage.abordage_type %>
+  <p>abordage.abordage_type.nom</p>
+<% end %>
+<% end %>

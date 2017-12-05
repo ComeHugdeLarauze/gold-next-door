@@ -1,0 +1,5 @@
+<%= simple_form_for [tresor, Abordage.new] do |f| %>
+  <%= f.input :message %>
+  <%= f.input :abordage_type, collection: Abordage.all %>
+  <%= f.submit %>
+<% end %>
