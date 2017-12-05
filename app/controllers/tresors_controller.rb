@@ -25,7 +25,7 @@ class TresorsController < ApplicationController
 
   def destroy
     @tresor.destroy
-    redirect_to root_path
+    redirect_to tresors_path
   end
 
   private
