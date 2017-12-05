@@ -35,6 +35,6 @@ class TresorsController < ApplicationController
   end
 
   def tresor_params
-    params.require(:tresor).permit(:titre, :description, :indice, :photo, :photo_cache)
+    params.require(:tresor).permit(:titre, :description, :prive, :indice, :photo, :photo_cache)
   end
 end
