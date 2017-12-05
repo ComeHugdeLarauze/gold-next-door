@@ -1,3 +1,5 @@
+<%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
+
 <div class="container">
 
   <!-- tab qui appelent AJAX -->
@@ -13,12 +15,21 @@
   <!-- trésors en cours -->
   <div id="body1" class="col-xs-10 col-xs-offset-1">
     <% @tresors.each do |tresor| %>
-      <div class="card">
-        <h2><%= link_to tresor.titre, tresor_path(tresor) %></h2>
-        <div class="card-descritpion">
+      <% if tresor.prive %>
+        <div class="card">
+          <h2><%= link_to tresor.indice, tresor_path(tresor) %></h2>
+          <%= image_tag 'coffre_ferme.jpg', height: 200, width: 300, crop: :fill %>
+        </div>
+
+      <% else %>
+
+        <div class="card">
+         <h2><%= link_to tresor.titre, tresor_path(tresor) %></h2>
+          <%= cl_image_tag tresor.photo, height: 200, width: 300, crop: :fill %>
           <p><%= tresor.description %></p>
         </div>
-      </div>
+      <% end %>
+
     <% end %>
     <%= link_to "Nouveau Trésors", new_tresor_path %>
   </div>
@@ -59,5 +70,3 @@
     body2.classList.remove('hidden');
   });
 </script>
-<%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
-
