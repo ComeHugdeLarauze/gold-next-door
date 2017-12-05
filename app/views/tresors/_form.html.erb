@@ -1,10 +1,12 @@
 <div class="container col-xs-12 col-sm-4 col-sm-offset-4">
   <div class='text-center'>
     <%= simple_form_for(@tresor) do |f| %>
-      <%= f.input :titre  %>
-      <%= f.input :description  %>
+      <%= f.input :titre %>
+      <%= f.input :indice %>
+      <%= f.input :description %>
       <%= f.input :photo %>
-      <%= f.submit "Add this tresor", class: 'btn btn-primary' %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Partage ton tresor", class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

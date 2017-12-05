@@ -1,10 +1,11 @@
 <div class="container">
+
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="card">
         <div class="card-description">
+          <%= cl_image_tag @tresor.photo, height: 200, width: 300, crop: :fill %>
           <h2><%= @tresor.titre %></h2>
-          <%= cl_image_tag @tresor.photo, crop: :fill %>
           <p><%= @tresor.description %></p>
         </div>
       </div>

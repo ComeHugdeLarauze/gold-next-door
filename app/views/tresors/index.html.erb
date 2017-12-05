@@ -1,19 +1,63 @@
-<div class="text-center">
-  <h1><em>Trésors</em></h1>
-  <hr>
-  <div class="container">
-    <div class="row">
-      <% @tresors.each do |tresor| %>
-        <div class="card col-xs-12">
-          <h2><%= tresor.titre %></h2>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tresor.photo, height: 300, width: 400, crop: :fill %>')">
-            <div class="card-description">
-            <p><%= tresor.description %></p>
-            </div>
-          </div>
+<div class="container">
+
+  <!-- tab qui appelent AJAX -->
+  <div class="tabs text-center col-xs-10 col-xs-offset-1">
+  <a id="tab1" class="tab active" href="#">
+    <p>Deal en cours</p>
+  </a>
+  <a id="tab2" class="tab" href="#">
+    <p>Trésors acquis</p>
+  </a>
+  </div>
+
+  <!-- trésors en cours -->
+  <div id="body1" class="col-xs-10 col-xs-offset-1">
+    <% @tresors.each do |tresor| %>
+      <div class="card">
+        <h2><%= link_to tresor.titre, tresor_path(tresor) %></h2>
+        <div class="card-descritpion">
+          <p><%= tresor.description %></p>
         </div>
-      <% end %>
-      <%= link_to "Nouveau Trésors", new_tresor_path %>
-    </div>
+      </div>
+    <% end %>
+    <%= link_to "Nouveau Trésors", new_tresor_path %>
+  </div>
+
+  <!-- trésors acquis-->
+  <div id="body2" class="done hidden">
+    <% @tresors.each do |tresor| %>
+      <div class="card col-xs-12">
+        <h2><%= link_to tresor.titre, tresor_path(tresor) %></h2>
+        <div class="card-descritpion">
+          <p><%= tresor.indice %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
+<!-- Javascript pour affichage tab -->
+<script>
+  const tab1 = document.getElementById('tab1')
+  const tab2 = document.getElementById('tab2')
+  const body1 = document.getElementById('body1')
+  const body2 = document.getElementById('body2')
+
+  tab1.addEventListener('click', (s) => {
+    s.preventDefault();
+    tab1.classList.add("active");
+    tab2.classList.remove("active");
+    body2.classList.add('hidden');
+    body1.classList.remove('hidden');
+  });
+
+  tab2.addEventListener('click', (s) => {
+    s.preventDefault();
+    tab2.classList.add("active");
+    tab1.classList.remove("active");
+    body1.classList.add('hidden');
+    body2.classList.remove('hidden');
+  });
+</script>
+<%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
+
