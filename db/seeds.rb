@@ -7,3 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Creating DateBase"
 
+5.times do
+  titre = Faker::FamilyGuy.location
+  description = Faker::ChuckNorris.fact
+  tresor = Tresor.new(user: User.all.sample, titre: titre, title: titre, description: description)
+  tresor.save!
+end
