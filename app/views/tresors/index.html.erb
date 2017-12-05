@@ -1,0 +1,16 @@
+<div class="text-center col-xs-12 col-sm-4 col-sm-offset-4 ">
+  <h1><em>Trésors</em></h1>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <% @tresors.each do |tresor| %>
+        <div class="col-xs-12">
+          <h2><%= tresor.titre %></h2>
+          <p><%= tresor.description %></p>
+        </div>
+      <% end %>
+      <%= link_to "Nouveau Trésors", new_tresor_path %>
+      <%= link_to "home", tresors_path %>
+    </div>
+  </div>
+</div>
