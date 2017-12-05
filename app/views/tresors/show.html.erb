@@ -10,4 +10,9 @@
       </div>
     </div>
   </div>
+
+  <div class="text-center">
+   <%= link_to "Supprimer tresor", tresor_path(@tresor), method: :delete, class: 'btn btn-danger' %>
+   <%= link_to "home", tresors_path, class: 'btn btn-primary' %>
+  </div>
 </div>
