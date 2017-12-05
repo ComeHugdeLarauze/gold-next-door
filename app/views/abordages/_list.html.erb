@@ -1,7 +1,11 @@
-<%= abordages.each do |abordage| %>
-<h2>abordage.pirate.name</h2>
-<p>abordage.message</p>
-<% if abordage.abordage_type %>
-  <p>abordage.abordage_type.nom</p>
-<% end %>
+<% if abordages.empty? %>
+  <p>T'es le premier ici !!</p>
+<% else %>
+  <% abordages.each do |abordage| %>
+    <h2><%= abordage.pirate.pseudo %></h2>
+    <p><%= abordage.message %></p>
+    <% if abordage.type_abordage %>
+      <p><%= abordage.quantite %> : <%= abordage.type_abordage.nom %></p>
+    <% end %>
+  <% end %>
 <% end %>

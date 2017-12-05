@@ -1,6 +1,4 @@
 class AbordagesController < ApplicationController
-  before_action :set_abordage, only: [:create]
-
   def index
     @abordages_participant = current_pirate.abordages
     @abordages_author = Abordage.where(tresor: current_pirate.tresors)
@@ -10,11 +8,13 @@ class AbordagesController < ApplicationController
   end
 
   def create
-    @abordage.new(abordage_params)
-    @abordage.user = current_user
-    @abordage.tresor = Tresor.find(params[tresor_id])
+    pimped_params =  abordage_params
+    pimped_params["type_abordage_id"] = pimped_params["type_abordage_id"].to_i
+    @abordage = Abordage.new(pimped_params)
+    @abordage.pirate = current_pirate
+    @abordage.tresor = Tresor.find(params[:tresor_id])
     if @abordage.save
-      redirect_to tresors_path(@abordage.tresor)
+      redirect_to tresor_path(@abordage.tresor)
     else
     end
   end
@@ -22,10 +22,10 @@ class AbordagesController < ApplicationController
   private
 
   def set_abordage
-    @abordage = Abordage.find(params[id])
+    @abordage = Abordage.find(params[:id])
   end
 
   def abordage_params
-    params.require(:abordage).permit(:abordage_type_id)
+    params.require(:abordage).permit(:message, :quantite, :type_abordage_id)
   end
 end

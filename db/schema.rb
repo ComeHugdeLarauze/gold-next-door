@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204162248) do
+ActiveRecord::Schema.define(version: 20171205155411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171204162248) do
     t.boolean "accepte"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantite"
     t.index ["pirate_id"], name: "index_abordages_on_pirate_id"
     t.index ["tresor_id"], name: "index_abordages_on_tresor_id"
     t.index ["type_abordage_id"], name: "index_abordages_on_type_abordage_id"
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 20171204162248) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pseudo"
     t.index ["email"], name: "index_pirates_on_email", unique: true
     t.index ["reset_password_token"], name: "index_pirates_on_reset_password_token", unique: true
   end
