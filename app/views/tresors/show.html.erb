@@ -13,4 +13,7 @@
     <%= link_to "Supprimer tresor", tresor_path(@tresor), method: :delete, class: 'btn btn-danger' %>
   </div>
 
+  <div class="abordages">
+    <%= render "abordage/list" %>
+  </div>
 </div>
