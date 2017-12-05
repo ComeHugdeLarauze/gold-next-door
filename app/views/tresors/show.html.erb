@@ -1,16 +1,18 @@
 <div class="container">
-
-  <div class="row col-xs-12">
-    <div class="card">
-      <div class="card-description">
-        <h2><%= @tresor.titre %></h2>
-        <p><%= @tresor.description %></p>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="card">
+        <div class="card-description">
+          <h2><%= @tresor.titre %></h2>
+          <%= cl_image_tag @tresor.photo, height: 300, width: 400, crop: :fill %>
+          <p><%= @tresor.description %></p>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="text-center">
-    <%= link_to "Supprimer tresor", tresor_path(@tresor), method: :delete, class: 'btn btn-danger' %>
-     <%= link_to "home", tresors_path, class: 'btn btn-primary' %>
+   <%= link_to "Supprimer tresor", tresor_path(@tresor), method: :delete, class: 'btn btn-danger' %>
+   <%= link_to "home", tresors_path, class: 'btn btn-primary' %>
   </div>
 </div>
