@@ -4,6 +4,8 @@ class Pirate < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :tresors
-  has_many :crews
+  has_many :crew_tresors
+  has_many :pirates
+
+  has_many :crews, through: :crew_pirates
 end

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :abordages, only: [:index]
 
-  resources :crews
+  resources :crews do
+    resources :crew_pirates, only:[:create, :destroy]
+  end
 
   resources :tresors do
     resources :abordages, only: :create

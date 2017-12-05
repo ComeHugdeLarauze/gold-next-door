@@ -11,18 +11,17 @@ class CrewsController < ApplicationController
   end
 
   def new
+
     @crew = Crew.new
     # authorize @crew
   end
 
   def create
     @crew = Crew.new(crew_params)
-    @crew.pirates.push(current_pirate)
-    # @crewpirate = CrewPirate.new(pirate_id: current_pirate.id, crew_id: @crew.id )
-    @crew.pirate_id = current_pirate.id
     # authorize @crew
     if @crew.save
-      redirect_to crews_path
+      @crewpirate = CrewPirate.create(pirate_id: current_pirate.id, crew_id: @crew.id)
+      redirect_to crew_path(@crew)
     else
       render :new
     end
@@ -32,6 +31,7 @@ class CrewsController < ApplicationController
   end
 
   def update
+    @crew.pirates.push(pirate.last)
     @crew.update(crew_params)
     redirect_to crew_path(@crew)
   end
