@@ -1,0 +1,7 @@
+
+<%= simple_form_for @crew do |f| %>
+  <%= f.input :nom, label: "Comment s'apelle ton crew Cap'tain ?" %>
+  <%= f.input :password %>
+  <%= f.input_field :prive, as: :boolean, boolean_style: :inline, prompt: "Cap'tain: Crew fantôme ou  Crew Visible de loin ? " %>
+  <%= f.button :submit %>
+<% end %>
