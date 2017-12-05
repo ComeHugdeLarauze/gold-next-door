@@ -6,12 +6,14 @@
       <% @tresors.each do |tresor| %>
         <div class="card col-xs-12">
           <h2><%= tresor.titre %></h2>
-          <div class="card-descritpion">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tresor.photo, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-description">
             <p><%= tresor.description %></p>
+            </div>
           </div>
         </div>
       <% end %>
       <%= link_to "Nouveau Trésors", new_tresor_path %>
     </div>
   </div>
-</div
+</div>
