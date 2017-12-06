@@ -1,9 +1,8 @@
-  <!-- trésors en cours -->
 
   <h1 class="h1-index">Bienvenue dans le crew #LeWagon matelot !</h1>
   <p class="p-index">Découvre des trésors dévoilés par d'autres pirates. Part à leur conquête ou dévoile les tiens pour savoir combien tu peux en tirer💰</p>
 
-
+  <!-- trésors en cours -->
   <div id="body1 row-index">
     <% @tresors.each do |tresor| %>
       <div class="cards">
@@ -36,6 +35,10 @@
             </div>
           </div>
 
+  <%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
+  <%= render "tresors/list", tresors: @tresors %>
+  <%= link_to "Nouveau Trésors", new_tresor_path %>
+        
         <% end %>
       </div>
     <% end %>

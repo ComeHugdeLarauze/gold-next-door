@@ -12,7 +12,9 @@
         <% end %>
   </div>
 </div>
+<%= current_pirate.tresors.last.titre %>
 <div class="text-center">
   <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn btn-info' %>
   <%= link_to "Les Crews", crews_path, class: 'btn btn-info' %>
 </div>
+<%= link_to "Quitter ce crew", crew_crew_pirate_path(current_pirate), method: :delete, class: 'btn btn-danger' %>

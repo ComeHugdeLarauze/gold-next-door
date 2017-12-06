@@ -5,6 +5,6 @@
 <%= simple_form_for @crew do |f| %>
   <%= f.input :nom, label: "Comment s'apelle ton crew Cap'tain ?" %>
   <%= f.input :password %>
-  <%= f.input :prive, label: "Crew fantôme ou Crew Visible de loin ? ", hint: "Les Crews Fantômes n'apparaissent que sur invitation privée" %>
+  <%= f.input :prive, label: "Créer un crew fantôme ? ", hint: "Les Crews Fantômes n'apparaissent que sur invitation privée" %>
   <%= f.button :submit %>
 <% end %>
