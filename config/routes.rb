@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :crews do
     resources :crew_pirates, only:[:new, :create, :destroy]
+    resources :crew_tresors, only:[:new, :create, :destroy]
+
   end
 
   resources :tresors do
