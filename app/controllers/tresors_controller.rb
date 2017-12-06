@@ -2,20 +2,23 @@ class TresorsController < ApplicationController
   before_action :set_tresor, only: [:show, :destroy]
 
   def index
-    @tresors = Tresor.all
+    @tresors = policy_scope(Tresor).order(created_at: :desc)
   end
 
   def show
     @abordage = Abordage.new
+    authorize @tresor
   end
 
   def new
     @tresor = Tresor.new
+    authorize @tresor
   end
 
   def create
     @tresor = Tresor.new(tresor_params)
     @tresor.pirate = current_pirate
+    authorize @tresor
     if @tresor.save
       redirect_to tresor_path(@tresor)
     else
@@ -24,6 +27,7 @@ class TresorsController < ApplicationController
   end
 
   def destroy
+    authorize @tresor
     @tresor.destroy
     redirect_to tresors_path
   end
