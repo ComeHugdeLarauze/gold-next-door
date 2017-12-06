@@ -3,9 +3,11 @@
 <% content_for :meta_image, image_path('logo-gnd.png') %>
 
 <% @crews.each do |crew| %>
-  <% if crew.prive? %>
+  <% if crew.prive == false %>
   <h2><%= link_to  crew.nom, crew_path(crew) %></h2>
-  <p><%= crew.pirates.all? ? "Contient #{crew.pirates.count} pirates" : 'Ne contient plus de pirate...' %></p>
+  <p><%= crew.pirates.all ? "Contient #{crew.pirates.count} pirates" : 'Ne contient plus de pirate...' %></p>
 <% end %>
 <% end %>
-<p>Il y a <%= @crews.where(prive: false).count %> Crews Fantôme sur Gold Next Door...</p>
+<p>Il y a <%= @crews.where(prive: true).count %> Crews fantôme sur Gold Next Door...</p>
+
+<%= link_to "Créer un Crew", new_crew_path, class: 'btn btn-primary' %>

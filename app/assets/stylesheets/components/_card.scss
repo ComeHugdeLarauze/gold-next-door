@@ -1,6 +1,8 @@
 .cards {
   display: flex;
   width: 320px;
+  margin: auto;
+  margin-top: 6px;
 }
 
 .card {
@@ -20,6 +22,8 @@
   background-size: cover;
   color: white;
   position: relative;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .card-user {
@@ -75,14 +79,16 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 1px solid $jaune;
   margin-bottom: 25px;
   background-color: $saumon;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background-color: white;
 }
 
 .card-footer p {
-  color: $jaune;
-  font-size: 12px;
+  color: $noir;
+  font-size: 16px;
 }
 
 .card-footer .controls{
@@ -99,4 +105,8 @@
 
 .card-footer .controls i:hover{
   opacity: 0.4;
+}
+
+.test {
+  margin: 0px 0 4px;
 }

@@ -21,6 +21,10 @@ class CrewPiratesController < ApplicationController
     end
   end
 
+  def destroy
+    redirect_to crews_path
+  end
+
 
   private
 
