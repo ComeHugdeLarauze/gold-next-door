@@ -21,19 +21,14 @@
                 <p><%= tresor.indice %></p>
               </div>
               <div class="controls">
-                <a href="#"><i class="fa fa-star"></i></a></li>
-                <a href="#"><i class="fa fa-heart"></i></a></li>
-                <a href="#"><i class="fa fa-share"></i></a></li>
               </div>
             </div>
           </div>
 
+
         <% else %>
           <div class="card">
             <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
-              <div class="card-category">
-                <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
-               </div>
               <a class="card-link" href="#" ></a>
             </div>
             <div class="card-footer">
@@ -41,17 +36,14 @@
                 <p><%= tresor.description %></p>
               </div>
               <div class="controls">
-                <a href="#"><i class="fa fa-star"></i></a></li>
-                <a href="#"><i class="fa fa-heart"></i></a></li>
-                <a href="#"><i class="fa fa-share"></i></a></li>
               </div>
             </div>
           </div>
         <% end %>
       </div>
     <% end %>
-    <%= link_to "Nouveau Trésors", new_tresor_path %>
   </div>
+
 
   <!-- trésors acquis-->
   <div id="body2">
