@@ -49,6 +49,4 @@ class CrewsController < ApplicationController
   def set_crew
     @crew = Crew.find(params[:id])
   end
-
-
 end
