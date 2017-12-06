@@ -1,6 +1,5 @@
-<div class="wrapper">
-  <div class="container-fluid">
-    <%= link_to "Ajouter un nouveau Trésor", new_tresor_path, class: 'btn btn-primary' %>
-  </div>
-  <%= render "tresors/list", tresors: @tresors  %>
-</div>
+
+  <%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
+  <%= render "tresors/list", tresors: @tresors %>
+  <%= link_to "Nouveau Trésors", new_tresor_path %>
+
