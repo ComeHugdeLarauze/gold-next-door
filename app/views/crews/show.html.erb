@@ -21,5 +21,8 @@
   <div class="text-center">
     <%= link_to "Supprimer ce crew", crew_path(@crew), method: :delete, class: 'btn btn-danger' %>
   </div>
+  <div class="text-center">
+    <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn btn-danger' %>
+  </div>
 
 </div>

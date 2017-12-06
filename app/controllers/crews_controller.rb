@@ -1,13 +1,12 @@
 class CrewsController < ApplicationController
 # CRUD
-  before_action :set_crew, only: [:show, :edit, :update]
+  before_action :set_crew, only: [:show, :edit]
 
   def index
     @crews = Crew.all
   end
 
   def show
-    # authorize @crew
   end
 
   def new
@@ -30,11 +29,6 @@ class CrewsController < ApplicationController
   def edit
   end
 
-  def update
-    @crew.pirates.push(pirate.last)
-    @crew.update(crew_params)
-    redirect_to crew_path(@crew)
-  end
 
   def destroy
     @crew.destroy
@@ -48,7 +42,6 @@ class CrewsController < ApplicationController
 
   def set_crew
     @crew = Crew.find(params[:id])
+    # authorize @crew
   end
-
-
 end

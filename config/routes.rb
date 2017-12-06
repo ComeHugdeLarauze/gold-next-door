@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :abordages, only: [:index]
 
   resources :crews do
-    resources :crew_pirates, only:[:create, :destroy]
+    resources :crew_pirates, only:[:new, :create, :destroy]
   end
 
   resources :tresors do

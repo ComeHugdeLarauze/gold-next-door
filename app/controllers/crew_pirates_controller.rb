@@ -1,13 +1,30 @@
 class CrewPiratesController < ApplicationController
+  before_action :set_crew
+
+  def new
+    @crew_pirate = CrewPirate.new
+    #authorize @crew_pirate
+  end
+
   def create
-    @crewToAdd = Crew.find(params[:crew_id])
-    @pirateToAdd = Pirate.find(params[:pirate_id])
-    @crewpirate = CrewPirate.new(pirate: @pirateToAdd, crew: @crewToAdd)
-    if @crewpirate.save?
-      redirect_to crew_path(@crewToAdd)
+    @crew_pirate = CrewPirate.new(pirate: current_pirate, crew: @crew)
+    if params[:crew_password] == @crew.password
+      #authorize @crew_pirate
+      if @crew_pirate.save
+        redirect_to crew_path(@crew)
+      else
+        render :new
+      end
     else
+      flash[:alert] = "Essaie encore"
       render :new
     end
+  end
 
+
+  private
+
+  def set_crew
+    @crew = Crew.find(params[:crew_id])
   end
 end

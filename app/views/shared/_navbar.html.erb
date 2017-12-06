@@ -48,9 +48,15 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <% if pirate_signed_in? %>
+          <%= link_to destroy_pirate_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        <% else %>
+          <li>
+            <%= link_to t(".sign_in", default: "Login"), new_pirate_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
