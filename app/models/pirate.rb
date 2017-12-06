@@ -9,5 +9,5 @@ class Pirate < ApplicationRecord
   has_many :crews, through: :crew_pirates
   has_many :abordages
 
-  validates :pseudo, uniqueness: true
+  # validates :pseudo, uniqueness: true
 end

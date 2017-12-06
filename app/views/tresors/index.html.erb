@@ -1,6 +1,3 @@
-
-<%= render "tresors/list", tresors: @tresors  %>
-
   <!-- trésors en cours -->
   <div id="body1">
     <% @tresors.each do |tresor| %>
@@ -21,8 +18,6 @@
               </div>
             </div>
           </div>
-
-
         <% else %>
           <div class="card">
             <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">

@@ -1,45 +1,45 @@
 <div class="cards">
   <% tresors.each do |tresor| %>
-  <% if tresor.prive %>
-  <div class="card">
-    <div class="card-body" style="background-image: url('<%= image_path 'coffre_ferme.jpg'%>')">
-      <div class="card-category">
-        <p><%= link_to tresor.indice, tresor_path(tresor) %></p>
+    <% if tresor.prive %>
+    <div class="card">
+      <div class="card-body" style="background-image: url('<%= image_path 'coffre_ferme.jpg'%>')">
+        <div class="card-category">
+          <p><%= link_to tresor.indice, tresor_path(tresor) %></p>
+        </div>
+        <a class="card-link" href="#" ></a>
       </div>
-      <a class="card-link" href="#" ></a>
+      <div class="card-footer">
+        <div class="card-descritpion">
+          <p><%= tresor.indice %></p>
+        </div>
+        <div class="controls">
+          <a href="#"><i class="fa fa-star"></i></a></li>
+          <a href="#"><i class="fa fa-heart"></i></a></li>
+          <a href="#"><i class="fa fa-share"></i></a></li>
+        </div>
+      </div>
     </div>
-    <div class="card-footer">
-      <div class="card-descritpion">
-        <p><%= tresor.indice %></p>
-      </div>
-      <div class="controls">
-        <a href="#"><i class="fa fa-star"></i></a></li>
-        <a href="#"><i class="fa fa-heart"></i></a></li>
-        <a href="#"><i class="fa fa-share"></i></a></li>
-      </div>
-    </div>
-  </div>
 
-  <% else %>
-  <div class="card">
-    <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
-      <div class="card-category">
-        <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
+    <% else %>
+    <div class="card">
+      <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
+        <div class="card-category">
+          <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
+        </div>
+        <a class="card-link" href="#" ></a>
       </div>
-      <a class="card-link" href="#" ></a>
+      <div class="card-footer">
+        <div class="card-descritpion">
+          <p><%= tresor.description %></p>
+        </div>
+        <div class="controls">
+          <a href="#"><i class="fa fa-star"></i></a></li>
+          <a href="#"><i class="fa fa-heart"></i></a></li>
+          <a href="#"><i class="fa fa-share"></i></a></li>
+        </div>
+      </div>
     </div>
-    <div class="card-footer">
-      <div class="card-descritpion">
-        <p><%= tresor.description %></p>
-      </div>
-      <div class="controls">
-        <a href="#"><i class="fa fa-star"></i></a></li>
-        <a href="#"><i class="fa fa-heart"></i></a></li>
-        <a href="#"><i class="fa fa-share"></i></a></li>
-      </div>
-    </div>
-  </div>
-  <% end %>
+    <% end %>
   <% end %>
 </div>
 
