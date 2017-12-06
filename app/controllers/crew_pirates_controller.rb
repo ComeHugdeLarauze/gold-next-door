@@ -22,7 +22,6 @@ class CrewPiratesController < ApplicationController
   end
 
   def destroy
-    current_pirate.destroy
     redirect_to crews_path
   end
 
