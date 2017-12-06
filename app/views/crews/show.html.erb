@@ -9,9 +9,11 @@
         <h2>List des membres de <%= @crew.nom %></h2>
         <% @crew.pirates.each do |pirate| %>
           <p><%= pirate[:email] %></p>
+          <%= pirate.tresors.count %>
         <% end %>
   </div>
 </div>
+<%= binding.pry current_pirate %>
 <div class="text-center">
   <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn btn-info' %>
   <%= link_to "Les Crews", crews_path, class: 'btn btn-info' %>
