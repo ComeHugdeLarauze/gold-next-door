@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :pirates
-  root to: 'pages#home'
   resources :abordages, only: [:index]
+  root to: 'tresors#index'
 
   resources :crews do
     resources :crew_pirates, only:[:new, :create, :destroy]
