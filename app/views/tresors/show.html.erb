@@ -1,6 +1,4 @@
 
-<div class="container">
-
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="card">
@@ -19,17 +17,9 @@
       </div>
     </div>
   </div>
-
-  <div class="text-center">
-   <%= link_to "Supprimer tresor", tresor_path(@tresor), method: :delete, class: 'btn btn-danger' %>
-   <%= link_to "home", tresors_path, class: 'btn btn-primary' %>
-  </div>
-
   <div class="abordages-conteneur">
     <h3>Négociations</h3>
+    <%= render "abordages/modal", tresor: @tresor, abordage: Abordage.new %>
     <hr>
     <%= render "abordages/list", abordages: @tresor.abordages %>
-    <%= render "abordages/form", tresor: @tresor, abordage: Abordage.new %>
   </div>
-
-</div>

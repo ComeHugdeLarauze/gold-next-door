@@ -1,7 +1,19 @@
 <%= simple_form_for([tresor, abordage], remote: true) do |f| %>
-  <%= f.input :message %>
-  <%= f.input :quantite %>
-  <%= f.association :type_abordage, collection: TypeAbordage.all, as: :radio_buttons, label_method: -> (obj){obj.nom}, input_html: {class: "aaaa"} %>
-  <%= f.submit "GO" %>
+<%#= f.association :type_abordage, collection: TypeAbordage.all, as: :radio_buttons, label_method: -> (obj){obj.nom}, input_html: {class: "radio_choice_type"} %>
+<div class="form-group radio_buttons optional init-class" id="abordage_type_abordage">
+  <input type="hidden" name="abordage[type_abordage_id]" value="">
+  <% TypeAbordage.all.each do |type| %>
+    <span class="radio_choice_type <%= type.emoji %>">
+      <label for="abordage_type_abordage_id_<%= type.id %>" class="radio" >
+        <input class="radio_buttons optional" type="radio" value="<%= type.id %>" name="abordage[type_abordage_id]" id="abordage_type_abordage_id_<%= type.id %>">
+        <%= image_tag "#{type.emoji}.svg", class: "image-picker" %>
+      </label>
+    </span>
+  <% end %>
+</div>
+
+<%= f.input :quantite %>
+<%= f.input :message %>
+<%= f.submit "GO" %>
 <% end %>
 
