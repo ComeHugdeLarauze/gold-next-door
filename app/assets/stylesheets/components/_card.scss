@@ -1,55 +1,103 @@
+.cards {
+  display: flex;
+  width: 270px;
+}
+
 .card {
-  height: 175px;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  height: 180px;
+  width: 300px;
+  margin: 10px;
   background-size: cover !important;
-  color: $green;
+  background-position: center;
+  border-radius: 10px;
+  color: $jaune;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 70px;
+}
+
+.card-body {
+  height: 180px;
+  background-size: cover;
+  color: white;
   position: relative;
-  padding: 100px;
-  margin-bottom: 20px;
-  a {
-    color: white;
-    font-weight: bold;
-  }
 }
 
 .card-user {
   position: absolute;
   right: 10px;
   top: 10px;
+  width: 40px;
+  border-radius: 50%;
 }
 
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   font-size: 10px;
   text-transform: uppercase;
 }
 
 .card-description {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 15px;
+  left: 15px;
 }
 
 .card-description h2 {
-  font-size: 24px;
+  font-size: 5px;
 }
 
 .card-description p {
-  font-size: 13px;
-  }
+  font-size: 10px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
 
 .card-link {
   position: absolute;
   top: 0;
   bottom: 0;
+  right: 0;
   width: 100%;
-  z-index:2;
+  z-index: 2;
   background: black;
   opacity: 0;
 }
 
-.card-link:hover{
+.card-link:hover {
   opacity: 0.1;
+}
+
+// Card-footer
+.card-footer {
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid $jaune;
+  margin-bottom: 25px;
+  background-color: $saumon;
+}
+
+.card-footer p {
+  color: rgba(0,0,0,0.4);
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.card-footer .controls{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-footer .controls i{
+  padding: 0 10px;
+  color: black;
+  opacity: 0.2;
+}
+
+.card-footer .controls i:hover{
+  opacity: 0.4;
 }
