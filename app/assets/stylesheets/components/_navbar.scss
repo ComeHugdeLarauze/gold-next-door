@@ -86,11 +86,14 @@
 }
 
 .navbar-crew {
-  position: absolute;
+  position: relative;
   font-size: 14px;
   color: white;
-  bottom: -4px;
-  left: 15px;
+  bottom: -6px;
+  left: -12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .navbar-logo {
