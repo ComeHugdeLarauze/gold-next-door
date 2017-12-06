@@ -1,4 +1,4 @@
-  <!-- trésors en cours -->
+<!-- trésors en cours -->
   <div id="body1 row-index">
     <% @tresors.each do |tresor| %>
       <div class="cards">
@@ -30,6 +30,9 @@
             </div>
           </div>
 
+  <%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
+  <%= render "tresors/list", tresors: @tresors %>
+  <%= link_to "Nouveau Trésors", new_tresor_path %>
 
         <% end %>
       </div>
