@@ -1,5 +1,40 @@
+<!-- trésors en cours -->
+  <div id="body1 row-index">
+    <% @tresors.each do |tresor| %>
+      <div class="cards">
+        <% if tresor.prive %>
+          <div class="card">
+            <div class="card-body" style="background-image: url('<%= image_path 'coffre_ferme.jpg'%>')">
+            </div>
+            <div class="card-footer">
+              <div class="card-descritpion">
+                <p><%= tresor.indice %></p>
+              </div>
+              <div class="controls">
+              </div>
+            </div>
+          </div>
+
+
+        <% else %>
+          <div class="card">
+            <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
+            </div>
+            <div class="card-footer">
+              <div class="card-descritpion">
+                <p class="test"><%= tresor.titre %></p>
+              </div>
+              <div class="controls">
+                <p class="test">Nom du pirate</p>
+              </div>
+            </div>
+          </div>
 
   <%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
   <%= render "tresors/list", tresors: @tresors %>
   <%= link_to "Nouveau Trésors", new_tresor_path %>
 
+        <% end %>
+      </div>
+    <% end %>
+  </div>
