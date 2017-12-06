@@ -1,14 +1,10 @@
   <!-- trésors en cours -->
-  <div id="body1">
+  <div id="body1 row-index">
     <% @tresors.each do |tresor| %>
       <div class="cards">
         <% if tresor.prive %>
           <div class="card">
             <div class="card-body" style="background-image: url('<%= image_path 'coffre_ferme.jpg'%>')">
-              <div class="card-category">
-                <p><%= link_to tresor.indice, tresor_path(tresor) %></p>
-              </div>
-              <a class="card-link" href="#" ></a>
             </div>
             <div class="card-footer">
               <div class="card-descritpion">
@@ -18,72 +14,24 @@
               </div>
             </div>
           </div>
+
+
         <% else %>
           <div class="card">
             <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
-              <a class="card-link" href="#" ></a>
             </div>
             <div class="card-footer">
               <div class="card-descritpion">
-                <p><%= tresor.description %></p>
+                <p class="test"><%= tresor.titre %></p>
               </div>
               <div class="controls">
+                <p class="test">Nom du pirate</p>
               </div>
             </div>
           </div>
+
+
         <% end %>
       </div>
     <% end %>
   </div>
-
-
-  <!-- trésors acquis-->
-  <div id="body2">
-    <% @tresors.each do |tresor| %>
-      <div class="cards">
-        <div class="card">
-          <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
-            <div class="card-category">
-              <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
-            </div>
-            <div class="card-descritpion">
-              <p><%= tresor.indice %></p>
-            </div>
-            <a class="card-link" href="#" ></a>
-          </div>
-          <div class="card-footer">
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a></li>
-              <a href="#"><i class="fa fa-heart"></i></a></li>
-              <a href="#"><i class="fa fa-share"></i></a></li>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<!-- Javascript pour affichage tab -->
-<script>
-  const tab1 = document.getElementById('tab1')
-  const tab2 = document.getElementById('tab2')
-  const body1 = document.getElementById('body1')
-  const body2 = document.getElementById('body2')
-
-  tab1.addEventListener('click', (s) => {
-    s.preventDefault();
-    tab1.classList.add("active");
-    tab2.classList.remove("active");
-    body2.classList.add('hidden');
-    body1.classList.remove('hidden');
-  });
-
-  tab2.addEventListener('click', (s) => {
-    s.preventDefault();
-    tab2.classList.add("active");
-    tab1.classList.remove("active");
-    body1.classList.add('hidden');
-    body2.classList.remove('hidden');
-  });
-</script>
