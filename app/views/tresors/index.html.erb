@@ -1,1 +1,6 @@
-<%= render "tresors/list", tresors: @tresors  %>
+<div class="wrapper">
+  <div class="container-fluid">
+    <%= link_to "Ajouter un nouveau Trésor", new_tresor_path, class: 'btn btn-primary' %>
+  </div>
+  <%= render "tresors/list", tresors: @tresors  %>
+</div>
