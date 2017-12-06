@@ -1,0 +1,7 @@
+<li>
+  <h2><%= abordage.pirate.pseudo %></h2>
+  <p><%= abordage.message %></p>
+  <% if abordage.type_abordage %>
+    <p><%= abordage.quantite %> : <%= abordage.type_abordage.nom %></p>
+  <% end %>
+</li>
