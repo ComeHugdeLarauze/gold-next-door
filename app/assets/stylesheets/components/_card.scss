@@ -11,9 +11,11 @@
   background-position: center;
   border-radius: 10px;
   color: $jaune;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
   margin-bottom: 70px;
+  border-top-left-radius: 100% 35%;
+  border-top-right-radius: 100% 35%;
 }
 
 .card-body {
@@ -21,6 +23,8 @@
   background-size: cover;
   color: white;
   position: relative;
+  border-top-left-radius: 100% 35%;
+  border-top-right-radius: 100% 35%;
 }
 
 .card-user {
@@ -33,9 +37,9 @@
 
 .card-category {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 15px;
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -50,7 +54,7 @@
 }
 
 .card-description p {
-  font-size: 10px;
+  font-size: 13px;
   opacity: 0.7;
   font-weight: lighter;
 }
@@ -72,17 +76,19 @@
 
 // Card-footer
 .card-footer {
+  height: 70px;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid $jaune;
   margin-bottom: 25px;
   background-color: $saumon;
+  border-top-left-radius: 100% 35%;
+  border-top-right-radius: 100% 35%;
 }
 
 .card-footer p {
-  color: rgba(0,0,0,0.4);
-  font-weight: lighter;
+  color: $jaune;
   font-size: 12px;
 }
 
