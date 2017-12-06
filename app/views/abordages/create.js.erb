@@ -1,0 +1,17 @@
+function refreshAbordageForm(){
+  var newAbordageForm = document.getElementById("abordage_message");
+  newAbordageForm.value = "";
+}
+
+function updateAbordageList(newContent){
+  var abordageList = document.getElementById("abordages-list");
+  abordageList.insertAdjacentHTML("beforeend", newContent);
+}
+
+
+<% if @abordage.errors.any? %>
+  refreshAbordageForm();
+<% else %>
+  updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage %>' );
+  refreshAbordageForm();
+<% end %>

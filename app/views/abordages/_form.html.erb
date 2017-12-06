@@ -1,0 +1,7 @@
+<%= simple_form_for([tresor, abordage], remote: true) do |f| %>
+  <%= f.input :message %>
+  <%= f.input :quantite %>
+  <%= f.association :type_abordage, collection: TypeAbordage.all, as: :radio_buttons, label_method: -> (obj){obj.nom}, input_html: {class: "aaaa"} %>
+  <%= f.submit "GO" %>
+<% end %>
+
