@@ -1,3 +1,4 @@
+
 <div class="container">
 
   <div class="row">
@@ -23,4 +24,12 @@
    <%= link_to "Supprimer tresor", tresor_path(@tresor), method: :delete, class: 'btn btn-danger' %>
    <%= link_to "home", tresors_path, class: 'btn btn-primary' %>
   </div>
+
+  <div class="abordages-conteneur">
+    <h3>Négociations</h3>
+    <hr>
+    <%= render "abordages/list", abordages: @tresor.abordages %>
+    <%= render "abordages/form", tresor: @tresor, abordage: Abordage.new %>
+  </div>
+
 </div>

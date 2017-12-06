@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Creating DateBase"
 
-5.times do
-  titre = Faker::FamilyGuy.location
-  description = Faker::ChuckNorris.fact
-  tresor = Tresor.new(user: User.all.sample, titre: titre, title: titre, description: description)
-  tresor.save!
+TypeAbordage.destroy_all
+
+[["Euros", "euros"], ["Drinks", "drinks"], ["Troc", "troc"], ["Free Hug", "free-hug"]].each do |type|
+  TypeAbordage.create(nom: type[0], emoji: type[1])
 end
+
+puts "Seed finished"
