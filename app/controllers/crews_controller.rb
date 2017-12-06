@@ -1,5 +1,6 @@
 class CrewsController < ApplicationController
-  before_action :set_crew, only: [:show, :edit, :update]
+# CRUD
+  before_action :set_crew, only: [:show, :edit]
 
   def index
     @crews = policy_scope(Crew).order(created_at: :desc)
@@ -21,7 +22,8 @@ class CrewsController < ApplicationController
     @crew.pirate_id = current_pirate.id
     authorize @crew
     if @crew.save
-      redirect_to crews_path
+      @crewpirate = CrewPirate.create(pirate_id: current_pirate.id, crew_id: @crew.id)
+      redirect_to crew_path(@crew)
     else
       render :new
     end
@@ -48,7 +50,6 @@ class CrewsController < ApplicationController
 
   def set_crew
     @crew = Crew.find(params[:id])
+    # authorize @crew
   end
-
-
 end

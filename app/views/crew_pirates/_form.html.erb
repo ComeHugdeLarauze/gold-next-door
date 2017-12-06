@@ -1,0 +1,9 @@
+<div class="container col-xs-12 col-sm-4 col-sm-offset-4">
+  <div class='text-center'>
+    <%= simple_form_for([@crew, @crew_pirate]) do |f| %>
+      <%= text_field_tag :crew_password %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
+

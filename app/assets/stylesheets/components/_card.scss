@@ -1,6 +1,6 @@
 .cards {
   display: flex;
-  width: 270px;
+  width: 320px;
 }
 
 .card {
@@ -9,13 +9,10 @@
   margin: 10px;
   background-size: cover !important;
   background-position: center;
-  border-radius: 10px;
   color: $jaune;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
   margin-bottom: 70px;
-  border-top-left-radius: 100% 35%;
-  border-top-right-radius: 100% 35%;
 }
 
 .card-body {
@@ -23,8 +20,6 @@
   background-size: cover;
   color: white;
   position: relative;
-  border-top-left-radius: 100% 35%;
-  border-top-right-radius: 100% 35%;
 }
 
 .card-user {
@@ -83,8 +78,6 @@
   border-bottom: 1px solid $jaune;
   margin-bottom: 25px;
   background-color: $saumon;
-  border-top-left-radius: 100% 35%;
-  border-top-right-radius: 100% 35%;
 }
 
 .card-footer p {

@@ -1,9 +1,3 @@
-
-<div class="container">
   <%= link_to "Déconnexion", destroy_pirate_session_path, method: :delete %>
-
   <%= render "tresors/list", tresors: @tresors %>
-
-  <!-- trésors -->
   <%= link_to "Nouveau Trésors", new_tresor_path %>
-</div>
