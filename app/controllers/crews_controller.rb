@@ -1,28 +1,26 @@
 class CrewsController < ApplicationController
 # CRUD
-  before_action :set_crew, only: [:show, :edit, :update]
+  before_action :set_crew, only: [:show, :edit]
 
   def index
     @crews = Crew.all
   end
 
   def show
-    # authorize @crew
   end
 
   def new
+
     @crew = Crew.new
     # authorize @crew
   end
 
   def create
     @crew = Crew.new(crew_params)
-    @crew.pirates.push(current_pirate)
-    # @crewpirate = CrewPirate.new(pirate_id: current_pirate.id, crew_id: @crew.id )
-    @crew.pirate_id = current_pirate.id
     # authorize @crew
     if @crew.save
-      redirect_to crews_path
+      @crewpirate = CrewPirate.create(pirate_id: current_pirate.id, crew_id: @crew.id)
+      redirect_to crew_path(@crew)
     else
       render :new
     end
@@ -31,10 +29,6 @@ class CrewsController < ApplicationController
   def edit
   end
 
-  def update
-    @crew.update(crew_params)
-    redirect_to crew_path(@crew)
-  end
 
   def destroy
     @crew.destroy
@@ -48,7 +42,6 @@ class CrewsController < ApplicationController
 
   def set_crew
     @crew = Crew.find(params[:id])
+    # authorize @crew
   end
-
-
 end

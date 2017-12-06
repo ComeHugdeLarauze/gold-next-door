@@ -1,4 +1,11 @@
-<% @crews.each do |crew| %>
- <h2><%= crew.nom %></h2>
+<% content_for :meta_title, "Le Crew #{@crews} à rejoind Gold Next Door" %>
+<% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
+<% content_for :meta_image, image_path('logo-gnd.png') %>
 
+<% @crews.each do |crew| %>
+  <% if crew.prive? %>
+  <h2><%= link_to  crew.nom, crew_path(crew) %></h2>
+  <p><%= crew.pirates.all? ? "Contient #{crew.pirates.count} pirates" : 'Ne contient plus de pirate...' %></p>
 <% end %>
+<% end %>
+<p>Il y a <%= @crews.where(prive: false).count %> Crews Fantôme sur Gold Next Door...</p>
