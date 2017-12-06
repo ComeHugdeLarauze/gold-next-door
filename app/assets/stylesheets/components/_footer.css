@@ -20,11 +20,18 @@
 .decouvrir {
   position: relative;
   right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pourparlers {
   position: relative;
   left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 .footer-text {
