@@ -1,0 +1,10 @@
+<% content_for :meta_title, "Le Crew #{@crew.nom} à rejoind Gold Next Door" %>
+<% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
+<% content_for :meta_image, image_path('logo-gnd.png') %>
+
+<%= simple_form_for @crew do |f| %>
+  <%= f.input :nom, label: "Comment s'apelle ton crew Cap'tain ?" %>
+  <%= f.input :password %>
+  <%= f.input :prive, label: "Créer un crew fantôme ? ", hint: "Les Crews Fantômes n'apparaissent que sur invitation privée" %>
+  <%= f.button :submit %>
+<% end %>

@@ -4,9 +4,10 @@ class Pirate < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :crew_pirates
   has_many :tresors
+  has_many :crews, through: :crew_pirates
   has_many :abordages
-  has_many :crews
 
-  validates :pseudo, uniqueness: true
+  # validates :pseudo, uniqueness: true
 end

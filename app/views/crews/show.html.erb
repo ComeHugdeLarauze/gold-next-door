@@ -1,0 +1,19 @@
+<% content_for :meta_title, "Le Crew #{@crew.nom} à rejoind Gold Next Door" %>
+<% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
+<% content_for :meta_image, image_path('logo-gnd.png') %>
+
+<div class="container col-xs-12 col-sm-4 col-sm-offset-4">
+  <div class="row">
+        <h1><%= @crew.nom %></h1>
+        <p><%= @crew.prive? ? 'Est un Groupe privé' : 'Est un gorupe Public' %></p>
+        <h2>List des membres de <%= @crew.nom %></h2>
+        <% @crew.pirates.each do |pirate| %>
+          <p><%= pirate[:email] %></p>
+        <% end %>
+  </div>
+</div>
+<div class="text-center">
+  <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn btn-info' %>
+  <%= link_to "Les Crews", crews_path, class: 'btn btn-info' %>
+</div>
+<%= link_to "Quitter ce crew", crew_crew_pirate_path(current_pirate), method: :delete, class: 'btn btn-danger' %>
