@@ -6,13 +6,39 @@
         <%= f.input :titre, placeholder: "GameBoy" %>
         <%= f.input :indice, placeholder: "le primaire..." %>
         <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
-        <%= f.input :prive, label: "Trésor Caché !?" %>
+
+        <div class="container-checkbox">
+          <input class="hidden" type="checkbox" name="prive">
+          <div class="form-group radio_buttons optional tresor_prive">
+            <label class="control-label radio_buttons optional">Trésor Caché !?</label>
+
+            <div id="tresor_prive">
+              <input type="hidden" name="tresor[prive]" value="">
+              <span class="radio">
+                <label for="tresor_prive_true">
+                  <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "coffre_close.png", height: 80, width: 80, crop: :fill%>
+                </label>
+              </span>
+
+              <span class="radio">
+                <label for="tresor_prive_false">
+                  <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false"><%= image_tag "coffre_open.png", height: 80, width: 80, crop: :fill%>
+                </label>
+              </span>
+            </div>
+          </div>
+          </div>
+        </div>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
       </div>
-      <div class="form-actions">
+
+
+
+      <div class="form-actions text-center">
         <%= f.button :submit, "Partage ton tresor", class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
 </div>
+
