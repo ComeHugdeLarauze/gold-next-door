@@ -20,7 +20,11 @@ class TresorsController < ApplicationController
     @tresor = Tresor.new(tresor_params)
     @tresor.pirate = current_pirate
     authorize @tresor
+
     if @tresor.save
+      params[:tresor][:crew_ids].each do |crew|
+        CrewTresor.create(crew_id: crew, tresor_id: @tresor.id )
+      end
       redirect_to tresor_path(@tresor)
     else
       render :new

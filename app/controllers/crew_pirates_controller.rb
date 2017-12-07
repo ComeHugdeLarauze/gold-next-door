@@ -1,15 +1,17 @@
 class CrewPiratesController < ApplicationController
   before_action :set_crew
+  skip_before_action :authenticate_pirate!, only: [:new, :create, :destroy]
 
   def new
     @crew_pirate = CrewPirate.new
-    #authorize @crew_pirate
+    authorize @crew_pirate
   end
 
   def create
     @crew_pirate = CrewPirate.new(pirate: current_pirate, crew: @crew)
+    authorize @crew_pirate
+
     if params[:crew_password] == @crew.password
-      #authorize @crew_pirate
       if @crew_pirate.save
         redirect_to crew_path(@crew)
       else
@@ -22,7 +24,6 @@ class CrewPiratesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     redirect_to crews_path
   end
 

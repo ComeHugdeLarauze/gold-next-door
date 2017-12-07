@@ -1,4 +1,4 @@
-class CrewPiratesPolicy < ApplicationPolicy
+class CrewPiratePolicy < ApplicationPolicy
   def show?
     return true
   end

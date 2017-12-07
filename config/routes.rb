@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   resources :crews do
     resources :crew_pirates, only:[:new, :create, :destroy]
-    resources :crew_tresors, only:[:new, :create, :destroy]
 
   end
 
   resources :tresors do
+    resources :crew_tresors, only:[:new, :create, :destroy]
     resources :abordages, only: :create
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
