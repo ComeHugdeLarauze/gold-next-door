@@ -1,5 +1,5 @@
-<li>
-  <h2><%= abordage.pirate.pseudo %></h2>
+<li class="message">
+  <h2><%= image_tag "profil-pic.png", class: 'avatar', height: 50 %> <%= abordage.pirate.pseudo %></h2>
   <p><%= abordage.message %></p>
   <% if abordage.type_abordage %>
     <p><%= abordage.quantite %> : <%= abordage.type_abordage.nom %></p>
