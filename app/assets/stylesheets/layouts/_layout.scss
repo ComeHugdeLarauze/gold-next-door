@@ -18,3 +18,13 @@ h1, h2, h3, h4, h5, h6 {
 p{
   color: $soft-grey;
 }
+
+.btn-principal-gnd {
+  background-color: $jaune;
+  border-color: $noir;
+  padding: 14px 20px;
+  color: black;
+  font-size: 20px;
+  border-radius: 30px;
+  width: 100%;
+}
