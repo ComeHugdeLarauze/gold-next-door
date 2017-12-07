@@ -2,10 +2,8 @@
   <div class="form-tresor">
     <h2>Mon précieux !</h2>
     <%= simple_form_for(@tresor) do |f| %>
+
       <div class="form-inputs">
-        <%= f.input :titre, placeholder: "GameBoy" %>
-        <%= f.input :indice, placeholder: "le primaire..." %>
-        <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
 
         <div class="container-checkbox">
           <input class="hidden" type="checkbox" name="prive">
@@ -27,13 +25,21 @@
               </span>
             </div>
           </div>
+        </div>
+
+        <div class="indice">
+          <div class="form-group string optional tresor_indice" id="indice">
+            <label class="control-label string optional" for="indice">Indice
+            </label>
+            <input class="form-control string optional" placeholder="le primaire..." type="text" name="tresor[indice]">
           </div>
         </div>
+
+        <%= f.input :titre, placeholder: "GameBoy" %>
+        <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
       </div>
-
-
 
       <div class="form-actions text-center">
         <%= f.button :submit, "Partage ton tresor", class: "btn btn-primary" %>
@@ -41,4 +47,3 @@
     <% end %>
   </div>
 </div>
-
