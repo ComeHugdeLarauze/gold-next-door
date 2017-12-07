@@ -19,7 +19,6 @@ class CrewsController < ApplicationController
     @crew = Crew.new(crew_params)
     @crew.pirates.push(current_pirate)
     @crewpirate = CrewPirate.new(pirate_id: current_pirate.id, crew_id: @crew.id )
-    @crew.pirate_id = current_pirate.id
     authorize @crew
     if @crew.save
       @crewpirate = CrewPirate.create(pirate_id: current_pirate.id, crew_id: @crew.id)

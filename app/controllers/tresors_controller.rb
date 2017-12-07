@@ -1,6 +1,6 @@
 class TresorsController < ApplicationController
   before_action :set_tresor, only: [:show, :destroy]
-
+  skip_before_action :authenticate_pirate!, only: [:home, :index]
   def index
     @tresors = policy_scope(Tresor).order(created_at: :desc)
   end
