@@ -1,7 +1,7 @@
 #tresor_prive{
   display: flex;
   flex-wrap: wrap;
-  width:100%;
+  width:300px;
   justify-content:space-around;
   align-item: center;
 }
@@ -16,7 +16,7 @@
 }
 
 .radio{
-  width: 100px;
+  width: 80px;
   height: 80px;
   margin-bottom: 0px;
   margin-top: 0px;
@@ -54,4 +54,26 @@
 .container-checkbox {
   margin-bottom: 10px;
   margin-top: 15px;
+}
+
+.picture {
+  display: flex;
+  justify-content:space-around;
+}
+
+.tresor_photo {
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+  margin-top: 20px;
+  margin-right: 4px;
+  width: 63px;
+  height: 55px;
+  input{
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
+    direction: ltr;
+    cursor: pointer;
+  }
 }

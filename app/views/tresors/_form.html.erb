@@ -37,7 +37,15 @@
 
         <%= f.input :titre, placeholder: "GameBoy" %>
         <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
-        <%= f.input :photo %>
+
+          <div class="picture">
+            <div class="form-group file optional tresor_photo">
+              <label class="control-label file optional" for="tresor_photo"><%= image_tag "camera1.svg", height: 50, width: 50, crop: :fill%>
+              </label>
+              <input class="file optional" type="file" name="tresor[photo]" id="tresor_photo">
+            </div>
+          </div>
+
         <%= f.input :photo_cache, as: :hidden %>
       </div>
 
