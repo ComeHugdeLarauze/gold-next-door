@@ -37,8 +37,11 @@
 
         <%= f.input :titre, placeholder: "GameBoy" %>
         <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
+        <%= f.association :crews, as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
+        <%= f.input :prive, label: "Trésor Caché !?" %>
       </div>
 
       <div class="form-actions text-center">
