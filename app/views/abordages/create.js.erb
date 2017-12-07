@@ -12,9 +12,9 @@ function updateAbordageList(newContent){
 <% if @abordage.errors.any? %>
   refreshAbordageForm();
 <% else %>
-  // document.getElementById('new-abordage-modal').classList.toggle("hide");
+  document.getElementById('new-abordage-modal').classList.toggle("is-hidden");
   // document.querySelector('.modal-backdrop').classList.toggle("hide");
-  $('#new-abordage-modal').modal('toogle');
+  //$('#new-abordage-modal').modal('toogle');
 
   updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage %>' );
   refreshAbordageForm();

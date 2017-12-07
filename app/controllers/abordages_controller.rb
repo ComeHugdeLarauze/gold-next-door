@@ -26,6 +26,16 @@ class AbordagesController < ApplicationController
     end
   end
 
+  def update
+    authorize @abordage
+    @abordage.pirate.abordages.each do |a|
+      a.accepte = false
+      a.save
+    end
+    @abordage.accepte = true
+    @abordage.save
+    redirect_to tresor_path(@abordage.tresor)
+  end
 
   private
 

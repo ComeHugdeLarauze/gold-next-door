@@ -3,7 +3,6 @@
     <%= image_tag 'coffre_ferme.jpg', height: 240, width: 320, crop: :fill %>
     <div class="infos">
       <h1><%= @tresor.indice %></h1>
-      <p>Slow network is detected. Fallback font will be used while loading:</p>
   <% else %>
     <%= cl_image_tag @tresor.photo, height: 240, width: 320, crop: :fill %>
     <div class="infos">

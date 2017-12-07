@@ -14,7 +14,7 @@ class AbordagePolicy < ApplicationPolicy
   end
 
   def update?
-    record.tresor.user == user
+    record.tresor.pirate == user
   end
 
   def destroy?
