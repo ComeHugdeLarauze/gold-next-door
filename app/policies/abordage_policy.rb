@@ -13,6 +13,10 @@ class AbordagePolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    record.tresor.user == user
+  end
+
   def destroy?
     record.user == user
   end

@@ -1,4 +1,6 @@
 class AbordagesController < ApplicationController
+  before_action :set_abordage, only: [:update]
+
   def index
     @abordages_participant = current_pirate.abordages
     @abordages_author = Abordage.where(tresor: current_pirate.tresors)
@@ -10,8 +12,6 @@ class AbordagesController < ApplicationController
   end
 
   def create
-    pimped_params =  abordage_params
-    pimped_params["type_abordage_id"] = pimped_params["type_abordage_id"].to_i
     @abordage = Abordage.new(abordage_params)
     @abordage.pirate = current_pirate
     @abordage.tresor = Tresor.find(params[:tresor_id])
@@ -22,8 +22,10 @@ class AbordagesController < ApplicationController
         format.js
       end
     else
+
     end
   end
+
 
   private
 
