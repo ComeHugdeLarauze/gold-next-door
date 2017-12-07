@@ -2,8 +2,10 @@
   <p>T'es le premier ici !!</p>
 <% else %>
   <ul id="messages">
+    <form>
     <% abordages.each do |abordage| %>
       <%= render "abordages/list_item", abordage: abordage %>
     <% end %>
+    </form>
   </ul>
 <% end %>

@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :tresors do
+    resources :abordages, only: [:create, :update]
     resources :crew_tresors, only:[:new, :create, :destroy]
-    resources :abordages, only: :create
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
