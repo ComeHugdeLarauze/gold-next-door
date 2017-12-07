@@ -1,45 +1,47 @@
-<% tresors.each do |tresor| %>
-  <div class="cards">
-    <% if tresor.prive %>
-      <div class="card">
-        <div class="card-body" style="background-image: url('<%= image_path 'coffre_ferme.jpg'%>')">
-          <div class="card-category">
-            <p></p>
+<div class="container-gnd">
+  <% tresors.each do |tresor| %>
+    <div class="cards">
+      <% if tresor.prive %>
+        <div class="card">
+          <div class="card-body" style="background-image: url('<%= image_path 'coffre_ferme.jpg'%>')">
+            <div class="card-category">
+              <p></p>
+            </div>
+            <a class="card-links" href="#" ></a>
           </div>
-          <a class="card-links" href="#" ></a>
-        </div>
-        <div class="card-footer">
-          <div class="card-descritpion">
-            <p><%= link_to tresor.indice, tresor_path(tresor) %></p>
-          </div>
-          <div class="controls">
-            <a href="#"><i class="fa fa-star"></i></a></li>
-            <a href="#"><i class="fa fa-heart"></i></a></li>
-            <a href="#"><i class="fa fa-share"></i></a></li>
-            <a href="#"><i class="fa fa-heart"></i></a></li>
-          </div>
-        </div>
-      </div>
-    <% else %>
-      <div class="card">
-        <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
-          <div class="card-category">
-            <p></p>
-          </div>
-          <a class="card-links" href="#" ></a>
-        </div>
-        <div class="card-footer">
-          <div class="card-descritpion">
-            <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
-          </div>
-          <div class="controls">
-            <a href="#"><i class="fa fa-star"></i></a></li>
-            <a href="#"><i class="fa fa-heart"></i></a></li>
-            <a href="#"><i class="fa fa-share"></i></a></li>
-            <a href="#"><i class="fa fa-heart"></i></a></li>
+          <div class="card-footer">
+            <div class="card-descritpion">
+              <p><%= link_to tresor.indice, tresor_path(tresor) %></p>
+            </div>
+            <div class="controls">
+              <a href="#"><i class="fa fa-star"></i></a></li>
+              <a href="#"><i class="fa fa-heart"></i></a></li>
+              <a href="#"><i class="fa fa-share"></i></a></li>
+              <a href="#"><i class="fa fa-heart"></i></a></li>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+      <% else %>
+        <div class="card">
+          <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
+            <div class="card-category">
+              <p></p>
+            </div>
+            <a class="card-links" href="#" ></a>
+          </div>
+          <div class="card-footer">
+            <div class="card-descritpion">
+              <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
+            </div>
+            <div class="controls">
+              <a href="#"><i class="fa fa-star"></i></a></li>
+              <a href="#"><i class="fa fa-heart"></i></a></li>
+              <a href="#"><i class="fa fa-share"></i></a></li>
+              <a href="#"><i class="fa fa-heart"></i></a></li>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
