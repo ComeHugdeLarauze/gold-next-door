@@ -1,4 +1,3 @@
-
 const classCheck = (e) => {
   const d = e.currentTarget;
     if (e.target.classList.contains("image-picker")){

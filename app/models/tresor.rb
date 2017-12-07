@@ -11,4 +11,8 @@ class Tresor < ApplicationRecord
   validates :titre, presence: true
   validates :photo, presence: true
   validates :description, presence: true
+
+  def self.count_by_type(tresor)
+    Abordage.where(tresor: tresor).group(:type_abordage_id).count
+  end
 end

@@ -1,24 +1,20 @@
-<div class="row">
-  <div class="col-xs-10 col-xs-offset-1">
-    <div class="card">
-      <% if @tresor.prive %>
-      <div class="card-description">
-        <h2><%= @tresor.indice %></h2>
-        <%= image_tag 'coffre_ferme.jpg', height: 200, width: 300, crop: :fill %>
-      </div>
-      <% else %>
-      <div class="card-description">
-        <h2><%= @tresor.titre %></h2>
-        <%= cl_image_tag @tresor.photo, height: 200, width: 300, crop: :fill %>
-        <p><%= @tresor.description %></p>
-      </div>
-      <% end %>
-    </div>
+<div class="details">
+  <% if @tresor.prive %>
+    <%= image_tag 'coffre_ferme.jpg', height: 240, width: 320, crop: :fill %>
+    <div class="infos">
+      <h1><%= @tresor.indice %></h1>
+  <% else %>
+    <%= cl_image_tag @tresor.photo, height: 240, width: 320, crop: :fill %>
+    <div class="infos">
+      <h1><%= @tresor.titre %></h1>
+      <p><%= @tresor.description %></p>
+  <% end %>
+    <%= render "abordages/status", tresor: @tresor %>
   </div>
 </div>
 <div class="abordages-conteneur">
-  <h3>Négociations</h3>
   <%= render "abordages/modal", tresor: @tresor, abordage: Abordage.new %>
   <hr>
   <%= render "abordages/list", abordages: @tresor.abordages %>
+  <%= render "abordages/form", tresor: @tresor, abordage: Abordage.new %>
 </div>
