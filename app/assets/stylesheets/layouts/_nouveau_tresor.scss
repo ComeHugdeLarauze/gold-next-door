@@ -1,7 +1,6 @@
 #tresor_prive{
   display: flex;
   flex-wrap: wrap;
-  width:300px;
   justify-content:space-around;
   align-item: center;
 }
@@ -67,8 +66,8 @@
   padding: 5px;
   margin-top: 20px;
   margin-right: 4px;
-  width: 63px;
-  height: 55px;
+  width: 90px;
+  height: 80px;
   input{
     opacity: 0;
     filter: alpha(opacity=0);
