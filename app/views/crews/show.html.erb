@@ -24,7 +24,7 @@
   <%= link_to "Les Crews", crews_path, class: 'btn btn-info' %>
  </div>
  <div class="action-button">
-  <%= link_to "Quitter ce crew", crew_crew_pirate_path(current_pirate), method: :delete, class: 'btn btn-danger' %>
+  <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn btn-danger' %>
  </div>
  <div class="action-button">
   <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn btn-primary' %>
