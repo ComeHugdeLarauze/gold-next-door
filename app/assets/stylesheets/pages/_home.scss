@@ -1,32 +1,4 @@
 // Specific CSS for your home-page
-.tabs {
-  display: flex;
-  align-items: center;
-}
-
-.tab {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  opacity: 0.3;
-  border-bottom: 5px solid transparent;
-  text-decoration: none;
-  color: black;
-}
-.tab:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.tab.active {
-  opacity: 1;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  border-bottom: 5px solid $jaune;
-  text-decoration: none;
-}
-
 .container {
   padding-top: 30px;
   padding-bottom: 60px;
@@ -34,13 +6,15 @@
 
 .h1-index {
   font-size: 26px;
-  text-align: center;
-  margin-top: 30px;
+  margin-top: 34px;
   margin-bottom: 20.5px;
+  color: white;
+  font-style: italic;
 }
 
 .p-index {
   font-size: 14px;
-  text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  color: white;
+  font-weight: 100;
 }
