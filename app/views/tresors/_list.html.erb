@@ -2,26 +2,26 @@
   <div class="cards">
     <% if tresor.prive %>
       <div class="card">
-        <div class="card-body" style="background-image: url('<%= image_path 'lock.jpg'%>')">
+        <div class="card-body">
+          <%= image_tag 'lock.jpg'%>
         </div>
         <div class="card-footer">
-          <div class="p-tresor-titre">
-            <p><%= link_to tresor.indice, tresor_path(tresor) %></p>
+          <div>
+            <%= link_to tresor.indice, tresor_path(tresor), class: 'p-tresor-titre' %>
           </div>
           <div class="controls">
             <p class="p-username">@username du pirate</p>
           </div>
         </div>
       </div>
-
     <% else %>
-
       <div class="card">
-        <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
+        <div class="card-body">
+          <%= cl_image_tag tresor.photo %>
         </div>
         <div class="card-footer">
-          <div class="p-tresor-titre">
-            <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
+          <div>
+            <%= link_to tresor.titre, tresor_path(tresor), class: 'p-tresor-titre' %>
           </div>
           <div class="controls">
             <p class="p-username">@username du pirate</p>

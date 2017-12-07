@@ -6,15 +6,19 @@
 
 .h1-index {
   font-size: 26px;
-  margin-top: 34px;
+  margin-top: 12px;
   margin-bottom: 20.5px;
-  color: white;
+  color: $noir;
   font-style: italic;
 }
 
 .p-index {
   font-size: 14px;
-  margin-bottom: 24px;
-  color: white;
+  margin-bottom: 32px;
+  color: $medium-grey;
+  font-weight: 100;
+}
+
+.title-crew {
   font-weight: 100;
 }
