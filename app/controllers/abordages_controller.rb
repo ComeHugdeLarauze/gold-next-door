@@ -1,8 +1,8 @@
 class AbordagesController < ApplicationController
+  skip_after_action :verify_policy_scoped, only: :index
   def index
     @abordages_participant = current_pirate.abordages
     @abordages_author = Abordage.where(tresor: current_pirate.tresors)
-    @abordages = policy_scope(Abordage.where(tresor: current_pirate.tresors)).order(created_at: :desc)
   end
 
   def new
