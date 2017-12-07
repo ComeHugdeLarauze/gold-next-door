@@ -12,6 +12,8 @@ function updateAbordageList(newContent){
 <% if @abordage.errors.any? %>
   refreshAbordageForm();
 <% else %>
+  // $('#new-abordage-modal').modal('hide');
+
   updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage %>' );
   refreshAbordageForm();
 <% end %>

@@ -3,21 +3,23 @@ class CrewsController < ApplicationController
   before_action :set_crew, only: [:show, :edit]
 
   def index
-    @crews = Crew.all
+    @crews = policy_scope(Crew).order(created_at: :desc)
   end
 
   def show
+    authorize @crew
   end
 
   def new
-
     @crew = Crew.new
-    # authorize @crew
+    authorize @crew
   end
 
   def create
     @crew = Crew.new(crew_params)
-    # authorize @crew
+    @crew.pirates.push(current_pirate)
+    @crewpirate = CrewPirate.new(pirate_id: current_pirate.id, crew_id: @crew.id )
+    authorize @crew
     if @crew.save
       @crewpirate = CrewPirate.create(pirate_id: current_pirate.id, crew_id: @crew.id)
       redirect_to crew_path(@crew)
@@ -29,6 +31,11 @@ class CrewsController < ApplicationController
   def edit
   end
 
+  def update
+    @crew.update(crew_params)
+    authorize @crew
+    redirect_to crew_path(@crew)
+  end
 
   def destroy
     @crew.destroy

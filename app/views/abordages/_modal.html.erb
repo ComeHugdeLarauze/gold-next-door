@@ -1,0 +1,40 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-abordage-modal">
+  Négocie !
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="new-abordage-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for([tresor, abordage], remote: true) do |f| %>
+          <%#= f.association :type_abordage, collection: TypeAbordage.all, as: :radio_buttons, label_method: -> (obj){obj.nom}, input_html: {class: "radio_choice_type"} %>
+          <div class="form-group radio_buttons optional init-class" id="abordage_type_abordage">
+            <input type="hidden" name="abordage[type_abordage_id]" value="">
+            <% TypeAbordage.all.each do |type| %>
+              <span class="radio_choice_type <%= type.emoji %>">
+                <label for="abordage_type_abordage_id_<%= type.id %>" class="radio" >
+                  <input class="radio_buttons optional" type="radio" value="<%= type.id %>" name="abordage[type_abordage_id]" id="abordage_type_abordage_id_<%= type.id %>">
+                  <%= image_tag "#{type.emoji}.svg", class: "image-picker" %>
+                </label>
+              </span>
+            <% end %>
+          </div>
+          <%= f.input :quantite %>
+          <%= f.input :message %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <%= f.submit "Ok",  class:"btn btn-secondary"%>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

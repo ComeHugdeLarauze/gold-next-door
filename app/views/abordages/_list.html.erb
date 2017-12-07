@@ -1,7 +1,7 @@
 <% if abordages.empty? %>
   <p>T'es le premier ici !!</p>
 <% else %>
-  <ul id="abordages-list">
+  <ul id="messages">
     <% abordages.each do |abordage| %>
       <%= render "abordages/list_item", abordage: abordage %>
     <% end %>

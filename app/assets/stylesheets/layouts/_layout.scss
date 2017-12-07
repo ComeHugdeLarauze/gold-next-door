@@ -1,13 +1,17 @@
 .container-gnd{
   margin-top: 85px;
-  margin-bottom: 120px;
+  margin-bottom: 65px;
 }
-.padded-80 {
+.padded {
   padding-top: 80px;
   padding-bottom: 140px;
   background-color: $noir;
 }
 
-.row {
-  background-color: $noir;
+h1, h2, h3, h4, h5, h6 {
+  color: $medium-grey;
+}
+
+p{
+  color: $soft-grey;
 }

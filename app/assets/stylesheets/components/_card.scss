@@ -3,10 +3,10 @@
   width: 320px;
   margin: auto;
   margin-top: 6px;
+  margin-bottom: -54px;
 }
 
 .card {
-  height: 180px;
   width: 300px;
   margin: 10px;
   background-size: cover !important;
@@ -15,15 +15,17 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
   margin-bottom: 70px;
+  border-radius: 16px;
 }
 
 .card-body {
-  height: 180px;
-  background-size: cover;
   color: white;
   position: relative;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width: 100%;
+  }
 }
 
 .card-user {
@@ -75,11 +77,9 @@
 
 // Card-footer
 .card-footer {
-  height: 70px;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 25px;
+  padding: 14px;
   background-color: $saumon;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
@@ -108,11 +108,24 @@
 }
 
 .p-username {
-  margin: 0px 0 4px;
+  margin: 4px 0 4px;
   font-weight: 100;
   font-style: italic;
 }
 
 .p-tresor-titre {
-  margin: 2px 0 3.5px;
+  margin: 2px 0 4.5px;
+  color: black;
+}
+.p-tresor-titre:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+.contour-card {
+position: relative;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    background-color: #FFF;
 }

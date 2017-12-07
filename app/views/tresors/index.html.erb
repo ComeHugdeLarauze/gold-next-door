@@ -1,42 +1,4 @@
-  <!-- trésors en cours -->
+<h1 class="h1-index">Bienvenue dans le crew <span class="title-crew">#LeWagon</span> matelot !</h1>
+  <p class="p-index">Découvre des trésors dévoilés par d'autres pirates. Part à leur conquête ou dévoile les tiens pour savoir combien tu peux en tirer</p>
 
-  <h1 class="h1-index">Bienvenue dans le crew #LeWagon matelot !</h1>
-  <p class="p-index">Découvre des trésors dévoilés par d'autres pirates. Part à leur conquête ou dévoile les tiens pour savoir combien tu peux en tirer💰</p>
-
-
-  <div id="body1 row-index">
-    <% @tresors.each do |tresor| %>
-      <div class="cards">
-        <% if tresor.prive %>
-          <div class="card">
-            <div class="card-body" style="background-image: url('<%= image_path 'lock.jpg'%>')">
-            </div>
-            <div class="card-footer">
-              <div>
-                <p class="p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
-              </div>
-              <div class="controls">
-                <p class="p-username">@username</p>
-              </div>
-            </div>
-          </div>
-
-
-        <% else %>
-          <div class="card">
-            <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
-            </div>
-            <div class="card-footer">
-              <div>
-                <p class="p-tresor-titre"><%= tresor.titre %></p>
-              </div>
-              <div class="controls">
-                <p class="p-username">@username</p>
-              </div>
-            </div>
-          </div>
-
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+<%= render "tresors/list", tresors: @tresors %>

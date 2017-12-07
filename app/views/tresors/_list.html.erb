@@ -1,45 +1,33 @@
-<div class="cards">
-  <% tresors.each do |tresor| %>
+<% tresors.each do |tresor| %>
+  <div class="cards">
     <% if tresor.prive %>
-    <div class="card">
-      <div class="card-body" style="background-image: url('<%= image_path 'coffre_ferme.jpg'%>')">
-        <div class="card-category">
-          <p><%= link_to tresor.indice, tresor_path(tresor) %></p>
+      <div class="card">
+        <div class="card-body">
+          <%= image_tag 'lock.jpg'%>
         </div>
-        <a class="card-link" href="#" ></a>
-      </div>
-      <div class="card-footer">
-        <div class="card-descritpion">
-          <p><%= tresor.indice %></p>
-        </div>
-        <div class="controls">
-          <a href="#"><i class="fa fa-star"></i></a></li>
-          <a href="#"><i class="fa fa-heart"></i></a></li>
-          <a href="#"><i class="fa fa-share"></i></a></li>
+        <div class="card-footer">
+          <div>
+            <%= link_to tresor.indice, tresor_path(tresor), class: 'p-tresor-titre' %>
+          </div>
+          <div class="controls">
+            <p class="p-username">@username du pirate</p>
+          </div>
         </div>
       </div>
-    </div>
-
     <% else %>
-    <div class="card">
-      <div class="card-body" style="background-image: url('<%= cl_image_path tresor.photo %>')">
-        <div class="card-category">
-          <p><%= link_to tresor.titre, tresor_path(tresor) %></p>
+      <div class="card">
+        <div class="card-body">
+          <%= cl_image_tag tresor.photo %>
         </div>
-        <a class="card-link" href="#" ></a>
-      </div>
-      <div class="card-footer">
-        <div class="card-descritpion">
-          <p><%= tresor.description %></p>
-        </div>
-        <div class="controls">
-          <a href="#"><i class="fa fa-star"></i></a></li>
-          <a href="#"><i class="fa fa-heart"></i></a></li>
-          <a href="#"><i class="fa fa-share"></i></a></li>
+        <div class="card-footer">
+          <div>
+            <%= link_to tresor.titre, tresor_path(tresor), class: 'p-tresor-titre' %>
+          </div>
+          <div class="controls">
+            <p class="p-username">@username du pirate</p>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
-  <% end %>
-</div>
-
+  </div>
+<% end %>
