@@ -2,31 +2,25 @@
 <% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
 <% content_for :meta_image, image_path('logo-gnd.png') %>
 
-<div class="container col-xs-12 col-sm-4 col-sm-offset-4">
-  <div class="row">
-        <h1><%= @crew.nom %></h1>
-        <p><%= @crew.prive? ? 'Est un Groupe privé' : 'Est un gorupe Public' %></p>
-        <h2>List des membres de <%= @crew.nom %></h2>
-        <% @crew.pirates.each do |pirate| %>
-          <p><%= pirate[:email] %></p>
-          <%= pirate.tresors.count %>
-        <% end %>
-  </div>
-</div>
+
+      <h1 id="nom-crew"><%= @crew.nom %></h1>
+      <p><%= @crew.prive? ? 'Est un Groupe privé' : 'Est un groupe Public' %></p>
+      <h2 id="membre-crew">Membres:</h2>
+      <% @crew.pirates.each do |pirate| %>
+        <p><%= pirate[:email] %></p>
+        <p><%= pirate.tresors.count %> trésor(s)</p>
+      <% end %>
+
+
+  <h2 id="nom-crew" >Tresors du Crew:</h2>
 <div class="container">
-  <h2>Liste des Tresors du Crew:</h2>
   <%= render "tresors/list", tresors: @crew.tresor.all %>
 </div>
-
 <div class="panel-action-crew">
- <div class="action-button">
-
-  <%= link_to "Les Crews", crews_path, class: 'btn btn-info' %>
- </div>
- <div class="action-button">
+ <div class="btn alert-crew">
   <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn btn-danger' %>
  </div>
  <div class="action-button">
-  <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn btn-primary' %>
+  <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn alert-crew' %>
  </div>
 </div>
