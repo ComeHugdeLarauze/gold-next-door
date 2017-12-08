@@ -10,6 +10,7 @@
           <div class="form-group radio_buttons optional tresor_prive">
             <label class="control-label radio_buttons optional">Trésor Caché !?</label>
 
+          <!-- tresor public/cache -->
             <div id="tresor_prive">
               <input type="hidden" name="tresor[prive]" value="">
               <span class="radio">
@@ -27,6 +28,7 @@
           </div>
         </div>
 
+          <!-- indice -->
         <div class="indice">
           <div class="form-group string optional tresor_indice" id="indice">
             <label class="control-label string optional" for="indice">Indice
@@ -38,6 +40,7 @@
         <%= f.input :titre, placeholder: "GameBoy" %>
         <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
 
+          <!-- charger une image -->
           <div class="picture">
             <div class="form-group file optional tresor_photo">
               <label class="control-label file optional" for="tresor_photo"><%= image_tag "addpic.svg", height: 80, width: 80, crop: :fill%>
@@ -49,9 +52,19 @@
         <%= f.input :photo_cache, as: :hidden %>
       </div>
 
+      <!-- envoyer le formulaire -->
       <div class="form-actions text-center">
         <%= f.button :submit, "Partage ton tresor", class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
 </div>
+
+<!-- <script>
+  $( "#tresor_prive" ).click(function() {
+  $( "#deroule" ).slideDown( "slow", function() {
+    // Animation complete.
+  });
+});
+</script>
+ -->
