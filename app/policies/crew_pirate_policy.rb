@@ -12,7 +12,7 @@ class CrewPiratePolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record[0].pirate.id == user.id
   end
 
   class Scope < Scope
@@ -21,3 +21,4 @@ class CrewPiratePolicy < ApplicationPolicy
     end
   end
 end
+

@@ -1,6 +1,7 @@
 class CrewPiratesController < ApplicationController
+
   before_action :set_crew
-  skip_before_action :authenticate_pirate!, only: [:new, :create, :destroy]
+  skip_before_action :authenticate_pirate!, only: [:new, :create]
 
   def new
     @crew_pirate = CrewPirate.new
@@ -24,6 +25,10 @@ class CrewPiratesController < ApplicationController
   end
 
   def destroy
+    @crew_pirate = CrewPirate.where(pirate_id: current_pirate.id, crew_id: @crew.id)
+
+    authorize @crew_pirate
+    @crew_pirate[0].destroy
     redirect_to crews_path
   end
 
@@ -33,4 +38,5 @@ class CrewPiratesController < ApplicationController
   def set_crew
     @crew = Crew.find(params[:crew_id])
   end
+
 end
