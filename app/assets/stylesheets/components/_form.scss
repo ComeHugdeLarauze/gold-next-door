@@ -26,24 +26,23 @@
   }
 }
 
-// form-actions.btn {
-//   margin-top: 30px;
-//   width: 100%;
-//   border-radius: 3px;
-//   margin-bottom: 20px;
-//   background-color: #ffd700 ;
-//   border-color: #ffd700 ;
-//   transition: opacity 0.3s ease-out;
-//   transition: opacity 0.3s ease-out;
-//   opacity: 1;
-//   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-//   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-// }
-// /* line 25, /Users/Come/code/ComeHugdeLarauze/gold-next-door/app/assets/stylesheets/components/_form.scss */
-// .form-actions .btn:hover {
-//   border: 1px solid;
-//   border-radius: 2px;
-//   border-color: #ffd700 ;
-//   background-color: #ffd700 ;
-//   opacity: 0.6;
-// }
+.form-actions .btn {
+  margin-top: 30px;
+ width: 100%;
+ border-radius: 3px;
+ margin-bottom: 20px;
+ background-color: #ffd700 ;
+ border-color: #ffd700 ;
+ transition: opacity 0.3s ease-out;
+ transition: opacity 0.3s ease-out;
+ opacity: 1;
+ box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+ box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.form-actions .btn:hover {
+ border: 1px solid;
+ border-radius: 2px;
+ border-color: #ffd700 ;
+ background-color: #ffd700 ;
+ opacity: 0.6;
+}

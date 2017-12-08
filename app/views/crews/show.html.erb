@@ -28,7 +28,7 @@
     <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn alert-crew' %>
   <% else %>
     <!-- cas ou le crew est public -->
-    <%= link_to "Devenir membre de ce crew", crew_crew_pirates_path(@crew, @crew_pirate), class: 'btn alert-crew', method: :post %>
+    <%= link_to "Devenir membre de ce crew", crew_crew_pirates_path(@crew, @crew_pirate), class: 'btn btn-primary', method: :post %>
   <% end %>
 
 <%end  %>
