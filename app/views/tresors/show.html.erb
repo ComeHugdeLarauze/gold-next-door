@@ -20,8 +20,10 @@
         <p><%= @tresor.description %></p>
     <% end %>
   <% end %>
-  <h2 class="vendeur">Vendu par <%= @tresor.pirate.pseudo %></h2>
   <%= render "abordages/status", tresor: @tresor %>
+  <div class="vendeur">
+     <h2>Par  <%= image_tag "profil-pic.png", class:'avatar', height: 60 %> <%= @tresor.pirate.pseudo %></h2>
+  </div>
   </div>
 </div>
 <div class="abordages-conteneur">

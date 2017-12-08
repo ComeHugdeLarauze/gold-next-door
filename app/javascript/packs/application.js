@@ -7,4 +7,12 @@ if (document.getElementById("abordage_type_abordage")) {
 
 
 import { clickcoffre } from "../components/coffre";
-clickcoffre();
+if (document.getElementById('tresor_prive_true')){
+  clickcoffre();
+};
+
+import { initModal } from "../components/modal-closer";
+if (document.getElementById('new-abordage-modal_btn')){
+  initModal();
+};
+
