@@ -1,37 +1,39 @@
-<% tresors.each do |tresor| %>
-  <div class="cards">
-    <% if tresor.prive %>
-      <%= link_to tresor_path(tresor), class: 'no-text-decoration' do %>
-      <div class="card">
-        <div class="card-body">
-          <%= image_tag 'lock.jpg'%>
-        </div>
-        <div class="card-footer">
-          <div class="p-tresor-titre">
-            <p class="p-indice p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
-          </div>
-          <div class="controls">
-            <p class="p-username">@username du pirate</p>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    <% else %>
-      <%= link_to tresor_path(tresor), class: 'no-text-decoration' do %>
+
+  <% tresors.each do |tresor| %>
+    <div class="cards">
+      <% if tresor.prive %>
+        <%= link_to tresor_path(tresor), class: 'no-text-decoration' do %>
         <div class="card">
           <div class="card-body">
-            <%= cl_image_tag tresor.photo %>
+            <%= image_tag 'lock.jpg'%>
           </div>
           <div class="card-footer">
-            <div>
-              <p class='p-tresor-titre'><%= tresor.titre %></p>
+            <div class="p-tresor-titre">
+              <p class="p-indice p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
             </div>
             <div class="controls">
               <p class="p-username">@username du pirate</p>
             </div>
           </div>
         </div>
+        <% end %>
+      <% else %>
+        <%= link_to tresor_path(tresor), class: 'no-text-decoration' do %>
+          <div class="card">
+            <div class="card-body">
+              <%= cl_image_tag tresor.photo %>
+            </div>
+            <div class="card-footer">
+              <div>
+                <p class='p-tresor-titre'><%= tresor.titre %></p>
+              </div>
+              <div class="controls">
+                <p class="p-username">@username du pirate</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+

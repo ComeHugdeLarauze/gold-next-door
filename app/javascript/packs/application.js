@@ -6,5 +6,12 @@ if (document.getElementById("abordage_type_abordage")) {
 };
 
 
-import { clickcoffre } from "../components/coffre";
-clickcoffre();
+import { clickcoffre } from '../components/coffre';
+if (document.getElementById('tresor_prive_true')){
+  clickcoffre();
+};
+
+import { clickcrew } from '../components/crew';
+if (document.getElementById('crew_prive_true')){
+  clickcrew();
+};

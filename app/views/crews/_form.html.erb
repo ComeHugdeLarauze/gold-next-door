@@ -1,10 +1,45 @@
-<% content_for :meta_title, "Le Crew #{@crew.nom} à rejoind Gold Next Door" %>
-<% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
-<% content_for :meta_image, image_path('logo-gnd.png') %>
+<div class="container-tresor">
+  <% content_for :meta_title, "Le Crew #{@crew.nom} à rejoind Gold Next Door" %>
+  <% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
+  <% content_for :meta_image, image_path('logo-gnd.png') %>
 
-<%= simple_form_for @crew do |f| %>
-  <%= f.input :nom, label: "Comment s'apelle ton crew Cap'tain ?" %>
-  <%= f.input :password %>
-  <%= f.input :prive, label: "Créer un crew fantôme ? ", hint: "Les Crews Fantômes n'apparaissent que sur invitation privée" %>
-  <%= f.button :submit %>
-<% end %>
+  <%= simple_form_for @crew do |f| %>
+    <div class="form-inputs">
+      <%= f.input :nom, label: "Comment s'apelle ton crew Cap'tain ?" %>
+
+      <!-- creer ou non un crew -->
+      <div class="container-checkbox">
+        <div class="form-group radio_buttons optional crew_prive">
+          <label class="control-label radio_buttons optional">Créer un crew privado ?
+          </label>
+
+          <div id="crew_prive">
+            <input type="hidden" name="crew[prive]" value="">
+            <span class="radio">
+              <label for="crew_prive_true">
+                <input class="radio_buttons optional" type="radio" value="true" name="crew[prive]" id="crew_prive_true"><%= image_tag "ferme.svg", height: 80, width: 80, crop: :fill%>
+              </label>
+            </span>
+            <span class="radio">
+              <label for="crew_prive_false">
+                <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="crew[prive]" id="crew_prive_false"><%= image_tag "ouvert.svg", height: 80, width: 80, crop: :fill%>
+              </label>
+            </span>
+            <p class="help-block text-center"><em>Les Crews privados n'apparaissent que sur invitation privée</em></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- mdp -->
+      <div class="form-group password required crew_password hidden" id="password_indice">
+        <label class="control-label password required" for="password">
+          <abbr title="required">*</abbr> Clée de ta crew</label>
+          <input class="form-control password required" id="password" type="password" name="crew[password]">
+        </div>
+
+      <div class="form-actions text-center">
+        <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
