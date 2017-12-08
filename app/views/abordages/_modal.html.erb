@@ -1,34 +1,27 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn-principal-gnd" data-toggle="modal" data-target="#new-abordage-modal">
+<button type="button" class="btn btn-principal-gnd" id="new-abordage-modal_btn">
   Négocie !
 </button>
 
-<!-- Modal -->
-<div class="modal fade" id="new-abordage-modal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <%= simple_form_for([tresor, abordage], remote: true) do |f| %>
-          <%#= f.association :type_abordage, collection: TypeAbordage.all, as: :radio_buttons, label_method: -> (obj){obj.nom}, input_html: {class: "radio_choice_type"} %>
-          <div class="form-group radio_buttons optional init-class" id="abordage_type_abordage">
-            <input type="hidden" name="abordage[type_abordage_id]" value="">
-            <% TypeAbordage.all.each do |type| %>
-              <span class="radio_choice_type">
-                <label for="abordage_type_abordage_id_<%= type.id %>" class="radio" >
-                  <input class="radio_buttons optional" type="radio" value="<%= type.id %>" name="abordage[type_abordage_id]" id="abordage_type_abordage_id_<%= type.id %>">
-                  <%= image_tag "#{type.emoji}.svg", class: "image-picker" %>
-                </label>
-              </span>
-            <% end %>
-          </div>
-          <%= f.input :quantite, label: 'Combien ?', error: 'Indique la quantité' %>
-          <%= f.input :message, label: 'Message', error: 'Et le message ?' %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-          <%= f.submit "Ok",  class: "btn btn-secondary" %>
-          <% end %>
-      </div>
+<div id="new-abordage-modal" class="gnd-modal modal-hidden">
+  <div id="new-abordage-modal-backgound"></div>
+  <div class="content">
+    <%= simple_form_for([tresor, abordage], remote: true) do |f| %>
+    <div class="form-group radio_buttons optional init-class" id="abordage_type_abordage">
+      <input type="hidden" name="abordage[type_abordage_id]" value="">
+      <% TypeAbordage.all.each do |type| %>
+      <span class="radio_choice_type">
+        <label for="abordage_type_abordage_id_<%= type.id %>" class="radio" >
+          <input class="radio_buttons optional" type="radio" value="<%= type.id %>" name="abordage[type_abordage_id]" id="abordage_type_abordage_id_<%= type.id %>">
+          <%= image_tag "#{type.emoji}.svg", class: "image-picker" %>
+        </label>
+      </span>
+      <% end %>
     </div>
+    <%= f.input :quantite, label: 'Combien ?', error: 'Indique la quantité', input_html: {value: 1} %>
+    <%= f.input :message, label: 'Message', error: 'Et le message ?' %>
+    <button type="button" class="btn btn-principal-gnd" id="new-modal-close">Annuler</button>
+    <%= f.submit "Ok",  class: "btn btn-principal-gnd" %>
+    <% end %>
   </div>
 </div>
+
