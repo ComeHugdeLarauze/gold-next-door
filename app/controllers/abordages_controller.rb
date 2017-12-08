@@ -28,6 +28,8 @@ class AbordagesController < ApplicationController
 
   def update
     authorize @abordage
+    @abordage.tresor.vendu = true
+    @abordage.tresor.save
     @abordage.pirate.abordages.each do |a|
       a.accepte = false
       a.save
