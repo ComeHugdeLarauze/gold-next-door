@@ -1,5 +1,5 @@
 <li class="message">
-  <% if active && abordage.type_abordage %>
+  <% if active && abordage.type_abordage && abordage.tresor.pirate == current_pirate %>
     <input type="radio" name="selector-mobile" id="abordage-item-<%= abordage.id %>">
   <% end %>
   <label for="abordage-item-<%= abordage.id %>">
@@ -16,11 +16,15 @@
     </div>
     <div class="message-type">
       <% if abordage.type_abordage %>
-        <div class="message-type <%= abordage.type_abordage.emoji %>"></div>
+        <div class="message-choisir <%= abordage.type_abordage.emoji %>">
+          <% if abordage.tresor.pirate == current_pirate && !abordage.tresor.vendu %>
+            Choisir
+          <% end %>
+        </div>
       <% end %>
     </div>
   </label>
-  <% if abordage.type_abordage && active %>
+  <% if abordage.type_abordage && active && abordage.tresor.pirate == current_pirate %>
     <%= link_to "Choisir cette proposition", tresor_abordage_path(abordage.tresor, abordage), method: :patch, class:"btn-accept" %>
   <% end %>
 </li>
