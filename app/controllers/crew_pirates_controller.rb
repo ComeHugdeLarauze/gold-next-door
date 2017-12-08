@@ -11,16 +11,20 @@ class CrewPiratesController < ApplicationController
   def create
     @crew_pirate = CrewPirate.new(pirate: current_pirate, crew: @crew)
     authorize @crew_pirate
-
-    if params[:crew_password] == @crew.password
-      if @crew_pirate.save
-        redirect_to crew_path(@crew)
+    if @crew.prive == true
+      if params[:crew_password] == @crew.password
+        if @crew_pirate.save
+          redirect_to crew_path(@crew)
+        else
+          render :new
+        end
       else
+        flash[:alert] = "Essaie encore"
         render :new
       end
     else
-      flash[:alert] = "Essaie encore"
-      render :new
+      @crew_pirate.save
+      redirect_to crew_path(@crew)
     end
   end
 
