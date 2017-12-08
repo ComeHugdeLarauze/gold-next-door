@@ -1,17 +1,26 @@
 <li class="message">
-  <input type="radio" name="selector-mobile" id="abordage-item-<%= abordage.id %>">
+  <% if active %>
+    <input type="radio" name="selector-mobile" id="abordage-item-<%= abordage.id %>">
+  <% end %>
   <label for="abordage-item-<%= abordage.id %>">
-    <h2>
+    <div class="message-avatar">
+      <%= image_tag "profil-pic.png", class: 'avatar', height: 60 %>
+    </div>
+    <div class="message-content">
+      <h2><%= abordage.pirate.pseudo %>
+        <% if abordage.type_abordage %>
+          <em>propose</em> <%= pluralize abordage.quantite, abordage.type_abordage.nom %>
+        <% end %>
+      </h2>
+      <p><%= abordage.message %></p>
+    </div>
+    <div class="message-type">
       <% if abordage.type_abordage %>
         <div class="message-type <%= abordage.type_abordage.emoji %>"></div>
       <% end %>
-      <%= image_tag "profil-pic.png", class: 'avatar', height: 30 %> <%= abordage.pirate.pseudo %>
-      <% if abordage.type_abordage %>
-        <em>propose</em> <%= pluralize abordage.quantite, abordage.type_abordage.nom %>
-      <% end %>
-    </h2>
-    <p><%= abordage.message %></p>
-    <p><%= abordage.accepte %></p>
+    </div>
   </label>
-  <%= link_to "Accepter", tresor_abordage_path(abordage.tresor, abordage), method: :patch, class:"btn-accept" %>
+  <% if abordage.type_abordage && active %>
+    <%= link_to "Accepter", tresor_abordage_path(abordage.tresor, abordage), method: :patch, class:"btn-accept" %>
+  <% end %>
 </li>

@@ -26,13 +26,8 @@
           <%= render 'shared/flashes' %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-          <%= yield %>
-        </div>
-      </div>
+      <%= yield %>
     </div>
-
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
