@@ -104,7 +104,8 @@
 .card-footer .controls{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: normal;
+  margin-bottom: 12px;
 }
 
 .card-footer .controls i{
@@ -134,6 +135,7 @@
 .p-tresor-titre {
   margin: 2px 0 4.5px;
   color: black;
+  margin-bottom: 12px;
 }
 .p-tresor-titre:hover {
     text-decoration: none;
