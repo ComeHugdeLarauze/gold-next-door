@@ -1,19 +1,71 @@
 <div class="row">
   <div class="form-tresor">
     <h2>Mon précieux !</h2>
-    <%= simple_form_for(@tresor) do |f| %>
+    <%= simple_form_for @tresor, html: { multipart: true } do |f| %>
+
       <div class="form-inputs">
+
+        <!-- tresor public/cache -->
+        <div class="container-checkbox">
+          <input class="hidden" type="checkbox" name="prive">
+          <div class="form-group radio_buttons optional tresor_prive">
+            <label class="control-label radio_buttons optional">Trésor Caché !?</label>
+
+            <div id="tresor_prive">
+              <input type="hidden" name="tresor[prive]" value="">
+              <span class="radio">
+                <label for="tresor_prive_true">
+                  <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "coffre_close.png", height: 80, width: 80, crop: :fill%>
+                </label>
+              </span>
+
+              <span class="radio">
+                <label for="tresor_prive_false">
+                  <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false"><%= image_tag "coffre_open.png", height: 80, width: 80, crop: :fill%>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+          <!-- indice -->
+        <div class="indice">
+          <div class="form-group string optional tresor_indice" id="indice">
+            <label class="control-label string optional" for="indice">Indice
+            </label>
+            <input class="form-control string optional" placeholder="le primaire..." type="text" name="tresor[indice]">
+          </div>
+        </div>
+
         <%= f.input :titre, placeholder: "GameBoy" %>
-        <%= f.association :crews, as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
-        <%= f.input :indice, placeholder: "le primaire..." %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
-        <%= f.input :prive, label: "Trésor Caché !?" %>
+        <%= f.association :crews, as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
+
+        <!-- charger une image -->
+        <div class="picture">
+          <div class="form-group file optional tresor_photo">
+            <label class="control-label file optional" for="tresor_photo"><%= image_tag "addpic.svg", height: 80, width: 80, crop: :fill%>
+            </label>
+            <input class="file optional" type="file" name="tresor[photo]" id="tresor_photo">
+          </div>
+        </div>
+        <%= f.input :photo_cache, as: :hidden %>
+
       </div>
-      <div class="form-actions">
+
+      <!-- envoyer le formulaire -->
+      <div class="form-actions text-center">
         <%= f.button :submit, "Partage ton tresor", class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
 </div>
+
+<!-- <script>
+  $( "#tresor_prive" ).click(function() {
+  $( "#deroule" ).slideDown( "slow", function() {
+    // Animation complete.
+  });
+});
+</script>
+ -->

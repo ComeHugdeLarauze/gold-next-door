@@ -129,3 +129,14 @@ position: relative;
     padding-left: 4px;
     background-color: #FFF;
 }
+
+.p-indice {
+
+}
+
+.no-text-decoration {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
