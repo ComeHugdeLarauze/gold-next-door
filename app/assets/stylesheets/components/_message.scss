@@ -6,6 +6,7 @@
 .message{
   margin: 0;
   padding: 0;
+
   h2{
     font-size: 17px;
     margin-top: 0;
@@ -24,9 +25,14 @@
     width: 60px;
     height: 60px;
   }
+  .message-avatar{
+    width: 62px;
+    height: 60px;
+    margin-right: 12px;
+    background-color: $saumon;
+  }
   .message-content{
     flex-grow: 2;
-    margin-left: 16px;
     margin-right: 16px;
     margin-top: 5px;
   }
@@ -36,14 +42,13 @@
   }
 }
 
-.message label{
+.message label, .message-new{
   display:flex;
   justify-content: space-between;
   align-items: flex-start;
   margin: 20px 0 0 0;
   padding: 9px 7px 1px 1px;
 }
-
 .vendu li{
   background-color: white;
   margin-bottom: 45px;
@@ -81,5 +86,4 @@
 .message input[type="radio"]:checked ~ .btn-accept {
   display: block;
 }
-
 

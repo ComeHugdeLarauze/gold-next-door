@@ -1,5 +1,5 @@
 <li class="message">
-  <% if active %>
+  <% if active && abordage.type_abordage %>
     <input type="radio" name="selector-mobile" id="abordage-item-<%= abordage.id %>">
   <% end %>
   <label for="abordage-item-<%= abordage.id %>">
@@ -21,6 +21,6 @@
     </div>
   </label>
   <% if abordage.type_abordage && active %>
-    <%= link_to "Accepter", tresor_abordage_path(abordage.tresor, abordage), method: :patch, class:"btn-accept" %>
+    <%= link_to "Choisir cette proposition", tresor_abordage_path(abordage.tresor, abordage), method: :patch, class:"btn-accept" %>
   <% end %>
 </li>
