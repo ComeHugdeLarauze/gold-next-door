@@ -1,7 +1,76 @@
-.messages {
-
+#messages {
+  list-style:none;
+  padding-left: 0;
 }
 
 .message{
-
+  margin: 0;
+  padding: 0;
+  h2{
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  p{
+    margin-left: 34px;
+    margin-top: 0;
+    font-weight: lighter;
+    letter-spacing: 1;
+  }
+  em{
+    color: $soft-grey;
+  }
+  .avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+  }
+  .message-type{
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin-left: -27px;
+    margin-top: -8px;
+    border-radius: 50%;
+  }
 }
+
+.message label{
+  display:block;
+  margin: 0;
+  padding: 1px;
+}
+
+.message .btn-accept{
+  display:block;
+  width: 100%;
+  font-size: 16px;
+  border-bottom: 1px solid $saumon;
+  padding: 4px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.message input[type="radio"]{
+    display: none;
+}
+
+
+.message input[type="radio"] ~ * {
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease-out;
+}
+
+.message input[type="radio"]:checked ~ * {
+  background-color: #FFF;
+}
+
+.message input[type="radio"] ~ .btn-accept {
+  display: none;
+}
+
+.message input[type="radio"]:checked ~ .btn-accept {
+  display: block;
+}
+
+

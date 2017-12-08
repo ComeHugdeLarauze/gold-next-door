@@ -4,15 +4,17 @@ function refreshAbordageForm(){
 }
 
 function updateAbordageList(newContent){
-  var abordageList = document.getElementById("abordages-list");
-  abordageList.insertAdjacentHTML("beforeend", newContent);
+  var messages = document.getElementById("messages");
+  messages.insertAdjacentHTML("beforeend", newContent);
 }
 
 
 <% if @abordage.errors.any? %>
   refreshAbordageForm();
 <% else %>
-  // $('#new-abordage-modal').modal('hide');
+  document.getElementById('new-abordage-modal').classList.toggle("is-hidden");
+  // document.querySelector('.modal-backdrop').classList.toggle("hide");
+  //$('#new-abordage-modal').modal('toogle');
 
   updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage %>' );
   refreshAbordageForm();

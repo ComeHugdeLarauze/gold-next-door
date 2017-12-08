@@ -17,7 +17,4 @@ class CrewPolicy < ApplicationPolicy
     true
   end
 
-  def destroy?
-    record.user == user
-  end
 end

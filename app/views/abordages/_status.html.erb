@@ -1,0 +1,8 @@
+<div class="status-container">
+  <% c = Tresor.count_by_type(tresor) %>
+  <% TypeAbordage.all.each do |type| %>
+    <div class="status-item <%= type.emoji %>">
+      <div class="count"><%= c[type.id] || 0 %></div>
+    </div>
+  <% end %>
+</div>
