@@ -9,7 +9,7 @@ puts "Creating DateBase"
 
 TypeAbordage.destroy_all
 
-[["Euros", "euros"], ["Drinks", "drinks"], ["Troc", "troc"], ["Free Hug", "free"]].each do |type|
+[["euro", "euros"], ["drink", "drinks"], ["cado", "troc"], ["free hug", "free"]].each do |type|
   TypeAbordage.create(nom: type[0], emoji: type[1])
 end
 

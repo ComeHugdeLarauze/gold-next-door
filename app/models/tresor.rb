@@ -7,6 +7,8 @@ class Tresor < ApplicationRecord
   has_many :abordages, dependent: :destroy
   mount_uploader :photo, PhotoUploader
 
+  has_one :vente, -> { where(accepte: true) }, class_name: 'Abordage'
+
 
   validates :titre, presence: true
   validates :photo, presence: true
