@@ -16,7 +16,7 @@
 <div class="container">
   <%= render "tresors/list", tresors: @crew.tresor.all %>
 </div>
-<% CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id).empty? ? <%= @crew %> : 'ok' %>
+<% CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id).empty? %>
 
   <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn alert-crew' %>
 
