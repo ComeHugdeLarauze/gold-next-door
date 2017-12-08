@@ -16,11 +16,9 @@
 <div class="container">
   <%= render "tresors/list", tresors: @crew.tresor.all %>
 </div>
-<div class="panel-action-crew">
- <div class="btn alert-crew">
-  <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn btn-danger' %>
- </div>
- <div class="action-button">
+<%= CrewPirate.where(pirate_id: 56, crew_id: @crew.id).empty? ? "nike ta mere" : "nopp" %>
+
+  <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn alert-crew' %>
+
   <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn alert-crew' %>
- </div>
-</div>
+
