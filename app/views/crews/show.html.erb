@@ -14,11 +14,16 @@
 
   <h2 id="nom-crew" >Tresors du Crew:</h2>
 <div class="container">
+
   <%= render "tresors/list", tresors: @crew.tresor.all %>
 </div>
-<% CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id).empty? %>
-
+<% if CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id) %>
   <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn alert-crew' %>
+<% else  %>
+<%end  %>
 
+ <% if  @crew.prive == false  %>
   <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn alert-crew' %>
-
+  <% else  %>
+  <%end  %>
+  <%= @crew.password %>
