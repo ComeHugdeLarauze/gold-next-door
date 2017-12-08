@@ -7,19 +7,14 @@
     margin-bottom: 30px;
     text-align: center;
   }
-}
 
-.form-actions {
   .btn {
     margin-top: 30px;
     width: 100%;
     border-radius: 3px;
     margin-bottom: 20px;
     background-color: $jaune;
-    border-color: $jaune;
-    transition: opacity 0.3s ease-out;
-    opacity: 1;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    border-color: $noir;
   }
 
   .btn:hover {

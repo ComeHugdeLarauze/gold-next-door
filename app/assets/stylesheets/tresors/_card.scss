@@ -86,6 +86,16 @@
   background-color: white;
 }
 
+.card-footer-2 {
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  background-color: $saumon;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background-color: $jaune;
+}
+
 .card-footer p {
   color: $noir;
   font-size: 16px;
@@ -94,7 +104,8 @@
 .card-footer .controls{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: normal;
+  margin-bottom: 12px;
 }
 
 .card-footer .controls i{
@@ -113,9 +124,18 @@
   font-style: italic;
 }
 
+.p-username-tresor-ferme {
+  margin: 4px 0 4px;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 16px;
+  color: $noir;
+}
+
 .p-tresor-titre {
   margin: 2px 0 4.5px;
   color: black;
+  margin-bottom: 12px;
 }
 .p-tresor-titre:hover {
     text-decoration: none;
@@ -128,4 +148,30 @@ position: relative;
     padding-right: 4px;
     padding-left: 4px;
     background-color: #FFF;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.img-card-username {
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.controls-tresor-ferme {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.p-statut {
+  margin-bottom: 0px;
+  color: $noir;
 }
