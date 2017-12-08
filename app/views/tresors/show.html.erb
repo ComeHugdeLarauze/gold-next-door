@@ -2,7 +2,7 @@
   <% if @tresor.vendu %>
     <%= cl_image_tag @tresor.photo, height: 240, width: 320, crop: :fill %>
     <div class="infos">
-      <h1><span class="mark-vendu">Vendu</span> <%= @tresor.titre %></h1>
+      <h1><span class="mark-vendu">Acquis</span> <%= @tresor.titre %></h1>
       <p><%= @tresor.description %></p>
       <% if @tresor.prive %>
         <p class="indice-reveal">C'était un trésor caché.<br>
@@ -20,20 +20,33 @@
         <p><%= @tresor.description %></p>
     <% end %>
   <% end %>
+  <h2 class="vendeur">Vendu par <%= @tresor.pirate.pseudo %></h2>
   <%= render "abordages/status", tresor: @tresor %>
   </div>
 </div>
 <div class="abordages-conteneur">
   <% if @tresor.vendu %>
     <ul class="messages vendu">
-      <h2 class="realign">Gagnant</h2>
+      <h2 class="realign">Acquis par</h2>
       <%= render "abordages/list_item", abordage: @tresor.vente, active: false %>
     </ul>
     <h3 class="realign">Toutes les propositions</h3>
     <%= render "abordages/list", abordages: @tresor.abordages, active: false %>
   <% else %>
-    <%= render "abordages/modal", tresor: @tresor, abordage: Abordage.new, active: true %>
+    <%# if current_pirate != @tresor.pirate %>
+      <%= render "abordages/modal", tresor: @tresor, abordage: Abordage.new, active: true %>
+    <%# end %>
     <%= render "abordages/list", abordages: @tresor.abordages, active: true %>
-    <%= render "abordages/form", tresor: @tresor, abordage: Abordage.new, active: false %>
+    <h3 class="realign">Ton message</h3>
+    <div class="message">
+      <div class="message-new">
+      <div class="message-avatar">
+        <%= image_tag "profil-pic.png", class:'avatar', height: 60 %>
+      </div>
+      <div class="message-content">
+        <%= render "abordages/form", tresor: @tresor, abordage: Abordage.new, active: false %>
+      </div>
+      </div>
+    </div>
   <% end %>
 </div>
