@@ -29,17 +29,17 @@
 <div class="abordages-conteneur">
   <% if @tresor.vendu %>
     <ul class="messages vendu">
-      <h2 class="realign">Acquis par</h2>
+      <h2>Acquis par</h2>
       <%= render "abordages/list_item", abordage: @tresor.vente, active: false %>
     </ul>
-    <h3 class="realign">Toutes les propositions</h3>
+    <h3>Toutes les propositions</h3>
     <%= render "abordages/list", abordages: @tresor.abordages, active: false %>
   <% else %>
     <%# if current_pirate != @tresor.pirate %>
       <%= render "abordages/modal", tresor: @tresor, abordage: Abordage.new, active: true %>
     <%# end %>
     <%= render "abordages/list", abordages: @tresor.abordages, active: true %>
-    <h3 class="realign">Ton message</h3>
+    <h3>Ton message</h3>
     <div class="message">
       <div class="message-new">
       <div class="message-avatar">
