@@ -1,27 +1,31 @@
 <% tresors.each do |tresor| %>
   <div class="cards">
     <% if tresor.prive %>
+
+      <!-- tresor caché -->
       <%= link_to tresor_path(tresor), class: 'no-text-decoration' do %>
-      <div class="card">
-        <div class="card-body">
-          <%= image_tag 'lock2.png'%>
-        </div>
-        <div class="card-footer-2">
-          <div class="p-tresor-titre">
-            <p class="p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
+        <div class="card">
+          <div class="card-body">
+            <%= image_tag 'lock2.png'%>
           </div>
-          <div class="controls controls-tresor-ferme">
-            <%= image_tag 'come.jpg', class: 'img-card-username' %>
-            <p class="p-username-tresor-ferme">@pseudo</p>
-          </div>
-          <div class="controls2 controls-tresor-ferme">
-              <%= image_tag 'treasure-icon.png', class: 'img-card-username' %>
-              <p class="p-statut">à conquérir / déjà conquis</p>
+          <div class="card-footer-2">
+            <div class="p-tresor-titre">
+              <p class="p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
             </div>
+            <div class="controls controls-tresor-ferme">
+              <%= image_tag 'come.jpg', class: 'img-card-username' %>
+              <p class="p-username-tresor-ferme">@pseudo</p>
+            </div>
+            <div class="controls2 controls-tresor-ferme">
+                <%= image_tag 'treasure-icon.png', class: 'img-card-username' %>
+                <p class="p-statut">à conquérir / déjà conquis</p>
+            </div>
+          </div>
         </div>
-      </div>
       <% end %>
+
     <% else %>
+        <!-- tresor public -->
       <%= link_to tresor_path(tresor), class: 'no-text-decoration' do %>
         <div class="card">
           <div class="card-body">
@@ -45,3 +49,4 @@
     <% end %>
   </div>
 <% end %>
+

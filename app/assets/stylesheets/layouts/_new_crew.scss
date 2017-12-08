@@ -1,4 +1,4 @@
-#tresor_prive{
+#crew_prive{
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
@@ -37,6 +37,7 @@
       border-radius: 80%;
       border-color: $jaune;
       opacity: 0.7;
+      padding: 3px;
       transition: opacity 0.3s ease-out;
       transition: border-color 0.4s ease-out;
     }
