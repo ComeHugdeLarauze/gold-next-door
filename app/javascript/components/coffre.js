@@ -1,20 +1,18 @@
 function clickcoffre () {
-  const prive = document.getElementById('tresor_prive_true')
-  const publique = document.getElementById('tresor_prive_false')
-  const indice = document.getElementById('indice')
+  const prive = document.getElementById('tresor_prive_true');
+  const publique = document.getElementById('tresor_prive_false');
+  const indice = document.getElementById('indice');
 
   prive.addEventListener('click', (s) => {
-    s.preventDefault();
-    prive.classList.add("indice");
-    publique.classList.remove("indice")
-    indice.classList.remove("hidden")
+    prive.checked = true;
+    indice.classList.remove("hidden");
+    console.log(prive);
   });
 
   publique.addEventListener('click', (s) => {
-    s.preventDefault();
-    publique.classList.add("indice");
-    prive.classList.remove("indice")
-    indice.classList.add("hidden")
+    publique.checked = true;
+    indice.classList.add("hidden");
+    console.log(publique);
   });
 }
 
