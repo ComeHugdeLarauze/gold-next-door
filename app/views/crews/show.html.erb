@@ -3,8 +3,8 @@
 <% content_for :meta_image, image_path('logo-gnd.png') %>
 
 
-      <h1 id="nom-crew"><%= @crew.nom %></h1>
-      <p><%= @crew.prive? ? 'Est un Groupe privé' : 'Est un groupe Public' %></p>
+<h1 id="nom-crew"><%= @crew.nom %></h1>
+<p><%= @crew.prive? ? 'Est un Groupe privé' : 'Est un groupe Public' %></p>
 
 
 <% if CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id).empty? == false %>
@@ -13,12 +13,10 @@
         <p><%= pirate[:email] %></p>
         <p><%= pirate.tresors.count %> trésor(s)</p>
       <% end %>
-
-
-  <h2 id="nom-crew" >Tresors du Crew:</h2>
-<div class="container">
-  <%= render "tresors/list", tresors: @crew.tresor.all %>
-  <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn alert-crew' %>
+    <h2 id="nom-crew" >Tresors du Crew:</h2>
+  <div class="container">
+    <%= render "tresors/list", tresors: @crew.tresor.all %>
+    <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn alert-crew' %>
 <% else  %>
 <% end  %>
 
