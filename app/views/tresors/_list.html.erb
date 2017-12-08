@@ -8,15 +8,16 @@
         </div>
         <div class="card-footer-2">
           <div class="p-tresor-titre">
-            <p class="p-indice p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
+            <p class="p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
           </div>
           <div class="controls controls-tresor-ferme">
             <%= image_tag 'come.jpg', class: 'img-card-username' %>
-            <p class="p-username-tresor-ferme">@username</p>
+            <p class="p-username-tresor-ferme">@pseudo</p>
           </div>
-          <div>
+          <div class="controls2 controls-tresor-ferme">
+              <%= image_tag 'treasure-icon.png', class: 'img-card-username' %>
               <p class="p-statut">à conquérir / déjà conquis</p>
-          </div>
+            </div>
         </div>
       </div>
       <% end %>
@@ -32,10 +33,11 @@
             </div>
             <div class="controls">
               <%= image_tag 'come.jpg', class: 'img-card-username' %>
-              <p class="p-username">@username</p>
+              <p class="p-username">@pseudo</p>
             </div>
-            <div>
-              <p class="p-statut color-statut-ouvert">à conquérir / déjà conquis</p>
+            <div class="controls2">
+              <%= image_tag 'treasure-icon.png', class: 'img-card-username' %>
+              <p class="p-statut">à conquérir / déjà conquis</p>
             </div>
           </div>
         </div>
