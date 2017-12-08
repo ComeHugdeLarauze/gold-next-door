@@ -6,7 +6,7 @@ class AbordagePolicy < ApplicationPolicy
   end
 
   def create?
-    record.tresor.pirate != user
+    return true;
   end
 
   def new?

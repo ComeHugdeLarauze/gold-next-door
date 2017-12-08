@@ -26,7 +26,10 @@
     height: 60px;
   }
   .message-avatar{
-    margin-right: 16px;
+    width: 62px;
+    height: 60px;
+    margin-right: 12px;
+    background-color: $saumon;
   }
   .message-content{
     flex-grow: 2;

@@ -16,6 +16,6 @@ function updateAbordageList(newContent){
   // document.querySelector('.modal-backdrop').classList.toggle("hide");
   //$('#new-abordage-modal').modal('toogle');
 
-  updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage %>' );
+  updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage, active: true %>' );
   refreshAbordageForm();
 <% end %>

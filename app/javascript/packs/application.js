@@ -7,4 +7,7 @@ if (document.getElementById("abordage_type_abordage")) {
 
 
 import { clickcoffre } from "../components/coffre";
-clickcoffre();
+if (document.getElementById('tresor_prive_true')){
+  clickcoffre();
+};
+
