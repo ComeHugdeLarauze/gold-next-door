@@ -5,3 +5,6 @@ if (document.getElementById("abordage_type_abordage")) {
   initPickTypeAbordage();
 };
 
+
+import { clickcoffre } from "../components/coffre";
+clickcoffre();

@@ -1,18 +1,26 @@
 .form-tresor {
-  padding: 10px 20px;
-  margin-top: 50px;
-  margin-left: 15px;
-  border-radius: 3px;
+  padding: -1px 20px;
+  margin-bottom: 30px;
   h2 {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
   }
-  .btn-tresor {
+  
+  .btn {
+    margin-top: 30px;
     width: 100%;
+    border-radius: 3px;
     margin-bottom: 20px;
     background-color: $jaune;
     border-color: $noir;
   }
-}
+  
+  .btn:hover {
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: $jaune;
+    background-color: $jaune;
+    opacity: 0.6;
+  }
