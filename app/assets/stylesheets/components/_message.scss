@@ -1,4 +1,4 @@
-#messages {
+#messages, .messages {
   list-style:none;
   padding-left: 0;
 }
@@ -7,11 +7,12 @@
   margin: 0;
   padding: 0;
   h2{
-    font-size: 18px;
+    font-size: 17px;
+    margin-top: 0;
     margin-bottom: 0;
   }
   p{
-    margin-left: 34px;
+    font-size: 16px;
     margin-top: 0;
     font-weight: lighter;
     letter-spacing: 1;
@@ -19,26 +20,33 @@
   em{
     color: $soft-grey;
   }
-  .avatar{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1px solid white;
+  .avatar, .message-avatar{
+    width: 60px;
+    height: 60px;
+  }
+  .message-content{
+    flex-grow: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 5px;
   }
   .message-type{
-    width: 26px;
-    height: 26px;
-    float: left;
-    margin-left: -27px;
-    margin-top: -8px;
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
   }
 }
 
 .message label{
-  display:block;
-  margin: 0;
-  padding: 1px;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px 0 0 0;
+  padding: 9px 7px 1px 1px;
+}
+
+.vendu li{
+  background-color: white;
+  margin-bottom: 45px;
 }
 
 .message .btn-accept{
@@ -49,6 +57,7 @@
   padding: 4px;
   text-align: center;
   margin-top: 0;
+  color: $saumon;
 }
 
 .message input[type="radio"]{
