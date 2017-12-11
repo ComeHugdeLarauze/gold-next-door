@@ -21,4 +21,8 @@ if (document.getElementById('new-abordage-modal_btn')){
   initModal();
 };
 
+import { selectcrew } from "../components/select-crew";
+if (document.getElementById('crewcheckbox')){
+  selectcrew();
+};
 
