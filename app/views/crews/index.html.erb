@@ -13,8 +13,7 @@
   <% end %>
   <p>Il y a <%= @crews.where(prive: true).count %> Crews privados sur Gold Next Door...</p>
 
-  <div class="form-actions text-center">
-    <%= link_to "Créer un Crew", new_crew_path, class: 'btn btn-primary' %>
+  <div class="wide_buttons">
+    <%= link_to "Créer un Crew 🔥", new_crew_path, class: 'button yellow' %>
   </div>
-
 </div>
