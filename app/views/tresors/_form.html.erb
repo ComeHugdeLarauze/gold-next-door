@@ -2,31 +2,34 @@
   <% content_for :meta_description, "Dévoile tes trésors avec ton Crew pour savoir combien tu peux en tirer..." %>
   <% content_for :meta_image, image_path('gold_next_door.png') %>
 
-<div class="container-tresor">
-  <div class="row">
-    <div class="form-tresor">
-      <h2>Mon précieux !</h2>
+<div class="header-form-tresor">
+  <h1 class="h1-index">Dévoile 1 Trésor en ta possession 📦 ✨</h1>
+  <p class="p-tresor-form">- une Game Boy enfouie dans tes tiroirs ? <br>- ce chew-gum mâché par Vanessa ?</br>- la soluce du devoir maison noté ?</p>
       <%= simple_form_for @tresor, html: { multipart: true } do |f| %>
+</div>
 
+<div class="container-tresor">
+  <div class="row-form-tresor">
+    <div class="form-tresor">
         <div class="form-inputs">
 
           <!-- tresor public/cache -->
           <div class="container-checkbox">
             <input class="hidden" type="checkbox" name="prive">
-            <div class="form-group radio_buttons optional tresor_prive">
-              <label class="control-label radio_buttons optional">Trésor Caché !?</label>
+            <div class="tresor_prive">
+              <label class="gnd_custom">Trésor ouvert ou Trésor fermé ?</label>
 
               <div id="tresor_prive">
+                <span class="radio">
+                  <label for="tresor_prive_false">
+                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false"><%= image_tag "coffre_open.png", height: 80, width: 80, crop: :fill%>
+                  </label>
+                </span>
+
                 <input type="hidden" name="tresor[prive]" value="">
                 <span class="radio">
                   <label for="tresor_prive_true">
                     <input class="radio_buttons optional" type="radio" value="true" name="tresor[prive]" id="tresor_prive_true"><%= image_tag "coffre_close.png", height: 80, width: 80, crop: :fill%>
-                  </label>
-                </span>
-
-                <span class="radio">
-                  <label for="tresor_prive_false">
-                    <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="tresor[prive]" id="tresor_prive_false"><%= image_tag "coffre_open.png", height: 80, width: 80, crop: :fill%>
                   </label>
                 </span>
               </div>
@@ -37,14 +40,14 @@
             <!-- indice -->
           <div class="indice">
             <div class="form-group string optional tresor_indice" id="indice">
-              <label class="control-label string optional" for="indice">Indice
+              <label class="gnd_custom" for="indice">Un indice qui caractérise ce Trésor
               </label>
-              <input class="form-control string optional" placeholder="le primaire..." type="text" name="tresor[indice]">
+              <input class="form-control string optional" placeholder="Pikachu" type="text" name="tresor[indice]">
             </div>
           </div>
 
-          <%= f.input :titre, placeholder: "GameBoy" %>
-          <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
+          <%= f.input :titre, placeholder: "Game Boy Color rouge" %>
+          <%= f.input :description, placeholder: "Console gardée intacte : 0 rayure et 0 impact..." %>
           <%= f.association :crews, as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
 
           <!-- charger une image -->

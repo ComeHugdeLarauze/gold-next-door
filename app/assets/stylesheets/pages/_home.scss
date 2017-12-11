@@ -7,11 +7,11 @@
 .h1-index {
   font-size: 22px;
   margin-top: 12px;
-  margin-bottom: 20.5px;
+  margin-bottom: 10px;
   color: $noir;
-  font-style: italic;
   margin-left: 35px;
   margin-right: 35px;
+  text-align: center;
 }
 
 .p-index {
@@ -19,8 +19,14 @@
   margin-bottom: 32px;
   color: $medium-grey;
   font-weight: 100;
-  margin-left: 35px;
-  margin-right: 35px;
+  margin-left: 26px;
+}
+
+.p-tresor-form {
+  font-size: 14px;
+  color: $medium-grey;
+  font-weight: 100;
+  text-align: center;
 }
 
 .title-crew {

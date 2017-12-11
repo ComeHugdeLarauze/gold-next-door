@@ -15,7 +15,7 @@
             <div class="controls controls-tresor-ferme">
               <%= image_tag 'come.jpg', class: 'img-card-username' %>
               <p class="p-username-tresor-ferme">
-                <%= @current_pirate.pseudo %>
+                <%= tresor.pirate.pseudo %>
               </p>
             </div>
             <div>
@@ -34,7 +34,7 @@
           </div>
           <div class="card-footer">
             <div>
-              <p class='p-tresor-titre'><%= tresor.titre %></p>
+              <p class='p-tresor-titre'><%= tresor.pirate.pseudo %></p>
             </div>
             <div class="controls">
               <%= image_tag 'come.jpg', class: 'img-card-username' %>

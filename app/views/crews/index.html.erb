@@ -7,7 +7,7 @@
   </div>
   <% @crews.each do |crew| %>
     <% if crew.prive == false %>
-    <h2><%= link_to  crew.nom, crew_path(crew) %></h2>
+    <h2>#<%= link_to  crew.nom, crew_path(crew) %></h2>
     <p><%= crew.pirates.all ? "Contient #{crew.pirates.count} pirates" : 'Ne contient plus de pirate...' %></p>
   <% end %>
   <% end %>
