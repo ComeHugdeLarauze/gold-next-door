@@ -46,9 +46,9 @@
             </div>
           </div>
 
-          <%= f.input :titre, placeholder: "Game Boy Color rouge" %>
-          <%= f.input :description, placeholder: "Console gardée intacte : 0 rayure et 0 impact..." %>
-          <%= f.association :crews, as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
+          <%= f.input :titre, label: 'Titre du produit', label_html: { class: 'gnd_custom' }, placeholder: "Game Boy Color rouge" %>
+          <%= f.input :description, label: 'Description du produit', label_html: { class: 'gnd_custom' }, placeholder: "Console gardée intacte : 0 rayure et 0 impact..." %>
+          <%= f.association :crews, label: 'Dans quels Crews veux-tu dévoiler ce Trésor ?', as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
 
           <!-- charger une image -->
           <div class="picture">
