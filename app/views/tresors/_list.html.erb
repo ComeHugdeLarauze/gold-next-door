@@ -1,3 +1,7 @@
+  <% content_for :meta_title, "Découvre les trésors de tes amis sur Gold Next Door" %>
+  <% content_for :meta_description, "Part à la chasse des trésors que tes amis cachaient jusqu'à aujourd'hui..." %>
+  <% content_for :meta_image, image_path('gold_next_door.png') %>
+
 <% tresors.each do |tresor| %>
   <div class="cards">
     <% if tresor.prive %>
