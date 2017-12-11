@@ -17,9 +17,6 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if pirate_signed_in? %>
-
-      <!-- Links when logged in -->
-
       <!-- Avatar with dropdown menu -->
         <div class="navbar-wagon-item">
         </div>
@@ -43,6 +40,7 @@
             <%= link_to t(".sign_in", default: "Login"), new_pirate_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
           </li>
         <% end %>
+        <%= link_to 'Profile', profile_path, class: "navbar-wagon-item navbar-wagon-link"  %>
       </ul>
     </div>
   </div>
