@@ -1,0 +1,22 @@
+.tabs{
+  color: white;
+  padding: O;
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.tabs h3{
+  font-size: 18px;
+}
+
+.tab-item{
+  flex: 1 0 auto;
+  text-align: center;
+  border-bottom: 3px solid $soft-grey;
+}
+
+.tab-item.active{
+  background: white;
+  color: black;
+  border-bottom: 3px solid $saumon;
+}

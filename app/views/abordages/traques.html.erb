@@ -1,0 +1,27 @@
+<%= render "abordages/nav", tab: 1 %>
+<ul class="pourparlers-list">
+  <% @abordages.each do |abordage| %>
+    <li class="pourparler">
+      <% if abordage.tresor.prive %>
+      <%= image_tag 'coffre_ferme.jpg', height: 60, width: 60, crop: :fill %>
+      <% else %>
+      <%= cl_image_tag abordage.tresor.photo, height: 60, width: 60, crop: :fill %>
+      <% end %>
+      <div class="content">
+        <%= abordage.tresor.titre %> de <%= abordage.tresor.pirate.pseudo %>
+        <br><%= image_tag abordage.type_abordage.emoji, class:"mini-emoji" %><%= pluralize abordage.quantite, abordage.type_abordage.nom %>
+        <br><em><%= abordage.created_at.strftime("%d/%m/%Y") %></em>
+      </div>
+      <div class="abordage-status">
+        <% if abordage.tresor.vente == abordage %>
+          Accepté
+        <% elsif !abordage.tresor.vendu %>
+          En cours
+        <% else %>
+          Refusé
+        <% end %>
+      </div>
+      <%= link_to "Voir",  tresor_path( abordage.tresor), class:"link-tresor" %>
+    </li>
+  <% end %>
+</ul>

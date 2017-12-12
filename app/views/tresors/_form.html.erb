@@ -1,6 +1,6 @@
   <% content_for :meta_title, "Dévoile un trésor que tu possèdes sur Gold Next Door !" %>
   <% content_for :meta_description, "Dévoile tes trésors avec ton Crew pour savoir combien tu peux en tirer..." %>
-  <% content_for :meta_image, image_path('gold_next_door.png') %>
+  <% content_for :meta_image, image_path('Gold_Next_Door.png') %>
 
 <div class="header-form-tresor">
   <h1 class="h1-index">Dévoile 1 Trésor en ta possession 📦 ✨</h1>
@@ -48,7 +48,17 @@
 
           <%= f.input :titre, label: 'Titre du produit', label_html: { class: 'gnd_custom' }, placeholder: "Game Boy Color rouge" %>
           <%= f.input :description, label: 'Description du produit', label_html: { class: 'gnd_custom' }, placeholder: "Console gardée intacte : 0 rayure et 0 impact..." %>
-          <%= f.association :crews, label: 'Dans quels Crews veux-tu dévoiler ce Trésor ?', as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
+
+          <label class="control-label check_boxes optional">Dans quels Crews veux-tu dévoiler ce Trésor ?</label>
+          <div id="crewcheckbox">
+            <% current_pirate.crews.each do |crew| %>
+              <span class="checkbox-crew">
+                <label for="tresor_crew_ids_<%= crew.id %>">
+                  <input class="check_boxes optional" type="checkbox" value="<%= crew.id %>" name="tresor[crew_ids][]" id="tresor_crew_ids_<%= crew.id %>"><%= crew.nom %>
+                </label>
+              </span>
+            <% end %>
+          </div>
 
           <!-- charger une image -->
           <div class="picture">
@@ -58,8 +68,8 @@
               <input class="file optional" type="file" name="tresor[photo]" id="tresor_photo">
             </div>
           </div>
-          <%= f.input :photo_cache, as: :hidden %>
         </div>
+        <%= f.input :photo_cache, as: :hidden %>
 
         <!-- envoyer le formulaire -->
           <div class="wide_buttons">

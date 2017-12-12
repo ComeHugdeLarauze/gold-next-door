@@ -10,5 +10,7 @@ class Pirate < ApplicationRecord
   has_many :tresors
   has_many :abordages
 
+  mount_uploader :photo, AvatarUploader
+
   # validates :pseudo, uniqueness: true
 end

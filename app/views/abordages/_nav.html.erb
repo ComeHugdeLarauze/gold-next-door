@@ -1,0 +1,12 @@
+<div class="tabs">
+  <div class="tab-item <%= 'active' if tab == 1 %>">
+    <%= link_to pourparlers_traques_path do %>
+    <h3>Mes traques</h3>
+    <% end %>
+  </div>
+  <div class="tab-item <%= 'active' if tab == 2 %>">
+    <%= link_to pourparlers_propositions_path do %>
+    <h3>Mes propositions</h3>
+    <% end %>
+  </div>
+</div>

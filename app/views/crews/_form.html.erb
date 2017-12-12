@@ -1,7 +1,7 @@
 <div class="container-tresor">
   <% content_for :meta_title, "Le Crew #{@crew.nom} a rejoint Gold Next Door" %>
   <% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
-  <% content_for :meta_image, image_path('gold_next_door.png') %>
+  <% content_for :meta_image, image_path('Gold_Next_Door.png') %>
 
   <%= simple_form_for @crew do |f| %>
     <div class="form-inputs">
@@ -25,7 +25,7 @@
                 <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="crew[prive]" id="crew_prive_false"><%= image_tag "ouvert.svg", height: 80, width: 80, crop: :fill%>
               </label>
             </span>
-            <p class="help-block text-center"><em>Les Crews privados n'apparaissent que sur invitation privée</em></p>
+            <!-- <p class="help-block text-center"><em>Les Crews privados n'apparaissent que sur invitation privée</em></p> -->
           </div>
         </div>
       </div>
