@@ -13,7 +13,11 @@
               <p class="p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
             </div>
             <div class="controls controls-tresor-ferme">
-              <%= cl_image_tag tresor.pirate.photo, class: 'img-card-username' %>
+              <% if tresor.pirate.photo? %>
+                <%= cl_image_tag tresor.pirate.photo, class: 'img-card-username' %>
+              <% else %>
+                <%= image_tag 'pirate.svg', class: 'img-card-username' %>
+              <% end %>
               <p class="p-username-tresor-ferme">
                 <%= tresor.pirate.pseudo %>
               </p>
@@ -37,7 +41,11 @@
               <p class='p-tresor-titre'><%= tresor.titre %></p>
             </div>
             <div class="controls">
-              <%= cl_image_tag tresor.pirate.photo, class: 'img-card-username' %>
+              <% if tresor.pirate.photo? %>
+                <%= cl_image_tag tresor.pirate.photo, class: 'img-card-username' %>
+              <% else %>
+                <%= image_tag 'pirate.svg', class: 'img-card-username' %>
+              <% end %>
               <p class="p-username"><%= tresor.pirate.pseudo %></p>
             </div>
             <div>
