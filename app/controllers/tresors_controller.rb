@@ -24,7 +24,7 @@ class TresorsController < ApplicationController
     if current_pirate.crews.empty?
       redirect_to crews_path
     else
-      if @tresor.save
+      if @tresor.save && :crew_ids != nil
         params[:tresor][:crew_ids].each do |crew|
           CrewTresor.create(crew_id: crew, tresor_id: @tresor.id )
         end
