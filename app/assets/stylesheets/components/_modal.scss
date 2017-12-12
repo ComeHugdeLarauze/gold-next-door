@@ -13,7 +13,7 @@
 
   .content{
     width: 80%;
-    height: 70%;
+    height: 50%;
     padding: 20px;
     z-index: 32;
     background-color: white;
@@ -36,4 +36,8 @@
 
 .modal-hidden{
   display:none;
+}
+
+#new-abordage-modal_btn{
+  cursor: hand;
 }

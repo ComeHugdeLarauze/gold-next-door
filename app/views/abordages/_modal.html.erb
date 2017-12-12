@@ -1,7 +1,3 @@
-<button type="button" class="btn" id="new-abordage-modal_btn">
-  Négocie !
-</button>
-
 <div id="new-abordage-modal" class="gnd-modal modal-hidden">
   <div id="new-abordage-modal-backgound"></div>
   <div class="content">
@@ -17,10 +13,11 @@
       </span>
       <% end %>
     </div>
-    <%= f.input :quantite, label: 'Combien ?', error: 'Indique la quantité', input_html: {value: 1} %>
-    <%= f.input :message, label: 'Message', error: 'Et le message ?' %>
-    <button type="button" class="btn" id="new-modal-close">Annuler</button>
-    <%= f.submit "Ok",  class: "btn" %>
+    <%= f.input :quantite, label: 'Combien ?', error: 'Indique la quantité', input_html: {value: 1, class: 'to-reset-int'} %>
+    <%= f.input :message, placeholder: 'Message', label: false,  error: 'Et le message ?', :input_html => { :class => 'to-reset' } %>
+    <div class="wide_buttons">
+        <%= f.button :submit, "Envoyer", class: 'button yellow' %>
+    </div>
     <% end %>
   </div>
 </div>

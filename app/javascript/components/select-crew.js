@@ -1,7 +1,13 @@
 function selectcrew () {
   $(document).ready(function(){
-    $(".checkbox-crew").click(function(){
-      $(this).toggleClass("active");
+    const checks = document.querySelectorAll(".checkbox-crew");
+
+    checks.forEach(function(label) {
+      const input = label.querySelector("input");
+
+      input.addEventListener('click', function(e){
+        $(label).toggleClass("active");
+      });
     });
   });
 }

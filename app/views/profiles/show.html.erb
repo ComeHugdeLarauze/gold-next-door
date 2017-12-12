@@ -8,18 +8,22 @@
     <h2><%= @pirate.pseudo %></h2>
     <p><%= @pirate.email %></p>
 
-  <div class="text-center">
-
-    <h3>Mes Crews :</h3>
-    <ul>
-      <% @pirate.crews.each do |crew| %>
-      <li><%= crew.nom %></li>
-      <% end %>
-      </ul>
+    <div class="flexbox-profil-updated">
+      <div class="profil-pseudo">
+        <h2><%= @pirate.pseudo %></h2>
+        <p><%= @pirate.email %></p>
+      </div>
     </div>
 
-
-
+    <div class=“crew-profile”>
+      <h2>Mes Crews</h2>
+      <ul id="sans-ul">
+        <% @pirate.crews.each do |crew| %>
+          <p><%= crew.nom %></p>
+        <% end %>
+      </ul>
+    </div>
+    
     <button type="button" class="btn btn-info" id="modify">Modifier mon profil</button>
     <div class="hidden" id="torender">
       <hr>

@@ -2,7 +2,36 @@
   text-align: center;
 
   h2 {
-    color: $jaune;
-    font-weight: bold;
+    color: $saumon;
+    font-size: 20px;
   }
+}
+
+
+.flexbox-profil-updated {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profil-pseudo {
+  text-align: center;
+}
+
+.profil-mail {
+  text-align: center;
+}
+
+.form-group .file {
+  padding: 10px;
+}
+
+.flexbox-profil-form {
+  display: flex;
+  justify-content:center;
+}
+
+#sans-ul {
+  margin-left: -33px;
+  list-style-type: none;
+  text-align: center;
 }

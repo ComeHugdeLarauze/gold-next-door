@@ -6,11 +6,19 @@
       <%= link_to tresor_path(tresor), class: 'no-text-decoration' do %>
         <div class="card">
           <div class="card-body">
-            <%= image_tag 'lock2.png'%>
+            <% if tresor.vendu %>
+              <%= cl_image_tag tresor.photo %>
+            <% else %>
+              <%= image_tag 'lock2.png'%>
+            <% end %>
           </div>
           <div class="card-footer-2">
             <div class="p-tresor-titre">
-              <p class="p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
+              <% if tresor.vendu %>
+                <p class="p-tresor-titre"><span class="mark-vendu">Acquis</span> <%= tresor.titre %></p>
+              <% else %>
+                <p class="p-tresor-titre">INDICE : « <%= tresor.indice %> »</p>
+              <% end %>
             </div>
             <div class="controls controls-tresor-ferme">
               <% if tresor.pirate.photo? %>
@@ -38,7 +46,7 @@
           </div>
           <div class="card-footer">
             <div>
-              <p class='p-tresor-titre'><%= tresor.titre %></p>
+              <p class='p-tresor-titre'><% if tresor.vendu %><span class="mark-vendu">Acquis</span><% end %> <%= tresor.titre %></p>
             </div>
             <div class="controls">
               <% if tresor.pirate.photo? %>

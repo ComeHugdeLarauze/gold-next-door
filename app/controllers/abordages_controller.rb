@@ -20,6 +20,7 @@ class AbordagesController < ApplicationController
     @abordage = Abordage.new(abordage_params)
     @abordage.pirate = current_pirate
     @abordage.tresor = Tresor.find(params[:tresor_id])
+    @tresor = @abordage.tresor
     authorize @abordage
     if @abordage.save
       respond_to do |format|

@@ -49,7 +49,7 @@
           <%= f.input :titre, label: 'Titre du produit', label_html: { class: 'gnd_custom' }, placeholder: "Game Boy Color rouge" %>
           <%= f.input :description, label: 'Description du produit', label_html: { class: 'gnd_custom' }, placeholder: "Console gardée intacte : 0 rayure et 0 impact..." %>
 
-          <label class="control-label check_boxes optional">Dans quels Crews veux-tu dévoiler ce Trésor ?</label>
+          <label class="control-label check_boxes optional gnd_custom">Dans quels Crews veux-tu dévoiler ce Trésor ?</label>
           <div id="crewcheckbox">
             <% current_pirate.crews.each do |crew| %>
               <span class="checkbox-crew">
