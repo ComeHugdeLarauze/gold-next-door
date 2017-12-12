@@ -7,6 +7,7 @@ class TresorsController < ApplicationController
   end
 
   def show
+    @pirate = current_pirate
     @abordage = Abordage.new
     authorize @tresor
   end
