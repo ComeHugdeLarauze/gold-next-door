@@ -4,17 +4,25 @@
   <% content_for :meta_image, image_path('Gold_Next_Door.png') %>
 
   <% if current_pirate.crews.empty?  %>
-  <% flash[:alert] = "T'es dans aucun crew pirate...!  Adopte un crew et adopte la mer moussaillon! " %>
+  <% flash[:alert] = "T'es dans aucun crew pirate...  Adopte un crew et dévoile tes premiers trésors ! " %>
   <% end %>
   <div class="text-center">
-    <h1 id='nom-crew'>#Crews</h1>
+    <h1 id='nom-crew'>Tous les Crews</h1>
   </div>
   <% @crews.each do |crew| %>
-
-    <h2><%= link_to  crew.nom, crew_path(crew) %></h2>
-
-    <p><%= crew.pirates.all ? "Contient #{crew.pirates.count} pirates" : 'Ne contient plus de pirate...' %></p>
+    <div class="card">
+      <h2 id="nom-crew"><%= link_to  crew.nom, crew_path(crew) %></h2>
+      <p><%= crew.pirates.all.empty? ? 'Ne contient plus de pirate...': "Contient #{crew.pirates.count} pirates" %></p>
+      <% if CrewPirate.where(pirate_id: current_pirate, crew_id: crew.id).empty? == false %>
+        <p>Ton Crew</p>
+      <% else %>
+        <p>Pas encore membre</p>
+      <% end %>
+    </div>
   <% end %>
+
+
+
 
 
   <div class="wide_buttons">
