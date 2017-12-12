@@ -1,6 +1,6 @@
-  <% content_for :meta_title, "Le Crew #{@crew.nom} à rejoind Gold Next Door" %>
-  <% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
-  <% content_for :meta_image, image_path('logo-gnd.png') %>
+  <% content_for :meta_title, "Rejoins le Crew #{@crew.nom} sur Gold Next Door" %>
+  <% content_for :meta_description, "Bienvenue matelot ! Envie de rejoindre cet équipage ?" %>
+  <% content_for :meta_image, image_path('gold_next_door.png') %>
 <div class="container-tresor">
 
 
@@ -18,18 +18,23 @@
     <h2 id="nom-crew" >Tresors du Crew:</h2>
     <%= render "tresors/list", tresors: @crew.tresor.all %>
   <div class="container-tresor">
-    <div class="form-actions">
-    <%= link_to "Quitter ce crew", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'btn btn-primary' %>
+    <div class="wide_buttons">
+    <%= link_to "Quitter ce Crew 😅", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'button yellow' %>
+    </div>
 <% else  %>
 <% end  %>
 
 <% if  CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id).empty? %>
   <% if @crew.prive %>
     <!-- cas ou le crew est prive -->
-    <%= link_to "Devenir membre de ce crew", new_crew_crew_pirate_path(@crew), class: 'btn btn-primary' %>
+    <div class="wide_buttons">
+    <%= link_to "Rejoindre ce Crew 😎", new_crew_crew_pirate_path(@crew), class: 'button yellow' %>
+    </div>
   <% else %>
     <!-- cas ou le crew est public -->
-    <%= link_to "Devenir membre de ce crew", crew_crew_pirates_path(@crew, @crew_pirate), class: 'btn btn-primary', method: :post %>
+    <div class="wide_buttons">
+    <%= link_to "Rejoindre ce Crew 😎", crew_crew_pirates_path(@crew, @crew_pirate), class: 'button yellow', method: :post %>
+    </div>
   <% end %>
 
 <% end  %>

@@ -1,3 +1,7 @@
+  <% content_for :meta_title, "Dévoile un trésor que tu possèdes sur Gold Next Door !" %>
+  <% content_for :meta_description, "Dévoile tes trésors avec ton Crew pour savoir combien tu peux en tirer..." %>
+  <% content_for :meta_image, image_path('gold_next_door.png') %>
+
 <div class="container-tresor">
   <div class="row">
     <div class="form-tresor">
@@ -70,9 +74,10 @@
         </div>
 
         <!-- envoyer le formulaire -->
-        <div class="form-actions text-center">
-          <%= f.button :submit, "Partage ton tresor", class: "btn btn-primary" %>
-        </div>
+          <div class="wide_buttons">
+          <%= f.button :submit, "Dévoiler ce Trésor 🔑", class: 'button yellow' %>
+          </div>
+
       <% end %>
     </div>
   </div>
