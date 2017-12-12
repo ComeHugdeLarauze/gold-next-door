@@ -5,15 +5,26 @@
       <% else %>
         <%= image_tag 'pirate.svg', class: 'avatar', height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
     <% end %>
+    <h2><%= @pirate.pseudo %></h2>
+    <p><%= @pirate.email %></p>
 
-    <h2 class="text-center">Ton Pseudo:</h2>
-    <p class="text-center"><%= @pirate.pseudo %></p>
+  <div class="text-center">
 
-    <h2 class="text-center">Ton email:</h2>
-    <p class="text-center"><%= @pirate.email %></p>
+    <h3>Mes Crews :</h3>
+    <ul>
+      <% @pirate.crews.each do |crew| %>
+      <li><%= crew.nom %></li>
+      <% end %>
+      </ul>
+    </div>
 
-    <hr>
-    <%= render "form" %>
-    <hr>
+
+
+    <button type="button" class="btn btn-info" id="modify">Modifier mon profil</button>
+    <div class="hidden" id="torender">
+      <hr>
+      <%= render "form" %>
+      <hr>
+    </div>
   </div>
 </div>
