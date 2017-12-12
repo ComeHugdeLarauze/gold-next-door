@@ -20,7 +20,7 @@
   </div>
   <% @crews.each do |crew| %>
     <div class="card-crew">
-      <h2><%= link_to  crew.nom, crew_path(crew) %>
+      <h2><%= link_to  crew.nice_nom, crew_path(crew) %>
         <% if crew.prive %>
           <%= image_tag "ferme.svg", height: 20, width: 20, crop: :fill%>
         <% end %>

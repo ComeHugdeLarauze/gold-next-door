@@ -16,15 +16,15 @@
       <h2>Mes Crews</h2>
       <ul id="sans-ul">
         <% @pirate.crews.each do |crew| %>
-          <p><%= crew.nom %></p>
+          <p><%= crew.nice_nom %></p>
         <% end %>
       </ul>
-    <button type="button" class="btn btn-info" id="modify">Modifier mon profil</button>
-    <div class="hidden" id="torender">
-      <hr>
-      <%= render "form" %>
-      <hr>
-    </div>
+      <button type="button" class="btn btn-info" id="modify">Modifier mon profil</button>
+      <div class="hidden" id="torender">
+        <hr>
+        <%= render "form" %>
+        <hr>
+      </div>
     </div>
 
   </div>
