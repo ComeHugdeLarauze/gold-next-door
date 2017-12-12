@@ -4,7 +4,7 @@ class Crew < ApplicationRecord
   has_many :pirates, through: :crew_pirates
   has_many :tresor, through: :crew_tresors
 
-  validates :nom, presence: true, uniqueness: true, format: { without: /\s/ }
+  validates :nom, presence: true, uniqueness: true
 
   # STATUSES = ["Public", "Privé"]
   # validates :status, inclusion: {in: STATUSES}
