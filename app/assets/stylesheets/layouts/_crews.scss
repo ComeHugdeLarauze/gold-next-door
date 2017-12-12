@@ -27,32 +27,55 @@
   margin-bottom: 20px;
   border-radius: 16px;
   background-color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 2px;
+  a {
+    font-size: 18px;
+    color: $noir;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    text-align: left;
+    padding-top: 15px;
+  }
 }
 
 .h1-index-crew {
-  font-size: 26px;
-  margin-top: 12px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   color: $noir;
   margin-left: 5px;
   margin-right: 5px;
   text-align: center;
 }
 
-.h2-crew-nom {
-  margin: 2px 0 4.5px;
-  color: black;
-  margin-bottom: 12px;
-  font-size: 12px;
-}
-.h2-crew-nom:hover {
-    text-decoration: none;
-    color: black;
-  }
-
-.p-crew-index {
+.label-crew-index {
   font-size: 14px;
   color: #696969;
   font-weight: 100;
   text-align: center;
+  margin-top: 18px;
+}
+
+.ou-crew-index {
+  text-align: center;
+}
+
+.nombre-pirates-dans-crew {
+  font-size: 16px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.part-of-crew {
+  font-size: 15px;
+  color: green;
+}
+
+.not-part-of-crew {
+  font-size: 15px;
+  color: $saumon;
 }
