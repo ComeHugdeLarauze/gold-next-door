@@ -12,5 +12,5 @@ class Pirate < ApplicationRecord
 
   mount_uploader :photo, AvatarUploader
 
-  # validates :pseudo, uniqueness: true
+  validates :pseudo, uniqueness: true, presence: true, format: { without: /\s/ }
 end
