@@ -9,11 +9,11 @@
       <%= image_tag "profil-pic.png", class: 'avatar', height: 60 %>
     </div>
     <div class="message-content">
-      <h2><%= abordage.pirate.pseudo %>
+      <h4><%= abordage.pirate.pseudo %>
         <% if abordage.type_abordage %>
           <em>propose</em> <%= pluralize abordage.quantite, abordage.type_abordage.nom %>
         <% end %>
-      </h2>
+      </h4>
       <p><%= abordage.message %></p>
     </div>
     <div class="message-type">
