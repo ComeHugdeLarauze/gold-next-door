@@ -1,18 +1,18 @@
 <div class="footer text-inline">
   <div>
     <%= link_to tresors_path, class: "decouvrir"  do %>
-    <%= image_tag "telescope2.png", class: 'margin-footer', height: 60 %>
+    <%= image_tag "telescope2.png", class: 'margin-footer', height: 40 %>
     <p class="footer-text">Traquer</p>
     <% end %>
   </div>
   <div>
     <%= link_to new_tresor_path, class: "tresor"  do %>
-    <%= image_tag "bouton-principal5.png", class: 'margin-footer btn-principal', height: 110 %>
+    <%= image_tag "bouton-principal5.png", id: 'tresor', class: 'margin-footer btn-principal', height: 110 %>
     <% end %>
   </div>
   <div>
     <%= link_to pourparlers_traques_path, class: "pourparlers"  do %>
-    <%= image_tag "sword2.png", class: 'margin-footer', height: 65 %>
+    <%= image_tag "sword2.png", class: 'margin-footer', height: 40 %>
     <p class="footer-text">Pourparlers</p>
     <% end %>
   </div>
