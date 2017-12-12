@@ -35,9 +35,9 @@
     <h3>Toutes les propositions</h3>
     <%= render "abordages/list", abordages: @tresor.abordages, active: false %>
   <% else %>
-    <%# if current_pirate != @tresor.pirate %>
+    <% if current_pirate != @tresor.pirate %>
       <%= render "abordages/modal", tresor: @tresor, abordage: Abordage.new, active: true %>
-    <%# end %>
+    <% end %>
     <%= render "abordages/list", abordages: @tresor.abordages, active: true %>
     <h3>Ton message</h3>
     <div class="message">

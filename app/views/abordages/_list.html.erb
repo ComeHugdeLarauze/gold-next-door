@@ -1,11 +1,7 @@
 <ul id="messages">
-  <% if abordages.empty? %>
-    <p>T'es le premier ici !!</p>
-  <% else %>
-      <form>
-      <% abordages.each do |abordage| %>
-        <%= render "abordages/list_item", abordage: abordage, active: active %>
-      <% end %>
-      </form>
+  <form>
+  <% abordages.each do |abordage| %>
+    <%= render "abordages/list_item", abordage: abordage, active: active %>
   <% end %>
+  </form>
 </ul>
