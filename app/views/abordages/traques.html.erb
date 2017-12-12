@@ -3,7 +3,7 @@
   <% @abordages.each do |abordage| %>
     <li class="pourparler">
       <% if abordage.tresor.prive %>
-      <%= image_tag 'coffre_ferme.jpg', height: 60, width: 60, crop: :fill %>
+      <%= image_tag 'lock2.png', height: 60, width: 60, crop: :fill %>
       <% else %>
       <%= cl_image_tag abordage.tresor.photo, height: 60, width: 60, crop: :fill %>
       <% end %>

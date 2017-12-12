@@ -22,5 +22,6 @@ function updateStatus(newContent){
   }
 
   updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage, active: true %>' );
+  updateStatus( '<%= j render "abordages/status", tresor: @tresor %>' );
   refreshAbordageForm();
 <% end %>
