@@ -11,7 +11,12 @@
   </div>
   <% @crews.each do |crew| %>
     <div class="card">
-      <h2 id="nom-crew"><%= link_to  crew.nom, crew_path(crew) %></h2>
+      <h2 id="nom-crew"><%= link_to  crew.nom, crew_path(crew) %><% if crew.prive %>
+          <%= image_tag "ferme.svg", height: 20, width: 20, crop: :fill%>
+        <% else %>
+          <%= image_tag "ouvert.svg", height: 20, width: 20, crop: :fill%>
+        <% end %>
+          </h2>
       <p><%= crew.pirates.all.empty? ? 'Ne contient plus de pirate...': "Contient #{crew.pirates.count} pirates" %></p>
       <% if CrewPirate.where(pirate_id: current_pirate, crew_id: crew.id).empty? == false %>
         <p>Ton Crew</p>
