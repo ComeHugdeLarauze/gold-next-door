@@ -5,6 +5,8 @@
       <% else %>
         <%= image_tag 'pirate.svg', class: 'avatar', height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
     <% end %>
+    <h2><%= @pirate.pseudo %></h2>
+    <p><%= @pirate.email %></p>
 
     <div class="flexbox-profil-updated">
       <div class="profil-pseudo">
@@ -21,9 +23,12 @@
         <% end %>
       </ul>
     </div>
-
-    <hr>
-    <%= render "form" %>
-    <hr>
+    
+    <button type="button" class="btn btn-info" id="modify">Modifier mon profil</button>
+    <div class="hidden" id="torender">
+      <hr>
+      <%= render "form" %>
+      <hr>
+    </div>
   </div>
 </div>

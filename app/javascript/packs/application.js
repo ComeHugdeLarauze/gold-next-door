@@ -26,3 +26,7 @@ if (document.getElementById('crewcheckbox')){
   selectcrew();
 };
 
+import { updateprofil } from "../components/updatprofil";
+if (document.getElementById('torender')){
+  updateprofil();
+};
