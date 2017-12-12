@@ -6,7 +6,7 @@ class AbordagePolicy < ApplicationPolicy
   end
 
   def create?
-    return true;
+    return true
   end
 
   def new?

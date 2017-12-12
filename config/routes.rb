@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :profile, only: [ :show, :edit, :update, :destroy]
   resources :pirates, only: :show
   resources :abordages, only: [:index]
+
   root to: 'tresors#index'
 
   resources :crews do
@@ -15,5 +16,7 @@ Rails.application.routes.draw do
     resources :abordages, only: [:create, :update]
     resources :crew_tresors, only:[:new, :create, :destroy]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get "pourparlers/traques", to: "abordages#traques"
+  get "pourparlers/propositions", to: "abordages#propositions"
 end
