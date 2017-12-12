@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :pirates
+
+  resource :profile, only: [ :show, :edit, :update, :destroy]
+  resources :pirates, only: :show
+  resources :abordages, only: [:index]
+
   root to: 'tresors#index'
 
   resources :crews do

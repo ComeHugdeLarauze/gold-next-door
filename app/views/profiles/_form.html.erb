@@ -1,0 +1,16 @@
+<div class="container-tresor">
+  <%= simple_form_for @pirate, url: profile_path do |f| %>
+
+    <!-- Upload picture -->
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :email, label: "Modifier mon couriel ?" %>
+    <%= f.input :pseudo, label: 'Modifier mon pseudo ?' %>
+
+
+    <div class="form-actions">
+      <%= f.submit 'Chaaargez!', class: 'btn btn-primary' %>
+    </div>
+
+  <% end %>
+</div>

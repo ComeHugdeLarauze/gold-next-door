@@ -1,0 +1,15 @@
+<div class="container-tresor">
+  <div class="container-profile">
+    <%= cl_image_tag @pirate.photo, height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
+
+    <h2 class="text-center">Ton Pseudo:</h2>
+    <p class="text-center"><%= @pirate.pseudo %></p>
+
+    <h2 class="text-center">Ton email:</h2>
+    <p class="text-center"><%= @pirate.email %></p>
+
+    <hr>
+    <%= render "form" %>
+    <hr>
+  </div>
+</div>
