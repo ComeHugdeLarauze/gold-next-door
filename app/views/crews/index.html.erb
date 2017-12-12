@@ -6,7 +6,9 @@
     <h1 id='nom-crew'>#Crews</h1>
   </div>
   <% @crews.each do |crew| %>
+
     <h2><%= link_to  crew.nom, crew_path(crew) %></h2>
+
     <p><%= crew.pirates.all ? "Contient #{crew.pirates.count} pirates" : 'Ne contient plus de pirate...' %></p>
   <% end %>
 
