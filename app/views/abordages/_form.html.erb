@@ -1,5 +1,7 @@
 <%= simple_form_for([tresor, abordage], remote: true) do |f| %>
-  <%= f.input :message, label: false %>
-  <%= f.submit "Envoyer" %>
+  <%= f.input :message, label: false, :input_html => { :class => 'to-reset' }  %>
+   <div class="wide_buttons">
+        <%= f.button :submit, "Envoyer", class: 'button yellow' %>
+    </div>
 <% end %>
 

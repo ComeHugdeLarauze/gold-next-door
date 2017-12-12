@@ -9,4 +9,8 @@ class Crew < ApplicationRecord
   # STATUSES = ["Public", "Privé"]
   # validates :status, inclusion: {in: STATUSES}
 
+  def nice_nom
+    "##{nom}"
+  end
+
 end
