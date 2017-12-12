@@ -1,6 +1,6 @@
 class TresorsController < ApplicationController
   before_action :set_tresor, only: [:show, :destroy]
-  skip_before_action :authenticate_pirate!, only: [:home, :index]
+  skip_before_action :authenticate_pirate!, only: [:home, :index, :create]
 
   def index
     @tresors = policy_scope(Tresor).order(created_at: :desc)
@@ -18,16 +18,20 @@ class TresorsController < ApplicationController
   end
 
   def create
-    @tresor = Tresor.new(tresor_params)
-    @tresor.pirate = current_pirate
-    authorize @tresor
-    if @tresor.save
-      params[:tresor][:crew_ids].each do |crew|
-        CrewTresor.create(crew_id: crew, tresor_id: @tresor.id )
-      end
-      redirect_to tresor_path(@tresor)
+      @tresor = Tresor.new(tresor_params)
+      @tresor.pirate = current_pirate
+      authorize @tresor
+    if current_pirate.crews.empty?
+      redirect_to crews_path
     else
-      render :new
+      if @tresor.save
+        params[:tresor][:crew_ids].each do |crew|
+          CrewTresor.create(crew_id: crew, tresor_id: @tresor.id )
+        end
+        redirect_to tresor_path(@tresor)
+      else
+        render :new
+      end
     end
   end
 
