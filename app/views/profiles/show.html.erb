@@ -1,6 +1,10 @@
 <div class="container-tresor">
   <div class="container-profile">
-    <%= cl_image_tag @pirate.photo, height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
+    <% if pirate_signed_in? && @current_pirate.photo? %>
+        <%= cl_image_tag @current_pirate.photo, class: 'avatar', height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
+      <% else %>
+        <%= image_tag 'pirate.svg', class: 'avatar', height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
+      <% end %>
 
     <h2 class="text-center">Ton Pseudo:</h2>
     <p class="text-center"><%= @pirate.pseudo %></p>
