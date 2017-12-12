@@ -6,26 +6,27 @@
   <% if current_pirate.crews.empty?  %>
   <% flash[:alert] = "T'es dans aucun crew pirate...  Adopte un crew et dévoile tes premiers trésors ! " %>
   <% end %>
-  <div class="text-center">
-    <h1 id='nom-crew'>Tous les Crews</h1>
-  </div>
-  <% @crews.each do |crew| %>
-    <div class="card">
-      <h2 id="nom-crew"><%= link_to  crew.nom, crew_path(crew) %></h2>
-      <p><%= crew.pirates.all.empty? ? 'Ne contient plus de pirate...': "Contient #{crew.pirates.count} pirates" %></p>
-      <% if CrewPirate.where(pirate_id: current_pirate, crew_id: crew.id).empty? == false %>
-        <p>Ton Crew</p>
-      <% else %>
-        <p>Pas encore membre</p>
-      <% end %>
-    </div>
-  <% end %>
-
-
-
-
 
   <div class="wide_buttons">
     <%= link_to "Créer un Crew ⚓", new_crew_path, class: 'button yellow' %>
   </div>
+
+  <p class="p-crew-index">OU</p>
+
+  <div class="text-center">
+    <h1 class="h1-index-crew">Tous les Crews existants</h1>
+  </div>
+  <% @crews.each do |crew| %>
+    <div class="card-crew">
+      <div>
+      <h2><%= link_to  crew.nom, crew_path(crew) %></h2>
+      </div>
+      <p><%= crew.pirates.all.empty? ? 'Ne contient plus de pirate...': "Contient #{crew.pirates.count} pirates" %></p>
+      <% if CrewPirate.where(pirate_id: current_pirate, crew_id: crew.id).empty? == false %>
+        <p>Tu fais partie de ce Crew</p>
+      <% else %>
+        <p>Tu n'est pas membre de ce Crew</p>
+      <% end %>
+    </div>
+  <% end %>
 </div>
