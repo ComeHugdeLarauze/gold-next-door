@@ -1,13 +1,13 @@
 #crewcheckbox {
   display: flex;
   justify-content:space-between;
-   flex-wrap: wrap;
+  flex-wrap: wrap;
   align-item: center;
   margin: -10px 2px;
 
 
   .checkbox-crew {
-    width: 100%;
+    flex: 0 0 30%;
     margin: auto;
     margin-top: 10px;
     padding: 10px;
@@ -16,21 +16,13 @@
     background-color: $saumon;
     text-align: center;
     color: white;
-    // transition: opacity 0.3s ease-out;
-
-    &:hover {
-    opacity: 1;
-    cursor: pointer;
-    }
 
     &.active {
-    background: $saumon;
-    color: white;
     opacity: 1;
     }
 
     input[type="checkbox"]{
-      display: none;
+      // display: none;
     }
 
     label{
@@ -47,6 +39,5 @@
     }
   }
 }
-
 
 
