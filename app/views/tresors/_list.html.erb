@@ -38,7 +38,7 @@
             </div>
             <div class="controls">
               <%= cl_image_tag tresor.pirate.photo, class: 'img-card-username' %>
-              <p class="p-username">@<%= tresor.pirate.pseudo %></p>
+              <p class="p-username"><%= tresor.pirate.pseudo %></p>
             </div>
             <div>
             <%= render "abordages/status", tresor: tresor, abordage: Abordage.new, active: true %>
