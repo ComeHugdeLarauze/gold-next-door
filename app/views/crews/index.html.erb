@@ -1,7 +1,7 @@
 <div class="container-tresor">
-  <% content_for :meta_title, "Le Crew #{@crews} à rejoind Gold Next Door" %>
-  <% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
-  <% content_for :meta_image, image_path('logo-gnd.png') %>
+  <% content_for :meta_title, "Tous les Crews de Gold Next Door" %>
+  <% content_for :meta_description, "Découvre tous les Crews présents sur Gold Next Door. Rejoins tes favoris !" %>
+  <% content_for :meta_image, image_path('gold_next_door.png') %>
   <div class="text-center">
     <h1 id='nom-crew'>#Crews</h1>
   </div>
@@ -13,8 +13,7 @@
   <% end %>
   <p>Il y a <%= @crews.where(prive: true).count %> Crews privados sur Gold Next Door...</p>
 
-  <div class="form-actions text-center">
-    <%= link_to "Créer un Crew", new_crew_path, class: 'btn btn-primary' %>
+  <div class="wide_buttons">
+    <%= link_to "Créer un Crew ⚓", new_crew_path, class: 'button yellow' %>
   </div>
-
 </div>

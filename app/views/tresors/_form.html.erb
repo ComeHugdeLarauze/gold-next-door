@@ -1,3 +1,7 @@
+  <% content_for :meta_title, "Dévoile un trésor que tu possèdes sur Gold Next Door !" %>
+  <% content_for :meta_description, "Dévoile tes trésors avec ton Crew pour savoir combien tu peux en tirer..." %>
+  <% content_for :meta_image, image_path('gold_next_door.png') %>
+
 <div class="container-tresor">
   <div class="row">
     <div class="form-tresor">
@@ -41,7 +45,22 @@
 
           <%= f.input :titre, placeholder: "GameBoy" %>
           <%= f.input :description, placeholder: "Dans un état impeccable, elle n'attend que toi!" %>
-          <%= f.association :crews, as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
+
+          <!-- Checkbox-crew -->
+          <div class="hidden">
+            <%= f.association :crews, as: :check_boxes, collection: current_pirate.crews, label_method: :nom %>
+          </div>
+
+          <label class="control-label check_boxes optional">Crews</label>
+          <div id="crewcheckbox">
+            <% current_pirate.crews.each do |crew| %>
+              <span class="checkbox-crew">
+                <label for="tresor_crew_ids_<%= crew.id %>">
+                  <input class="check_boxes optional" type="checkbox" value="<%= crew.id %>" name="tresor[crew_ids][]" id="tresor_crew_ids_<%= crew.id %>"><%= crew.nom %>
+                </label>
+              </span>
+            <% end %>
+          </div>
 
           <!-- charger une image -->
           <div class="picture">
@@ -55,9 +74,10 @@
         </div>
 
         <!-- envoyer le formulaire -->
-        <div class="form-actions text-center">
-          <%= f.button :submit, "Partage ton tresor", class: "btn btn-primary" %>
-        </div>
+          <div class="wide_buttons">
+          <%= f.button :submit, "Dévoiler ce Trésor 🔑", class: 'button yellow' %>
+          </div>
+
       <% end %>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <div class="container-tresor">
-  <% content_for :meta_title, "Le Crew #{@crew.nom} à rejoind Gold Next Door" %>
+  <% content_for :meta_title, "Le Crew #{@crew.nom} a rejoint Gold Next Door" %>
   <% content_for :meta_description, "Le nouveau crew de Gold Next Door fait beaucoup parler de lui sur les internets" %>
-  <% content_for :meta_image, image_path('logo-gnd.png') %>
+  <% content_for :meta_image, image_path('gold_next_door.png') %>
 
   <%= simple_form_for @crew do |f| %>
     <div class="form-inputs">
@@ -25,7 +25,7 @@
                 <input class="radio_buttons optional" readonly="readonly" type="radio" value="false" name="crew[prive]" id="crew_prive_false"><%= image_tag "ouvert.svg", height: 80, width: 80, crop: :fill%>
               </label>
             </span>
-            <p class="help-block text-center"><em>Les Crews privados n'apparaissent que sur invitation privée</em></p>
+            <!-- <p class="help-block text-center"><em>Les Crews privados n'apparaissent que sur invitation privée</em></p> -->
           </div>
         </div>
       </div>
@@ -37,8 +37,8 @@
           <input class="form-control password required" id="password" type="password" name="crew[password]">
         </div>
 
-      <div class="form-actions text-center">
-        <%= f.button :submit, class: "btn btn-primary" %>
+      <div class="wide_buttons">
+        <%= f.button :submit, "En avant toute 💣", class: 'button yellow' %>
       </div>
     </div>
   <% end %>

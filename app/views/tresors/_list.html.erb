@@ -14,11 +14,12 @@
             </div>
             <div class="controls controls-tresor-ferme">
               <%= image_tag 'come.jpg', class: 'img-card-username' %>
-              <p class="p-username-tresor-ferme">@pseudo</p>
+              <p class="p-username-tresor-ferme">
+                <%= @current_pirate.pseudo %>
+              </p>
             </div>
-            <div class="controls2 controls-tresor-ferme">
-                <%= image_tag 'treasure-icon.png', class: 'img-card-username' %>
-                <p class="p-statut">à conquérir / déjà conquis</p>
+            <div>
+            <%= render "abordages/status", tresor: @tresor, abordage: Abordage.new, active: true %>
             </div>
           </div>
         </div>
@@ -37,11 +38,12 @@
             </div>
             <div class="controls">
               <%= image_tag 'come.jpg', class: 'img-card-username' %>
-              <p class="p-username">@pseudo</p>
+              <p class="p-username">
+                <%= @current_pirate.pseudo %>
+              </p>
             </div>
-            <div class="controls2">
-              <%= image_tag 'treasure-icon.png', class: 'img-card-username' %>
-              <p class="p-statut">à conquérir / déjà conquis</p>
+            <div>
+            <%= render "abordages/status", tresor: tresor, abordage: Abordage.new, active: true %>
             </div>
           </div>
         </div>
