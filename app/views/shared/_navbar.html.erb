@@ -2,7 +2,7 @@
   <!-- Logo -->
   <div>
   <%= link_to crews_path, class: "navbar-crew" do %>
-    <%= image_tag "treasure-map.svg", height: 50 %>
+    <%= image_tag "treasure-map.svg", height: 42 %>
     <p class="crew-navbar">Mes Crews</p>
   <% end %>
   </div>
@@ -36,6 +36,7 @@
       <% end %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if pirate_signed_in? %>
+      <%= cl_image_tag @current_pirate.photo, class: 'avatar', height: 50, data: { toggle: "dropdown" } %>
           <%= link_to destroy_pirate_session_path, method: :delete do %>
             <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
           <% end %>
