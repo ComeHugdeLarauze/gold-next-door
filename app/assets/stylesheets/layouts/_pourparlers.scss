@@ -1,0 +1,53 @@
+.pourparlers_nav{
+
+}
+.pourparlers-list{
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.pourparler{
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  em{
+    color: $soft-grey;
+    font-size: 14px;
+  }
+  .content{
+    flex-grow: 2;
+    margin-left: 16px;
+  }
+  .mini-emoji{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    margin-top: -4px;
+  }
+  .abordage-status{
+    background-color: white;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  .link-tresor{
+    display: inline-block;
+    background-color: $saumon;
+    color: white;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
