@@ -8,7 +8,7 @@ class AbordagesController < ApplicationController
   end
 
   def propositions
-    @abordages = policy_scope(current_pirate.abordages).order(created_at: :desc)
+    @tresors = policy_scope(current_pirate.tresors).order(created_at: :desc)
   end
 
 

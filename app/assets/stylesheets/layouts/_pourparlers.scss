@@ -1,11 +1,21 @@
-.pourparlers_nav{
 
-}
 .pourparlers-list{
   list-style: none;
   padding-left: 0;
   width: 100%;
   text-align: left;
+  .status-container{
+    margin-top:0;
+    border-top:none;
+    border-bottom: 1px solid $soft-grey;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  .status-item{
+    width: 38px;
+    height: 38px;
+  }
 }
 
 .pourparler{
@@ -22,6 +32,10 @@
     flex-grow: 2;
     margin-left: 16px;
   }
+  .abordage-global_status{
+    flex-grow: 2;
+    margin-left: 16px;
+  }
   .mini-emoji{
     display: inline-block;
     width: 20px;
@@ -34,10 +48,11 @@
     display: inline-block;
     height: 60px;
     width: 60px;
-    text-align: center;
     font-size: 14px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    text-align: center;
   }
   .link-tresor{
     display: inline-block;
