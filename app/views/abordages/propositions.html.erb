@@ -1,5 +1,20 @@
 <%= render "abordages/nav", tab: 2 %>
-<div id="abordages-conteneur">
-  <% @abordages.each do |abordage| %>
+<ul class="pourparlers-list">
+  <% @tresors.each do |tresor| %>
+  <li class="pourparler">
+    <%= cl_image_tag tresor.photo, height: 60, width: 60, crop: :fill %>
+    <div class="content">
+      <%= tresor.titre %><br><em><%= tresor.created_at.strftime("%d/%m/%Y") %></em>
+    </div>
+    <div class="abordage-status">
+      <% if tresor.vendu %>
+      Vendu
+      <% else %>
+      En cours
+      <% end %>
+    </div>
+    <%= link_to "Voir", tresor_path(tresor), class:"link-tresor" %>
+  </li>
+  <%= render "abordages/status", tresor: tresor %>
   <% end %>
-</div>
+</ul>
