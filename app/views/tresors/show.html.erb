@@ -1,8 +1,8 @@
   <% content_for :meta_title, "Découvre ce Trésor sur Gold Next Door" %>
-  <% content_for :meta_description, "Part en chasse. Démarre les négociations : achat, troc, drink, free hug..." %>
+  <% content_for :meta_description, "Pars en chasse. Démarre les négociations : achat, troc, drink, free hug..." %>
   <% content_for :meta_image, image_path('Gold_Next_Door.png') %>
 
-<div class="details">
+<div class="details <%= 'details-ferme' if @tresor.prive && !@tresor.vendu %>">
   <% if @tresor.vendu %>
     <%= cl_image_tag @tresor.photo, height: 240, width: 320, crop: :fill %>
     <div class="infos">
@@ -16,7 +16,7 @@
     <% if @tresor.prive %>
       <%= image_tag 'lock2.png', height: 240, width: 320, crop: :fill %>
       <div class="infos">
-        <h1><%= @tresor.indice %></h1>
+        <h1>INDICE : « <%= @tresor.indice %> »</h1>
     <% else %>
       <%= cl_image_tag @tresor.photo, height: 240, width: 320, crop: :fill %>
       <div class="infos">
@@ -24,7 +24,16 @@
         <p><%= @tresor.description %></p>
     <% end %>
   <% end %>
-  <%= render "abordages/status", tresor: @tresor %>
+  <div class="crews-list-details">
+    <% @tresor.crews.each do |crew| %>
+      <%= link_to crew.nice_nom, crew_path(crew) %>
+    <% end %>
+  </div>
+  <% if current_pirate != @tresor.pirate  && !@tresor.vendu %>
+      <div id="new-abordage-modal_btn"><div id="status-update"><%= render "abordages/status", tresor: @tresor %></div></div>
+      <% else %>
+      <div id="status-update"><%= render "abordages/status", tresor: @tresor %></div>
+  <% end %>
   <div class="vendeur">
      <h2>Par  <%= image_tag "profil-pic.png", class:'avatar', height: 60 %> <%= @tresor.pirate.pseudo %></h2>
   </div>
@@ -33,7 +42,7 @@
 <div class="abordages-conteneur">
   <% if @tresor.vendu %>
     <ul class="messages vendu">
-      <h2>Acquis par</h2>
+      <h3>Acquis par</h3>
       <%= render "abordages/list_item", abordage: @tresor.vente, active: false %>
     </ul>
     <h3>Toutes les propositions</h3>

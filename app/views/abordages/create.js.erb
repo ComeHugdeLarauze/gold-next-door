@@ -1,19 +1,24 @@
 function refreshAbordageForm(){
-  var newAbordageForm = document.getElementById("abordage_message");
-  newAbordageForm.value = "";
+  var newAbordageForms = document.querySelectorAll(".to-reset");
+  newAbordageForms.forEach((f) => f.value = "");
+  document.querySelector(".to-reset-int").value = 1;
 }
 
 function updateAbordageList(newContent){
-  var messages = document.getElementById("messages");
-  messages.insertAdjacentHTML("beforeend", newContent);
+  document.getElementById("messages").insertAdjacentHTML("beforeend", newContent);
 }
 
+function updateStatus(newContent){
+  document.getElementById("status-update").innerHTML = newContent;
+}
 
 <% if @abordage.errors.any? %>
   refreshAbordageForm();
 <% else %>
-  if (!document.getElementById("new-abordage-modal").classList.contains("modal-hidden")){
-    document.getElementById("new-abordage-modal").classList.add("modal-hidden");
+  if (document.getElementById("new-abordage-modal")){
+    if (!document.getElementById("new-abordage-modal").classList.contains("modal-hidden")){
+      document.getElementById("new-abordage-modal").classList.add("modal-hidden");
+    }
   }
 
   updateAbordageList( '<%= j render "abordages/list_item", abordage: @abordage, active: true %>' );
