@@ -13,3 +13,4 @@ const initPickTypeAbordage = () => {
 };
 
 export { initPickTypeAbordage };
+export { classCheck };
