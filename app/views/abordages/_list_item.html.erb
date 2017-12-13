@@ -6,7 +6,11 @@
     <label>
   <% end %>
     <div class="message-avatar">
-      <%= image_tag "profil-pic.png", class: 'avatar', height: 60 %>
+      <% if abordage.pirate.photo? %>
+        <%= cl_image_tag abordage.pirate.photo, class:'avatar', height: 60 %>
+      <% else %>
+        <%= image_tag 'pirate.svg', class:'avatar', height: 60 %>
+      <% end %>
     </div>
     <div class="message-content">
       <h4><%= abordage.pirate.pseudo %>

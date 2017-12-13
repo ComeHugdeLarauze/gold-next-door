@@ -1,12 +1,12 @@
 <div class="tabs">
   <div class="tab-item <%= 'active' if tab == 1 %>">
     <%= link_to pourparlers_traques_path do %>
-    <h3>Mes traques</h3>
+    <h3><%= pluralize @abordages.count, "Traque" %></h3>
     <% end %>
   </div>
   <div class="tab-item <%= 'active' if tab == 2 %>">
     <%= link_to pourparlers_propositions_path do %>
-    <h3>Mes Trésors dévoilés</h3>
+    <h3><%= pluralize @tresors.count, "Trésor" %></h3>
     <% end %>
   </div>
 </div>

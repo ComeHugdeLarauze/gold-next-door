@@ -1,0 +1,12 @@
+<div class="tabs">
+  <div class="tab-item <%= 'active' if tab == 1 %>">
+    <%= link_to crew_path(crew) do %>
+    <h3><%= pluralize crew.tresors.count, "Trésor" %></h3>
+    <% end %>
+  </div>
+  <div class="tab-item <%= 'active' if tab == 2 %>">
+    <%= link_to crew_pirates_path(crew) do %>
+    <h3><%= pluralize crew.pirates.count, "Pirate" %></h3>
+    <% end %>
+  </div>
+</div>

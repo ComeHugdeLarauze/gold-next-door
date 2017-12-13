@@ -1,13 +1,15 @@
 class AbordagesController < ApplicationController
   before_action :set_abordage, only: [:update]
-  skip_after_action :verify_authorized, only: [:traques, :propositions, :trolls]
-  after_action :verify_policy_scoped, only: [:traques, :propositions, :trolls]
+  skip_after_action :verify_authorized, only: [:traques, :propositions]
+  after_action :verify_policy_scoped, only: [:traques, :propositions]
 
   def traques
     @abordages = policy_scope(current_pirate.abordages.where.not(type_abordage: nil))
+    @tresors = policy_scope(current_pirate.tresors)
   end
 
   def propositions
+    @abordages = policy_scope(current_pirate.abordages.where.not(type_abordage: nil))
     @tresors = policy_scope(current_pirate.tresors).order(created_at: :desc)
   end
 

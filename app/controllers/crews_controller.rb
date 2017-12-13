@@ -10,6 +10,12 @@ class CrewsController < ApplicationController
     authorize @crew
   end
 
+  def pirates
+    @crew = Crew.find(params[:crew_id])
+    @pirates = @crew.pirates
+    authorize @crew
+  end
+
   def new
     @crew = Crew.new
     authorize @crew
