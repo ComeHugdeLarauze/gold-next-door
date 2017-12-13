@@ -16,12 +16,12 @@ CrewPirate.destroy_all
 procesing('CrewPirate')
 Pirate.destroy_all
 procesing('Pirate')
+Abordage.destroy_all
+procesing('Abordage')
 Tresor.destroy_all
 procesing('Tresor')
 Crew.destroy_all
 procesing('Crew')
-Abordage.destroy_all
-procesing('Abordage')
 TypeAbordage.destroy_all
 procesing('TypeAbordage')
 
