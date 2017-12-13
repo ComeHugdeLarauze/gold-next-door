@@ -4,11 +4,11 @@
     <!-- Upload picture -->
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden%>
-    <%= f.input :email, label: "Modifier mon couriel ?" %>
-    <%= f.input :pseudo, label: 'Modifier mon pseudo ?' %>
+    <%= f.input :email, label: "Modifier mon email :" %>
+    <%= f.input :pseudo, label: 'Modifier mon pseudo :' %>
 
     <div class="wide_buttons">
-      <%= f.submit 'Chaaargez!', class: 'button yellow' %>
+      <%= f.submit "A l'abordage !", class: 'button yellow' %>
     </div>
   <% end %>
 </div>
