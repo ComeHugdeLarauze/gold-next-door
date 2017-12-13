@@ -12,14 +12,14 @@ end
 
 
 puts "Destroy all DB."
+Pirate.destroy_all
+procesing('Pirate')
 TypeAbordage.destroy_all
+Crew.destroy_all
+procesing('Crew')
 procesing('TypeAbordage')
 CrewPirate.destroy_all
 procesing('CrewPirate')
-Pirate.destroy_all
-procesing('Pirate')
-Crew.destroy_all
-procesing('Crew')
 
 puts "DB destroyed"
 puts "Creating DateBase"
