@@ -35,7 +35,7 @@
       <div id="status-update"><%= render "abordages/status", tresor: @tresor %></div>
   <% end %>
   <div class="vendeur">
-     <h2>Par
+     <h2>
       <% if @tresor.pirate.photo? %>
         <%= cl_image_tag tresor.pirate.photo, class:'avatar', height: 60 %>
       <% else %>

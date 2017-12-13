@@ -1,5 +1,6 @@
 <div id="new-abordage-modal" class="gnd-modal modal-hidden">
-  <div id="new-abordage-modal-backgound"></div>
+  <div id="new-abordage-modal-background"></div>
+  <div id="new-abordage-modal-error" class="hide-error">Choisis un type</div>
   <div class="content">
     <%= simple_form_for([tresor, abordage], remote: true) do |f| %>
     <div class="form-group radio_buttons optional init-class" id="abordage_type_abordage">
@@ -7,7 +8,7 @@
       <% TypeAbordage.all.each do |type| %>
       <span class="radio_choice_type">
         <label for="abordage_type_abordage_id_<%= type.id %>" class="radio" >
-          <input class="radio_buttons optional" type="radio" value="<%= type.id %>" name="abordage[type_abordage_id]" id="abordage_type_abordage_id_<%= type.id %>">
+          <input class="radio_buttons optional to-reset-radio" type="radio" value="<%= type.id %>" name="abordage[type_abordage_id]" id="abordage_type_abordage_id_<%= type.id %>">
           <%= image_tag "#{type.emoji}.svg", class: "image-picker" %>
         </label>
       </span>
