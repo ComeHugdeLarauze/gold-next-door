@@ -1,3 +1,5 @@
+require 'open-uri'
+require 'nokogiri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,10 +9,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Creating DateBase"
 
-TypeAbordage.destroy_all
+# TypeAbordage.destroy_all
 
-[["euro", "euros"], ["drink", "drinks"], ["cado", "troc"], ["free hug", "free"]].each do |type|
-  TypeAbordage.create(nom: type[0], emoji: type[1])
+# [["euro", "euros"], ["drink", "drinks"], ["cado", "troc"], ["free hug", "free"]].each do |type|
+#   TypeAbordage.create(nom: type[0], emoji: type[1])
+# end
+
+url = "https://kitt.lewagon.com/camps/100/classmates"
+
+html_file = open(url).read
+html_doc = Nokogiri::HTML(html_file)
+
+html_doc.search('.valign-middle').each do |element|
+  puts element.text.strip
 end
+
 
 puts "Seed finished"
