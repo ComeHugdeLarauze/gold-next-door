@@ -30,3 +30,5 @@ import { updateprofil } from "../components/updatprofil";
 if (document.getElementById('torender')){
   updateprofil();
 };
+
+import '../components/select2';

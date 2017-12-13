@@ -3,7 +3,12 @@ class CrewsController < ApplicationController
   before_action :set_crew, only: [:show, :edit]
 
   def index
-    @crews = policy_scope(Crew).order(created_at: :desc)
+    @crew_list = policy_scope(Crew).order(created_at: :desc)
+    if params[:query]
+      @crews = policy_scope(Crew).where("nom ILIKE ?", "%#{params[:query]}%").order(created_at: :desc)
+    else
+      @crews = policy_scope(Crew).order(created_at: :desc)
+    end
   end
 
   def show

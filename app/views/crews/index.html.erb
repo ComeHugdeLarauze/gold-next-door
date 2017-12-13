@@ -3,20 +3,28 @@
 <% content_for :meta_image, image_path('Gold_Next_Door.png') %>
 
 <div class="container-tresor">
+
+  <div class="search-crew-global">
+    <%= simple_form_for crews_path, method: :get do |f| %>
+      <div class="search-crew">
+        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2', placeholder: "chercher un crew" %>
+      </div>
+      <div class="search-submit">
+        <%= f.submit :chercher, class: 'button yellow'%>
+      </div>
+    <% end %>
+  </div>
+
   <div class="wide_buttons">
     <%= link_to "Créer un Crew ⚓", new_crew_path, class: 'button yellow' %>
   </div>
   <!-- search -->
-  <div class="ou-crew-index">
-    <label class="label-crew-index">OU</label>
-  </div>
 
   <% if current_pirate.crews.empty?  %>
   <% flash[:alert] = "T'es dans aucun crew pirate...  Adopte un crew et dévoile tes premiers trésors ! " %>
   <% end %>
 
   <div class="text-center">
-    <h1 class="h1-index-crew">Rejoindre un Crew existants</h1>
     <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
   </div>
   <% @crews.each do |crew| %>
