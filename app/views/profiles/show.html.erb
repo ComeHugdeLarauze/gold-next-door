@@ -1,9 +1,9 @@
 <div class="container-tresor">
   <div class="container-profile">
     <% if pirate_signed_in? && @current_pirate.photo? %>
-        <%= cl_image_tag @current_pirate.photo, class: 'avatar', height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
+        <%= cl_image_tag @current_pirate.photo, class: 'avatar', height: 120, width: 120, crop: :fill, class: "avatar-profile" %>
       <% else %>
-        <%= image_tag 'pirate.svg', class: 'avatar', height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
+        <%= image_tag 'pirate.svg', class: 'avatar', height: 120, width: 120, crop: :fill, class: "avatar-profile" %>
     <% end %>
     <div class="flexbox-profil-updated">
       <div class="profil-pseudo">
@@ -13,13 +13,15 @@
     </div>
 
     <div class=“crew-profile”>
-      <h2>Mes Crews</h2>
+      <h2 class="h2-profil-pirate">Mes Crews</h2>
       <ul id="sans-ul">
         <% @pirate.crews.each do |crew| %>
-          <p><%= crew.nice_nom %></p>
+          <p><%= link_to  crew.nice_nom, crew_path(crew) %></p>
         <% end %>
       </ul>
-      <button type="button" class="btn btn-info" id="modify">Modifier mon profil</button>
+      <div class="wide_buttons">
+      <button class="button yellow" id="modify">Modifier mon profil</button>
+      </div>
       <div class="hidden" id="torender">
         <hr>
         <%= render "form" %>
