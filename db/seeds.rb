@@ -14,14 +14,14 @@ end
 puts "Destroy all DB."
 CrewPirate.destroy_all
 procesing('CrewPirate')
-Pirate.destroy_all
-procesing('Pirate')
 Abordage.destroy_all
 procesing('Abordage')
 Tresor.destroy_all
 procesing('Tresor')
 Crew.destroy_all
 procesing('Crew')
+Pirate.destroy_all
+procesing('Pirate')
 TypeAbordage.destroy_all
 procesing('TypeAbordage')
 
