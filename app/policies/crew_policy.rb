@@ -9,6 +9,10 @@ class CrewPolicy < ApplicationPolicy
     return true
   end
 
+  def pirates?
+    return show?
+  end
+
   def create?
     return true
   end

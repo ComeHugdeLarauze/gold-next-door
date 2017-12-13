@@ -12,7 +12,7 @@
   </div>
 
   <% if current_pirate.crews.empty?  %>
-  <% flash[:alert] = "T'es dans aucun crew pirate...  Adopte un crew et dévoile tes premiers trésors ! " %>
+  <% flash[:alert] = "T'es dans aucun Crew pirate...  Adopte un crew et dévoile tes premiers trésors ! " %>
   <% end %>
 
   <div class="text-center">
@@ -27,7 +27,16 @@
           <%= image_tag "ferme.svg", height: 20, width: 20, crop: :fill%>
         <% end %>
           </h2>
-      <p class="nombre-pirates-dans-crew"><%= crew.pirates.all.empty? ? 'Ne contient plus de pirate...': "Contient #{crew.pirates.count} pirates" %></p>
+      <p class="nombre-dans-crew">
+        <% if crew.pirates.empty? %>
+          <%= "Ne contient plus de pirates..." %>
+        <% else %>
+          <%= pluralize crew.pirates.count, "pirate" %>
+        <% end %>
+      </p>
+      <p class="nombre-dans-crew">
+          <%= pluralize crew.tresors.count, "trésor" %>
+      </p>
       <% if CrewPirate.where(pirate_id: current_pirate, crew_id: crew.id).empty? == false %>
         <p class="part-of-crew">Tu fais partie de ce Crew 😎</p>
       <% else %>
@@ -36,5 +45,4 @@
     </div>
     <% end %>
   <% end %>
-
 </div>

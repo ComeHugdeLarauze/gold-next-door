@@ -35,7 +35,13 @@
       <div id="status-update"><%= render "abordages/status", tresor: @tresor %></div>
   <% end %>
   <div class="vendeur">
-     <h2>Par  <%= image_tag "profil-pic.png", class:'avatar', height: 60 %> <%= @tresor.pirate.nice_pseudo %></h2>
+     <h2>Par
+      <% if @tresor.pirate.photo? %>
+        <%= cl_image_tag tresor.pirate.photo, class:'avatar', height: 60 %>
+      <% else %>
+        <%= image_tag 'pirate.svg', class:'avatar', height: 60 %>
+      <% end %>
+      <%= @tresor.pirate.nice_pseudo %></h2>
   </div>
   </div>
 </div>
@@ -56,7 +62,11 @@
     <div class="message">
       <div class="message-new">
       <div class="message-avatar">
-        <%= image_tag "profil-pic.png", class:'avatar', height: 60 %>
+        <% if pirate_signed_in? && current_pirate.photo? %>
+          <%= cl_image_tag current_pirate.photo, class:'avatar', height: 60 %>
+        <% else %>
+          <%= image_tag 'pirate.svg', class:'avatar', height: 60 %>
+        <% end %>
       </div>
       <div class="message-content">
         <%= render "abordages/form", tresor: @tresor, abordage: Abordage.new, active: false %>

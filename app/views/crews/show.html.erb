@@ -1,42 +1,11 @@
-  <% content_for :meta_title, "Rejoins le Crew #{@crew.nom} sur Gold Next Door" %>
-  <% content_for :meta_description, "Bienvenue matelot ! Envie de rejoindre cet équipage ?" %>
-  <% content_for :meta_image, image_path('Gold_Next_Door.png') %>
-<div class="container-tresor">
+<% content_for :meta_title, "Rejoins le Crew #{@crew.nom} sur Gold Next Door" %>
+<% content_for :meta_description, "Bienvenue matelot ! Envie de rejoindre cet équipage ?" %>
+<% content_for :meta_image, image_path('Gold_Next_Door.png') %>
 
-
-  <h1 id="nom-crew"><%= @crew.nice_nom %></h1>
-  <p><%= @crew.prive? ? 'Est un Groupe privé' : 'Est un groupe Public' %></p>
-
-</div>
-
-<% if CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id).empty? == false %>
-      <h2 id="membre-crew">Membres:</h2>
-      <% @crew.pirates.each do |pirate| %>
-        <p><%= pirate[:email] %></p>
-        <p><%= pirate.tresors.count %> trésor(s)</p>
-      <% end %>
-    <h2 id="nom-crew" >Tresors du Crew:</h2>
-    <%= render "tresors/list", tresors: @crew.tresor.all %>
-  <div class="container-tresor">
-    <div class="wide_buttons">
-    <%= link_to "Quitter ce Crew 😅", crew_crew_pirate_path(@crew, current_pirate), method: :delete, class: 'button yellow' %>
-    </div>
-<% else  %>
-<% end  %>
-
-<% if  CrewPirate.where(pirate_id: current_pirate, crew_id: @crew.id).empty? %>
-  <% if @crew.prive %>
-    <!-- cas ou le crew est prive -->
-    <div class="wide_buttons">
-    <%= link_to "Rejoindre ce Crew 😎", new_crew_crew_pirate_path(@crew), class: 'button yellow' %>
-    </div>
-  <% else %>
-    <!-- cas ou le crew est public -->
-    <div class="wide_buttons">
-    <%= link_to "Rejoindre ce Crew 😎", crew_crew_pirates_path(@crew, @crew_pirate), class: 'button yellow', method: :post %>
-    </div>
-  <% end %>
-
-<% end  %>
- </div>
-</div>
+<%= render "crews/header", crew: @crew, crew_pirate: @crew_pirate %>
+<% if @crew.pirates.exists?(current_pirate.id) || !@crew.prive %>
+  <%= render "crews/nav", tab: 1, crew: @crew %>
+  <%= render "tresors/list", tresors: @crew.tresors %>
+<% else %>
+  <p class="crew-prive-notif">Ce crew est privé</p>
+<% end %>

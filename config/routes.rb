@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :crews do
     resources :crew_pirates, only:[:new, :create, :destroy]
-
+    get "pirates", to: "crews#pirates"
   end
 
   resources :tresors do
