@@ -36,9 +36,9 @@ url = "http://les-departements.fr/carte-des-regions.html"
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
-html_doc.search('.liste-region ul li span').each do |element|
+html_doc.search('.liste-region ul li span').first(10).each do |element|
   crew = Crew.create(nom: element.text.strip, prive: false)
-  p crew
+  crew
 end
 
 5.times do |c|
@@ -51,48 +51,50 @@ end
   crew = Crew.create(nom: crews, prive: true, password: 456789)
 end
 
+def tocrew(arg)
+  crew = Crew.create(nom: arg, prive: true, password: 456789)
 
-crews = "LeWagon"
-crew = Crew.create(nom: crews, prive: true, password: 456789)
+end
 
-crews = "LaSorbonne"
-crew = Crew.create(nom: crews, prive: true, password: 456789)
-
-crews = "ParisDESCARTE"
-crew = Crew.create(nom: crews, prive: true, password: 456789)
-
-crews = "EMLV"
-crew = Crew.create(nom: crews, prive: true, password: 456789)
-
-
+tocrew("Le Wagon Paris")
+tocrew("La Sorbonne")
+tocrew("IUT Paris Descartes")
+tocrew("BDE Dauphine")
+tocrew("Paris")
 #------------ CREATION DE PIRATES #-->
 
 10.times do |m|
-   p pseudo = "#{Faker::HarryPotter.character.split[0]}#{Faker::Superhero.prefix}"
-   p email =  "#{pseudo}@mail.com"
+   pseudo = "#{Faker::HarryPotter.character.split[0]}#{Faker::Superhero.prefix}"
+   email =  "#{pseudo}@mail.com"
    pirate = Pirate.create!(pseudo: pseudo, email: email, password: '123456')
 end
 
 10.times do |m|
-  p pseudo = "#{Faker::StarWars.character.split[0]}#{Faker::Superhero.prefix}"
-  p email =  "#{pseudo}@mail.com"
+  pseudo = "#{Faker::StarWars.character.split[0]}#{Faker::Superhero.prefix}"
+  email =  "#{pseudo}@mail.com"
   pirate = Pirate.create!(pseudo: pseudo, email: email, password: '123456')
 end
 
 10.times do |m|
-   p pseudo = "#{Faker::GameOfThrones.character.split[0]}#{Faker::GameOfThrones.house.split[0]}"
-   p email =  "#{pseudo}@#{Faker::GameOfThrones.house.split[0]}.com"
+   pseudo = "#{Faker::GameOfThrones.character.split[0]}#{Faker::GameOfThrones.house.split[0]}"
+   email =  "#{pseudo}@#{Faker::GameOfThrones.house.split[0]}.com"
   pirate = Pirate.create!(pseudo: pseudo, email: email, password: '123456')
 end
 
-Pirate.create!(pseudo: "Max", email: "maxime@mail.com", password: '123456')
-Pirate.create!(pseudo: "Come", email: "come@mail.com", password: '123456')
-Pirate.create!(pseudo: "Capu", email: "capucine@mail.com", password: '123456')
-Pirate.create!(pseudo: "Gaby", email: "gabriel@mail.com", password: '123456')
+def pirate_creation(arg)
+  Pirate.create!(pseudo: "#{arg}", email: "#{arg}@mail.com", password: '123456')
+
+end
+
+pirate_creation("Blondy")
+pirate_creation("Côme")
+pirate_creation("Capu")
+pirate_creation("Gaby")
+pirate_creation("Boris")
 
 #------------ CREATION DE CREWS/PIRATES #-->
 
-95.times do |l|
+125.times do |l|
   crew = Crew.all.sample
   pirate = Pirate.all.sample
   crewpirate = CrewPirate.new(pirate_id: pirate.id, crew_id: crew.id)
