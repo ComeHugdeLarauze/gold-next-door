@@ -2,47 +2,17 @@
 <% content_for :meta_description, "Découvre tous les Crews présents sur Gold Next Door. Rejoins tes favoris !" %>
 <% content_for :meta_image, image_path('Gold_Next_Door.png') %>
 
-<div class="container-tresor">
-  <div class="wide_buttons">
-    <%= link_to "Créer un Crew ⚓", new_crew_path, class: 'button yellow' %>
-  </div>
-  <!-- search -->
-  <div class="ou-crew-index">
-    <label class="label-crew-index">OU</label>
-  </div>
-
-  <% if current_pirate.crews.empty?  %>
-  <% flash[:alert] = "T'es dans aucun Crew pirate...  Adopte un crew et dévoile tes premiers trésors ! " %>
-  <% end %>
-
-  <div class="text-center">
-    <h1 class="h1-index-crew">Trouver un Crew</h1>
-    <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
-  </div>
-  <% @crews.each do |crew| %>
-    <%= link_to crew_path(crew), class: 'no-text-decoration' do %>
-    <div class="card-crew">
-      <h2 class="h2-crew-card"><%= crew.nice_nom %>
-        <% if crew.prive %>
-          <%= image_tag "ferme.svg", height: 20, width: 20, crop: :fill%>
-        <% end %>
-          </h2>
-      <p class="nombre-dans-crew">
-        <% if crew.pirates.empty? %>
-          <%= "Ne contient plus de pirates..." %>
-        <% else %>
-          <%= pluralize crew.pirates.count, "pirate" %>
-        <% end %>
-      </p>
-      <p class="nombre-dans-crew">
-          <%= pluralize crew.tresors.count, "trésor" %>
-      </p>
-      <% if CrewPirate.where(pirate_id: current_pirate, crew_id: crew.id).empty? == false %>
-        <p class="part-of-crew">Tu fais partie de ce Crew 😎</p>
-      <% else %>
-        <p class="not-part-of-crew">Tu n'est pas dans ce Crew 😢</p>
-      <% end %>
-    </div>
-    <% end %>
-  <% end %>
+<%= render "crews/nav_index", tab: 1 %>
+<div class="wide_buttons">
+  <%= link_to "Crée un Crew ⚓", new_crew_path, class: 'button yellow' %>
 </div>
+<% if @crews.empty? %>
+  <div class="crew-global-notif">
+  <p>T'es dans aucun Crew pirate !</p>
+  <div class="wide_buttons">
+    <%= link_to "Adopte un crew", crews_decouvrir_path, class: 'button yellow' %>
+  </div>
+  </div>
+<% else %>
+  <%= render "crews/crew_list", crews: @crews %>
+<% end %>

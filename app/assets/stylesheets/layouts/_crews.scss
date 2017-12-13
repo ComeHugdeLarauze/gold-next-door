@@ -1,35 +1,16 @@
-.panel-action-crew {
-  border: 2px solid blue;
-
-}
-.action-button {
-
-}
-#nom-crew {
-  font-size: 2.2em;
-  text-align: center;
-  word-break: break-word;
-}
-
-#membre-crew {
-  border-bottom: 4px solid $jaune;
-  width: 30%;
-}
-
 .card-crew {
-  width: 300px;
-  margin: 10px;
+  width: 100%;
+  margin-bottom: 10px;
   background-size: cover !important;
   background-position: center;
-  color: $jaune;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
   margin-bottom: 20px;
   border-radius: 16px;
   background-color: white;
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 2px;
+  text-align: center;
   a {
     font-size: 18px;
     color: $noir;
@@ -37,8 +18,25 @@
 
   h2 {
     margin-bottom: 10px;
-    text-align: left;
+    text-align: center;
     padding-top: 15px;
+  }
+  .crew-compteurs{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  .crew-compteurs p{
+    font-size: 16px;
+    font-weight: 100;
+    font-style: italic;
+    color: $medium-grey;
+    width: 50%;
+    text-align: center;
+  }
+  .crew-compteurs p:first-child{
+    border-right: 1px solid $medium-grey;
   }
 }
 
@@ -60,15 +58,6 @@
   margin-top: 18px;
 }
 
-.ou-crew-index {
-  text-align: center;
-}
-
-.nombre-dans-crew {
-  font-size: 16px;
-  font-weight: 100;
-  font-style: italic;
-}
 
 .part-of-crew {
   font-size: 15px;
@@ -92,13 +81,13 @@
 .crew-header{
   text-align: center;
   margin-bottom: 24px;
-  word-break: break-word;
   h1{
+    word-break: break-word;
     font-size: 24px;
     margin-top: 0;
-    background-color: $saumon;
+    background-color: white;
     padding: 8px;
-    color: white;
+    color: $noir;
   }
   .mini_buttons{
     text-align: right;
@@ -112,16 +101,21 @@
   background-size: auto 50%;
 }
 
-.crew-prive-notif{
+.crew-global-notif{
   padding-top: 130px;
-  font-size: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
   text-align: center;
-  background-image: asset-url('ferme.svg');
   background-repeat: no-repeat;
   background-color: white;
   height: 400px;
   background-size: 20% auto;
   background-position: center 180px;
+}
+
+.notif-closed-emoji{
+  background-image: asset-url('ferme.svg');
 }
 
 .crew-pirate{

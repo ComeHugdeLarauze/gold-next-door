@@ -1,0 +1,12 @@
+<div class="tabs">
+  <div class="tab-item <%= 'active' if tab == 1 %>">
+    <%= link_to crews_path do %>
+    <h3>Mes Crews</h3>
+    <% end %>
+  </div>
+  <div class="tab-item <%= 'active' if tab == 2 %>">
+    <%= link_to crews_decouvrir_path do %>
+    <h3>Découvrir</h3>
+    <% end %>
+  </div>
+</div>

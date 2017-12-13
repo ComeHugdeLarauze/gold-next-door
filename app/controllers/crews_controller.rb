@@ -1,9 +1,15 @@
 class CrewsController < ApplicationController
 # CRUD
   before_action :set_crew, only: [:show, :edit]
+  skip_after_action :verify_authorized, only: [:decouvrir]
+  after_action :verify_policy_scoped, only: [:decouvrir]
 
   def index
-    @crews = policy_scope(Crew).order(created_at: :desc)
+    @crews = policy_scope(current_pirate.crews).order(created_at: :desc)
+  end
+
+  def decouvrir
+    @crews = policy_scope(Crew.all).order(created_at: :desc)
   end
 
   def show
