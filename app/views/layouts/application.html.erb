@@ -23,7 +23,7 @@
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
 
-    <meta property='title' content="<%= meta_title %>" />
+    <title><%= meta_title %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -48,6 +48,7 @@
 
   </head>
   <body>
+    <div>
     <%= render 'shared/navbar' %>
 
     <div class="container-fluid container-gnd">
