@@ -1,20 +1,21 @@
 .panel-action-crew {
   border: 2px solid blue;
-
 }
+
 .action-button {
 
 }
+
 #nom-crew {
   font-size: 2.2em;
   text-align: center;
+  word-break: break-word;
 }
 
 #membre-crew {
   border-bottom: 4px solid $jaune;
   width: 30%;
 }
-
 
 .card-crew {
   width: 300px;
@@ -43,7 +44,7 @@
 }
 
 .h1-index-crew {
-  font-size: 22px;
+  font-size: 26px;
   margin-top: 9px;
   margin-bottom: -6px;
   color: $noir;
@@ -64,7 +65,7 @@
   text-align: center;
 }
 
-.nombre-pirates-dans-crew {
+.nombre-dans-crew {
   font-size: 16px;
   font-weight: 100;
   font-style: italic;
@@ -80,6 +81,7 @@
   color: $saumon;
 }
 
+
 .search-crew-global {
   display: flex;
   justify-content: center;
@@ -88,4 +90,66 @@
 .search-submit {
   margin-top:10px;
   margin-left: 100px;
+}
+
+.h2-crew-card {
+  font-size: 18px;
+  color: #252525;
+  word-break: break-word;
+}
+
+.break-word {
+    word-break: break-word;
+}
+
+.crew-header{
+  text-align: center;
+  margin-bottom: 24px;
+  h1{
+    font-size: 24px;
+    margin-top: 0;
+    background-color: $saumon;
+    padding: 8px;
+    color: white;
+  }
+  .mini_buttons{
+    text-align: right;
+  }
+}
+
+.crew-prive-name{
+  background-image: asset-url('ferme.svg');
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  background-size: auto 50%;
+}
+
+.crew-prive-notif{
+  padding-top: 130px;
+  font-size: 24px;
+  text-align: center;
+  background-image: asset-url('ferme.svg');
+  background-repeat: no-repeat;
+  background-color: white;
+  height: 400px;
+  background-size: 20% auto;
+  background-position: center 180px;
+}
+
+.crew-pirate{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: $medium-grey;
+  .avatar{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .tresors-per-pirate{
+    color: $soft-grey;
+    font-style: italic;
+    margin-left: 12px;
+  }
 }

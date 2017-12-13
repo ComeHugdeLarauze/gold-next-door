@@ -37,7 +37,6 @@ h3{
 .wide_buttons .button{
   width: 100%;
   display: block;
-  float: left;
   border-radius:3px;
   margin: 18px 0px 10px 0px;
   padding:15px 0px;
@@ -48,6 +47,15 @@ h3{
   border-color: #f1c40f;
 
 }
+
+.mini_buttons .button{
+  color: $saumon;
+  background-color: white;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
 .button:active{
   position:relative;
   top:6px;

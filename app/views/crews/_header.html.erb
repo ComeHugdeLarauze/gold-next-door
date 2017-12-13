@@ -1,0 +1,19 @@
+<div class="crew-header">
+  <% if crew.pirates.exists?(current_pirate.id) %>
+      <div class="mini_buttons">
+      <%= link_to "Quitter X", crew_crew_pirate_path(crew, current_pirate), method: :delete, class: 'button' %>
+    </div>
+  <% end %>
+  <h1 <%= "class= crew-prive-name" if crew.prive %> ><%= crew.nice_nom %></h1>
+    <% if !crew.pirates.exists?(current_pirate.id) %>
+      <div class="wide_buttons">
+        <% if @crew.prive %>
+        <!-- cas ou le crew est prive -->
+        <%= link_to "Rejoindre ce Crew 😎", new_crew_crew_pirate_path(crew), class: 'button yellow' %>
+        <% else %>
+        <!-- cas ou le crew est public -->
+        <%= link_to "Rejoindre ce Crew 😎", crew_crew_pirates_path(crew, crew_pirate), class: 'button yellow', method: :post %>
+        <% end %>
+      </div>
+    <% end %>
+</div>

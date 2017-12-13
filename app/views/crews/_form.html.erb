@@ -5,12 +5,13 @@
 
   <%= simple_form_for @crew do |f| %>
     <div class="form-inputs">
-      <%= f.input :nom, label: "Comment s'apelle ton crew Cap'tain ?" %>
+      <h2 class="h2-form-create-crew"> Quel nom pour ton Crew ?</h2>
+      <%= f.input :nom, placeholder: "Le Gang du 16ème...", label: false %>
 
       <!-- creer ou non un crew -->
       <div class="container-checkbox">
         <div class="form-group radio_buttons optional crew_prive">
-          <label class="control-label radio_buttons optional">Créer un crew privado ?
+          <h2 class="h2-n2-form-create-crew"> Crew privé ou Crew public ?</h2>
           </label>
 
           <div id="crew_prive">
@@ -33,7 +34,7 @@
       <!-- mdp -->
       <div class="form-group password required crew_password hidden" id="password_indice">
         <label class="control-label password required" for="password">
-          <abbr title="required">*</abbr> Clés de ta crew</label>
+          <abbr title="required">*</abbr> Clé de ta crew</label>
           <input class="form-control password required" id="password" type="password" name="crew[password]">
         </div>
 
