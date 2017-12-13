@@ -45,7 +45,10 @@ h3{
   font: 16px "Montserrat";
   color: $noir;
   border-color: #f1c40f;
-
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mini_buttons .button{

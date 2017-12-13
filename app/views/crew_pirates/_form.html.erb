@@ -6,7 +6,9 @@
   <div class='text-center'>
     <%= simple_form_for([@crew, @crew_pirate]) do |f| %>
       <%= text_field_tag :crew_password %>
-      <%= f.submit "Rejoindre #{@crew.nom}", class: 'btn alert-crew' %>
+      <div class="wide_buttons">
+      <%= f.submit "Rejoindre #{@crew.nom}", class: 'button yellow' %>
+      </div>
     <% end %>
   </div>
 </div>
