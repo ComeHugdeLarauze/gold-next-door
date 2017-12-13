@@ -26,7 +26,7 @@
   <% end %>
   <div class="crews-list-details">
     <% @tresor.crews.each do |crew| %>
-      <%= link_to crew.nice_nom, crew_path(crew) %>
+      <%= link_to crew.nice_nom, crew_path(crew), class: 'break-word' %>
     <% end %>
   </div>
   <% if current_pirate != @tresor.pirate  && !@tresor.vendu %>

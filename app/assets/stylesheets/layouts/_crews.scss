@@ -8,6 +8,7 @@
 #nom-crew {
   font-size: 2.2em;
   text-align: center;
+  word-break: break-word;
 }
 
 #membre-crew {
@@ -83,4 +84,9 @@
 .h2-crew-card {
   font-size: 18px;
   color: #252525;
+  word-break: break-word;
+}
+
+.break-word {
+    word-break: break-word;
 }

@@ -16,7 +16,7 @@
       <h2>Mes Crews</h2>
       <ul id="sans-ul">
         <% @pirate.crews.each do |crew| %>
-          <p><%= crew.nice_nom %></p>
+          <p class="break-word"><%= crew.nice_nom %></p>
         <% end %>
       </ul>
       <button type="button" class="btn btn-info" id="modify">Modifier mon profil</button>
