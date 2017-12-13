@@ -16,7 +16,7 @@
       <h2 class="h2-profil-pirate">Mes Crews</h2>
       <ul id="sans-ul">
         <% @pirate.crews.each do |crew| %>
-        <p class="break-word"><%= crew.nice_nom %></p>
+        <p class="break-word"><%= link_to crew.nice_nom, crew_path(crew) %></p>
         <% end %>
       </ul>
       <div class="wide_buttons">
