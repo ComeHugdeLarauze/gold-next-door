@@ -1,3 +1,21 @@
+.panel-action-crew {
+  border: 2px solid blue;
+
+}
+.action-button {
+
+}
+#nom-crew {
+  font-size: 2.2em;
+  text-align: center;
+  word-break: break-word;
+}
+
+#membre-crew {
+  border-bottom: 4px solid $jaune;
+  width: 30%;
+}
+
 .card-crew {
   width: 300px;
   margin: 10px;
@@ -62,7 +80,15 @@
   color: $saumon;
 }
 
+.h2-crew-card {
+  font-size: 18px;
+  color: #252525;
+  word-break: break-word;
+}
 
+.break-word {
+    word-break: break-word;
+}
 .crew-header{
   text-align: center;
   margin-bottom: 24px;
@@ -113,4 +139,5 @@
     font-style: italic;
     margin-left: 12px;
   }
+
 }
