@@ -14,5 +14,7 @@ node_modules
 /public/packs-test
 /node_modules
 
+public/downloads/tmp/*
+
 # Ignore application configuration
 /config/application.yml

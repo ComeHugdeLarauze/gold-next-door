@@ -1,3 +1,7 @@
+<% content_for :meta_title, "Gold Next Door - La piraterie n'est jamais finie" %>
+<% content_for :meta_description, "Découvre des trésors cachés autour de toi jusqu'à aujourd'hui ! Dévoile les tiens pour savoir combien tu peux en tirer... Entre amis ou dans ton campus, qui sera le meilleur négociateur ?" %>
+<% content_for :meta_image, image_path('Gold_Next_Door.png') %>
+
 <%= render "abordages/nav", tab: 1 %>
 <ul class="pourparlers-list">
   <% @abordages.each do |abordage| %>

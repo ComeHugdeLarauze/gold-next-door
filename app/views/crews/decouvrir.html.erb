@@ -2,7 +2,7 @@
 <div class="search-crew-global">
     <%= simple_form_for crews_path, method: :get, html: {id: "submittag"} do |f| %>
       <div class="search-crew">
-        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2', placeholder: "chercher" %>
+        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2' %>
       </div>
       <div class="search-submit">
         <%= f.submit :chercher, class: 'button yellow hidden'%>
