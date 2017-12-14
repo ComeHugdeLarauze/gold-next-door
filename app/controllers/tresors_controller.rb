@@ -1,9 +1,15 @@
 class TresorsController < ApplicationController
   before_action :set_tresor, only: [:show, :destroy]
   skip_before_action :authenticate_pirate!, only: [:home, :index, :create]
+  skip_after_action :verify_authorized, only: [:index]
+  skip_after_action :verify_policy_scoped, only: [:index]
 
   def index
-    @tresors = policy_scope(Tresor).order(created_at: :desc)
+    if pirate_signed_in?
+      @tresors = Tresor.joins(crew_tresors: :crew).where(crew_tresors: {crew: current_pirate.crews.pluck(:id)}).distinct
+    else
+      @tresors = policy_scope(Tresor).order(created_at: :desc)
+    end
   end
 
   def show
