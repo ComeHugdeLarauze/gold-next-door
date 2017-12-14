@@ -1,11 +1,11 @@
 <%= render "crews/nav_index", tab: 2 %>
 <div class="search-crew-global">
-    <%= simple_form_for crews_path, method: :get do |f| %>
+    <%= simple_form_for crews_path, method: :get, html: {id: "submittag"} do |f| %>
       <div class="search-crew">
-        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2', placeholder: "chercher un crew",onchange: "crewselected" %>
+        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2', placeholder: "chercher" %>
       </div>
       <div class="search-submit">
-        <%= f.submit :chercher, class: 'button yellow'%>
+        <%= f.submit :chercher, class: 'button yellow hidden'%>
       </div>
     <% end %>
   </div>
