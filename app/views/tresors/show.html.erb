@@ -37,7 +37,7 @@
   <div class="vendeur">
      <h2>
       <% if @tresor.pirate.photo? %>
-        <%= cl_image_tag tresor.pirate.photo, class:'avatar', height: 60 %>
+        <%= cl_image_tag @tresor.pirate.photo, class:'avatar', height: 60 %>
       <% else %>
         <%= image_tag 'pirate.svg', class:'avatar', height: 60 %>
       <% end %>
