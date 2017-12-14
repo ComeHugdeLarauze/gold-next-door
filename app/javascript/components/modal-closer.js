@@ -9,6 +9,7 @@ function refreshAbordageForm(){
     document.getElementById("new-abordage-modal-error").classList.remove("show-error");
     document.getElementById("new-abordage-modal-error").classList.add("hide-error");
   }
+
 }
 
 const toggleModal = (e) => {
