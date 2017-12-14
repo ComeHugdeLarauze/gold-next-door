@@ -1,13 +1,13 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Embarques", new_session_path(resource_name) %><br />
+  <%= link_to "Embarquer ⚓", new_session_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Inscris toi", new_registration_path(resource_name) %><br />
+  <%= link_to "Je m'inscris 😎", new_registration_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "tu as oublié ton mot de passe?", new_password_path(resource_name) %><br />
+  <%= link_to "Alors, mot de passe oublié ? 😉", new_password_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
