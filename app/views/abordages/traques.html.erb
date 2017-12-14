@@ -13,7 +13,7 @@
       <% end %>
       <div class="content">
         <%= abordage.tresor.titre %> de <%= abordage.tresor.pirate.pseudo %>
-        <br><%= image_tag abordage.type_abordage.emoji, class:"mini-emoji" %><%= pluralize abordage.quantite, abordage.type_abordage.nom %>
+        <br><%= image_tag "#{abordage.type_abordage.emoji}.svg", class:"mini-emoji" %><%= pluralize abordage.quantite, abordage.type_abordage.nom %>
         <br><em><%= abordage.created_at.strftime("%d/%m/%Y") %></em>
       </div>
       <div class="abordage-status">
