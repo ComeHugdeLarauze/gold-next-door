@@ -8,9 +8,10 @@
 </div>
 <% if @crews.empty? %>
   <div class="crew-global-notif">
-  <p>T'es dans aucun Crew pirate !</p>
-  <div class="wide_buttons">
-    <%= link_to "Adopte un crew", crews_decouvrir_path, class: 'button yellow' %>
+    <p>T'es dans aucun Crew pirate !</p>
+    <div class="wide_buttons">
+      <%= link_to "Adopte un crew", crews_decouvrir_path, class: 'button yellow' %>
+    </div>
   </div>
 <% else %>
   <%= render "crews/crew_list", crews: @crews %>
