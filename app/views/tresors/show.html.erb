@@ -24,25 +24,22 @@
         <p><%= @tresor.description %></p>
     <% end %>
   <% end %>
+  <div class="vendeur">
+      <h2><%= @tresor.pirate.nice_pseudo %></h2>
+  </div>
   <div class="crews-list-details">
     <% @tresor.crews.each do |crew| %>
       <%= link_to crew.nice_nom, crew_path(crew), class: 'break-word' %>
     <% end %>
   </div>
   <% if current_pirate != @tresor.pirate  && !@tresor.vendu %>
-      <div id="new-abordage-modal_btn"><div id="status-update"><%= render "abordages/status", tresor: @tresor %></div></div>
+      <div id="new-abordage-modal_btn">
+        <div id="status-update"><%= render "abordages/status", tresor: @tresor %></div>
+        <div class="btn-offer">Faire une offre</div>
+      </div>
       <% else %>
       <div id="status-update"><%= render "abordages/status", tresor: @tresor %></div>
   <% end %>
-  <div class="vendeur">
-     <h2>
-      <% if @tresor.pirate.photo? %>
-        <%= cl_image_tag @tresor.pirate.photo, class:'avatar', height: 60 %>
-      <% else %>
-        <%= image_tag 'pirate.svg', class:'avatar', height: 60 %>
-      <% end %>
-      <%= @tresor.pirate.nice_pseudo %></h2>
-  </div>
   </div>
 </div>
 <div class="abordages-conteneur">
