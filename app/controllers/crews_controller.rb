@@ -5,12 +5,11 @@ class CrewsController < ApplicationController
   after_action :verify_policy_scoped, only: [:decouvrir]
 
   def index
-    @crews = policy_scope(current_pirate.crews).order(created_at: :desc)
-    @crew_list = policy_scope(Crew).order(created_at: :desc)
+    @crew_list = policy_scope(current_pirate.crews).order(created_at: :desc)
   end
 
   def decouvrir
-    @crew_list = policy_scope(Crew).order(created_at: :desc)
+    @crew_list = Crew.all
     if params[:query]
       @crews = policy_scope(Crew).where("nom ILIKE ?", "%#{params[:query]}%").order(created_at: :desc)
     else
