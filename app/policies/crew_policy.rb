@@ -5,6 +5,10 @@ class CrewPolicy < ApplicationPolicy
     end
   end
 
+  def decouvrir?
+    return true
+  end
+
   def show?
     return true
   end

@@ -1,8 +1,9 @@
 const classCheck = (e) => {
   const d = e.currentTarget;
     if (e.target.classList.contains("image-picker")){
-      d.classList.remove("init-class");
-      d.removeEventListener("click", classCheck);
+      if (d.classList.contains("init-class")){
+        d.classList.remove("init-class");
+      }
     };
 };
 

@@ -12,20 +12,24 @@ end
 
 
 puts "Destroy all DB."
-TypeAbordage.destroy_all
-procesing('TypeAbordage')
 CrewPirate.destroy_all
 procesing('CrewPirate')
-Pirate.destroy_all
-procesing('Pirate')
+Abordage.destroy_all
+procesing('Abordage')
+Tresor.destroy_all
+procesing('Tresor')
 Crew.destroy_all
 procesing('Crew')
+Pirate.destroy_all
+procesing('Pirate')
+TypeAbordage.destroy_all
+procesing('TypeAbordage')
 
 puts "DB destroyed"
 puts "Creating DateBase"
 
 
-#------------ CREATION DES TYPES D'ABORDAGES #-->
+# #------------ CREATION DES TYPES D'ABORDAGES #-->
 [["euro", "euros"], ["drink", "drinks"], ["cado", "troc"], ["free hug", "free"]].each do |type|
   TypeAbordage.create(nom: type[0], emoji: type[1])
 end
@@ -53,7 +57,6 @@ end
 
 def tocrew(arg)
   crew = Crew.create(nom: arg, prive: true, password: 456789)
-
 end
 
 tocrew("Le Wagon Paris")
