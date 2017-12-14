@@ -2,8 +2,14 @@
   <%= simple_form_for @pirate, url: profile_path do |f| %>
 
     <!-- Upload picture -->
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden%>
+    <div class="photo-container">
+
+      <%= f.label :photo do %>
+        <%= image_tag 'profile_pic.svg', height: 70, width: 70 %>
+      <% end %>
+      <%= f.input :photo, label: false %>
+      <%= f.input :photo_cache, as: :hidden%>
+    </div>
     <%= f.input :email, label: "Modifier mon email :" %>
     <%= f.input :pseudo, label: 'Modifier mon pseudo :' %>
 
