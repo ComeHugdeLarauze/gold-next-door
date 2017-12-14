@@ -10,7 +10,6 @@ if (document.getElementById('tresor_prive_true')){
   clickcoffre();
 };
 
-
 import { clickcrew } from '../components/crew';
 if (document.getElementById('crew_prive_true')){
   clickcrew();
@@ -32,3 +31,8 @@ if (document.getElementById('torender')){
 };
 
 import '../components/select2';
+
+import { crewselected} from "../components/crewselected";
+if (document.getElementById('query')){
+  updateprofil();
+};

@@ -7,7 +7,7 @@
   <div class="search-crew-global">
     <%= simple_form_for crews_path, method: :get do |f| %>
       <div class="search-crew">
-        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2', placeholder: "chercher un crew" %>
+        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2', placeholder: "chercher un crew",onchange: "crewselected" %>
       </div>
       <div class="search-submit">
         <%= f.submit :chercher, class: 'button yellow'%>
@@ -28,7 +28,7 @@
     <h1 class="h1-index-crew">Trouver un Crew</h1>
     <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
   </div>
-  
+
   <% @crews.each do |crew| %>
     <%= link_to crew_path(crew), class: 'no-text-decoration' do %>
     <div class="card-crew">
