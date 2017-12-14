@@ -18,20 +18,19 @@ class TresorsController < ApplicationController
   end
 
   def create
-      @tresor = Tresor.new(tresor_params)
-      @tresor.pirate = current_pirate
-      authorize @tresor
-    if current_pirate.crews.empty?
-      redirect_to crews_path
-    else
-      if @tresor.save && :crew_ids != nil
-        params[:tresor][:crew_ids].each do |crew|
-          CrewTresor.create(crew_id: crew, tresor_id: @tresor.id )
-        end
-        redirect_to tresor_path(@tresor)
-      else
-        render :new
+    redirect_to crews_path if current_pirate.crews.empty?
+    @tresor = Tresor.new(tresor_params)
+    @tresor.pirate = current_pirate
+    authorize @tresor
+    if params[:tresor][:crew_ids] != nil && @tresor.save
+      params[:tresor][:crew_ids].each do |crew|
+        CrewTresor.create(crew_id: crew, tresor_id: @tresor.id)
       end
+      flash[:alert] = nil
+      redirect_to tresor_path(@tresor)
+    else
+      flash[:alert] = "Oups... Ajoute un Crew si tu veux dévoiler un trésor!"
+      render :new
     end
   end
 
