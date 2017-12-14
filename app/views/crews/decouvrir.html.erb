@@ -1,0 +1,14 @@
+<%= render "crews/nav_index", tab: 2 %>
+<div class="search-crew-global">
+    <%= simple_form_for crews_path, method: :get do |f| %>
+      <div class="search-crew">
+        <%= select_tag :query, options_from_collection_for_select(@crew_list, :nom, :nom), class: 'select2', placeholder: "chercher un crew",onchange: "crewselected" %>
+      </div>
+      <div class="search-submit">
+        <%= f.submit :chercher, class: 'button yellow'%>
+      </div>
+    <% end %>
+  </div>
+ <div class="container-tresor">
+<%= render "crews/crew_list", crews: @crews %>
+</div>

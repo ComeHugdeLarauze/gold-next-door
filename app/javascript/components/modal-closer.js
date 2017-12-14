@@ -1,5 +1,3 @@
-import { classCheck } from '../components/type-picker';
-
 function refreshAbordageForm(){
   document.querySelectorAll(".to-reset").forEach((f) => f.value = "");
   document.querySelector(".to-reset-int").value = 1;
@@ -11,13 +9,13 @@ function refreshAbordageForm(){
     document.getElementById("new-abordage-modal-error").classList.remove("show-error");
     document.getElementById("new-abordage-modal-error").classList.add("hide-error");
   }
-  document.getElementById("abordage_type_abordage").addEventListener("click", classCheck);
+
 }
 
 const toggleModal = (e) => {
   const m = document.getElementById("new-abordage-modal");
   m.classList.toggle("modal-hidden");
-  if (m.classList.contains("modal-hidden")){refreshAbordageForm()}
+  if(m.classList.contains("modal-hidden")){refreshAbordageForm()}
 }
 
 

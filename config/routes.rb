@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'tresors#index'
 
+  get "crews/decouvrir", to: "crews#decouvrir"
   resources :crews do
     resources :crew_pirates, only:[:new, :create, :destroy]
     get "pirates", to: "crews#pirates"
