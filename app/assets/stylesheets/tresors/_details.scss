@@ -28,17 +28,14 @@
     padding: 0 20px 10px 20px;
   }
   .vendeur{
-    display: flex;
-    background-color: $saumon;
-    padding: 5px 5px;
-    margin-top: 20px;
+
   }
-  .vendeur h2{
-    font-size: 18px;
-    font-style: italic;
+  .vendeur h2 {
+    font-size: 15px;
     font-weight: normal;
-    color: white;
+    color: $saumon;
     margin: 0;
+    text-align: left;
   }
   .avatar{
     width: 30px;
@@ -59,6 +56,14 @@
   .crews-list-details a{
     font-size: 15px;
     color: $saumon;
+  }
+  .btn-offer{
+    color: white;
+    background-color:$saumon;
+    padding: 9px 5px;
+    text-align: center;
+    margin-top: 18px;
+    border-radius: 10px;
   }
 }
 
