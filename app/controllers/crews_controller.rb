@@ -6,6 +6,7 @@ class CrewsController < ApplicationController
 
   def index
     @crews = policy_scope(current_pirate.crews).order(created_at: :desc)
+    @crew_list = policy_scope(Crew).order(created_at: :desc)
   end
 
   def decouvrir
