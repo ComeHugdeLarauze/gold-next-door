@@ -6,13 +6,18 @@
 <ul class="pourparlers-list">
   <% @abordages.each do |abordage| %>
     <li class="pourparler">
-      <% if abordage.tresor.prive %>
+      <% if abordage.tresor.prive && !abordage.tresor.vendu %>
       <%= image_tag 'lock2.png', height: 60, width: 60, crop: :fill %>
       <% else %>
       <%= cl_image_tag abordage.tresor.photo, height: 60, width: 60, crop: :fill %>
       <% end %>
       <div class="content">
-        <%= abordage.tresor.titre %> de <%= abordage.tresor.pirate.pseudo %>
+        <% if abordage.tresor.prive && !abordage.tresor.vendu %>
+          « <%= abordage.tresor.indice %> »
+        <% else %>
+          <%= abordage.tresor.titre %>
+        <% end %>
+         de <%= abordage.tresor.pirate.pseudo %>
         <br><%= image_tag abordage.type_abordage.emoji, class:"mini-emoji" %><%= pluralize abordage.quantite, abordage.type_abordage.nom %>
         <br><em><%= abordage.created_at.strftime("%d/%m/%Y") %></em>
       </div>
