@@ -5,7 +5,7 @@
 <%= render "crews/header", crew: @crew, crew_pirate: @crew_pirate %>
 <% if @crew.pirates.exists?(current_pirate.id) || !@crew.prive %>
   <%= render "crews/nav", tab: 1, crew: @crew %>
-  <%= render "tresors/list", tresors: @crew.tresors %>
+  <%= render "tresors/list", tresors: @crew.tresors.order(created_at: :desc) %>
 <% else %>
   <p class="crew-global-notif notif-closed-emoji">Ce crew est privé</p>
 <% end %>
