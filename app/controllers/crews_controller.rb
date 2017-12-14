@@ -9,7 +9,12 @@ class CrewsController < ApplicationController
   end
 
   def decouvrir
-    @crews = policy_scope(Crew.all).order(created_at: :desc)
+    @crew_list = policy_scope(Crew).order(created_at: :desc)
+    if params[:query]
+      @crews = policy_scope(Crew).where("nom ILIKE ?", "%#{params[:query]}%").order(created_at: :desc)
+    else
+      @crews = policy_scope(Crew).order(created_at: :desc)
+    end
   end
 
   def show

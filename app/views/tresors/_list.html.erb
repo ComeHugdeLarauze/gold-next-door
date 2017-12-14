@@ -31,7 +31,7 @@
               </p>
             </div>
             <div>
-            <%= render "abordages/status", tresor: @tresor, abordage: Abordage.new, active: true %>
+            <%= render "abordages/status", tresor: tresor %>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
               <p class="p-username"><%= tresor.pirate.nice_pseudo %></p>
             </div>
             <div>
-            <%= render "abordages/status", tresor: tresor, abordage: Abordage.new, active: true %>
+            <%= render "abordages/status", tresor: tresor %>
             </div>
           </div>
         </div>

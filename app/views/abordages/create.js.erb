@@ -1,7 +1,21 @@
 function refreshAbordageForm(){
-  var newAbordageForms = document.querySelectorAll(".to-reset");
-  newAbordageForms.forEach((f) => f.value = "");
+  document.querySelectorAll(".to-reset").forEach((f) => f.value = "");
   document.querySelector(".to-reset-int").value = 1;
+  if (!document.getElementById("abordage_type_abordage").classList.contains("init-class")){
+    document.getElementById("abordage_type_abordage").classList.add("init-class");
+  }
+  document.querySelectorAll(".to-reset-radio").forEach((r) => r.checked = false);
+  if (document.getElementById("new-abordage-modal-error").classList.contains("show-error")){
+    document.getElementById("new-abordage-modal-error").classList.remove("show-error");
+    document.getElementById("new-abordage-modal-error").classList.add("hide-error");
+  }
+}
+
+function showErrorModal(){
+  if (!document.getElementById("new-abordage-modal-error").classList.contains("show-error")){
+    document.getElementById("new-abordage-modal-error").classList.add("hide-error");
+    document.getElementById("new-abordage-modal-error").classList.add("show-error");
+  }
 }
 
 function updateAbordageList(newContent){
@@ -14,6 +28,7 @@ function updateStatus(newContent){
 
 <% if @abordage.errors.any? %>
   refreshAbordageForm();
+  showErrorModal();
 <% else %>
   if (document.getElementById("new-abordage-modal")){
     if (!document.getElementById("new-abordage-modal").classList.contains("modal-hidden")){
