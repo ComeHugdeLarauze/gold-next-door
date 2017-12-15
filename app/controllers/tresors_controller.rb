@@ -6,9 +6,9 @@ class TresorsController < ApplicationController
 
   def index
     if pirate_signed_in?
-      @tresors = Tresor.joins(crew_tresors: :crew).where(crew_tresors: {crew: current_pirate.crews.pluck(:id)}).distinct
+      @tresors = Tresor.joins(crew_tresors: :crew).where(crew_tresors: {crew: current_pirate.crews.pluck(:id)}).distinct.order(created_at: :desc)
     else
-      @tresors = policy_scope(Tresor).order(created_at: :asc)
+      @tresors = policy_scope(Tresor).order(created_at: :desc)
     end
   end
 
